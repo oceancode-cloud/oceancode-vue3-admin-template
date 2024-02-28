@@ -1,10 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import { getStore } from '@oceancode/core';
-import { setupFramework } from "@oceancode/framework";
-import "@oceancode/framework-core/dist/style.css";
-import "@oceancode/core/dist/style.css";
+import { setupFramework, getStore } from "@oceancode/framework";
 import "@oceancode/framework/dist/style.css";
 
 import { loadConfig } from './config'

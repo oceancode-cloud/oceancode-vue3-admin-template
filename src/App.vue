@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { OcRootView } from '@oceancode/framework-core'
+import { OcRootView } from '@oceancode/framework'
 </script>
 
 <template>

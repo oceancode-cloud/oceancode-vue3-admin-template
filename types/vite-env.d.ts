@@ -1,5 +1,7 @@
 /// <reference types="vite/client" />
 
+declare module "@oceancode/framework"
+
 interface ImportMetaEnv {
   // 标题
   VITE_GLOB_APP_TITLE: string;

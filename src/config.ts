@@ -1,5 +1,5 @@
-import { getStore } from '@oceancode/core';
-const pinia = getStore()
+// import { getStore } from '@oceancode/framework';
+const pinia = null; // getStore()
 
 const routes = [
   {
