@@ -1,2 +1,4 @@
-# oceancode-front-vue3-admin-template
-一个Vue3搭建的企业级管理端模板。 它的技术栈为：Vue3 + TypeScript4 + Vite2 + NaiveUI  + Axios + Pinia2 + PlopJS
+# Oceancode Admin Template
+
+## 免责声明
+> 承诺永久开源免费可商用，这并不意味着您可以将本项目应用到非法的领域，比如涉及赌博，暴力等方面。如因此产生纠纷等法律问题，本项目以及相关衍生子项目不承担任何责任。
