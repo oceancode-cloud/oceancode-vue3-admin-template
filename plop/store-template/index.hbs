@@ -1,11 +1,12 @@
-import { defineStore } from 'pinia'
-import { {{upperDataName}}StoreType } from './{{name}}Store.d'
-import { setLocalStorage, getLocalStorage } from '@/utils'
-import { StorageEnum } from '@/enums/storageEnum'
-
-export const use{{upperDataName}}Store = defineStore({
-  id: 'use{{upperDataName}}Store',
-  state: (): {{upperDataName}}StoreType => ({}),
+import { defineStore, getStore } from '@oceancode/framework';
+export const use{{upperDataName}}Store = defineStore('use{{upperDataName}}Store', {
+  state: () => {
+    return { }
+  },
   getters: {},
   actions: {}
 })
+
+export function use{{upperDataName}}() {
+  return use{{upperDataName}}Store(getStore());
+}
