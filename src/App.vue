@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { OcRootView } from '@oceancode/framework'
+import { OcContext } from '@oceancode/framework' 
+import { ping } from '@/api'
+ping()
 </script>
 
 <template>
-  <oc-root-view>
+  <oc-context>dfs
     <RouterView />
-  </oc-root-view>
+  </oc-context>
 </template>

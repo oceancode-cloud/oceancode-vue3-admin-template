@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@oceancode/naive-ui':
-    specifier: ^1.0.21
-    version: 1.0.21(lodash@4.17.21)(pinia@2.1.7)(vue@3.3.7)
+    specifier: ^1.0.31
+    version: 1.0.31(lodash@4.17.21)(pinia@2.1.7)(vue@3.3.7)
   '@types/color':
     specifier: ^3.0.6
     version: 3.0.6
@@ -65,7 +65,7 @@ devDependencies:
     specifier: ^17.8.1
     version: 17.8.1
   '@types/node':
-    specifier: ^16.18.84
+    specifier: ^16.18.85
     version: 16.18.85
   '@types/three':
     specifier: ^0.144.0
@@ -94,6 +94,9 @@ devDependencies:
   default-passive-events:
     specifier: ^2.0.0
     version: 2.0.0
+  dotenv:
+    specifier: ^16.4.5
+    version: 16.4.5
   eslint:
     specifier: ^8.57.0
     version: 8.57.0
@@ -1102,8 +1105,8 @@ packages:
       fastq: 1.17.1
     dev: true
 
-  /@oceancode/core@1.0.4(mitt@3.0.1)(pinia@2.1.7)(vue@3.3.7):
-    resolution: {integrity: sha512-ysElVfueBbXMrG3uOpl8BrNKV3AS7GzclQMSSJ01nRreww6oYZYUNw6rAlYgCuBheLBSrT2ouwzjPWySymBHWw==, tarball: https://registry.npmmirror.com/@oceancode/core/-/core-1.0.4.tgz}
+  /@oceancode/core@1.0.9(mitt@3.0.1)(pinia@2.1.7)(vue@3.3.7):
+    resolution: {integrity: sha512-HPV4vXdjseb3/jqLFr5g6hlrj45wlJLKPHjsqKTDTCGya8TL+NNK4OONjFVsCchKzPADi2uT/fPbsbrh46cgCg==, tarball: https://registry.npmmirror.com/@oceancode/core/-/core-1.0.9.tgz}
     peerDependencies:
       mitt: ^3.0.1
       pinia: ^2.1.7
@@ -1115,26 +1118,26 @@ packages:
       vue: 3.3.7(typescript@5.3.3)
     dev: false
 
-  /@oceancode/framework-core@1.0.9(@oceancode/core@1.0.4)(vue@3.3.7):
-    resolution: {integrity: sha512-72VDrn1fJQkecRou6nkZ17hsJHWcXjAXFzYrN/NcO0VCXjGV0ZWUuvQwy49JGDxN+PB2e8Ki0o6Qj9Bjq1nNww==, tarball: https://registry.npmmirror.com/@oceancode/framework-core/-/framework-core-1.0.9.tgz}
+  /@oceancode/framework-core@1.0.12(@oceancode/core@1.0.9)(vue@3.3.7):
+    resolution: {integrity: sha512-YKraFecy45CO/W6WwZ3z2cW6Dz7wmAlJvhoIZdOsz5n9K+/lhJLebJEsYwx0rt0eGa+umoU5yXCcCkzIIh9Clw==, tarball: https://registry.npmmirror.com/@oceancode/framework-core/-/framework-core-1.0.12.tgz}
     peerDependencies:
-      '@oceancode/core': ^1.0.1
+      '@oceancode/core': ^1.0.6
       vue: ^3.0.0
     dependencies:
-      '@oceancode/core': 1.0.4(mitt@3.0.1)(pinia@2.1.7)(vue@3.3.7)
+      '@oceancode/core': 1.0.9(mitt@3.0.1)(pinia@2.1.7)(vue@3.3.7)
       sass: 1.71.1
       vue: 3.3.7(typescript@5.3.3)
       vue3-sfc-loader: 0.8.4
     dev: false
 
-  /@oceancode/naive-ui@1.0.21(lodash@4.17.21)(pinia@2.1.7)(vue@3.3.7):
-    resolution: {integrity: sha512-nL3wsPks/7K1S4WrOmi7I3byEZhV+T+w8IqDHWH7aboOzxJyj7vW59W8p3HUQIFnymgp0ER21iZT3+IQojtseg==, tarball: https://registry.npmmirror.com/@oceancode/naive-ui/-/naive-ui-1.0.21.tgz}
+  /@oceancode/naive-ui@1.0.31(lodash@4.17.21)(pinia@2.1.7)(vue@3.3.7):
+    resolution: {integrity: sha512-1GKUN/YK6+v/c1vy1i/3fRicU4HKnIer96+FAL/iv92RKbIGlPE5qY1wOm3f16MEGMfSkXgss5rywn1Q30P5fw==, tarball: https://registry.npmmirror.com/@oceancode/naive-ui/-/naive-ui-1.0.31.tgz}
     peerDependencies:
       vue: ^3.0.0
     dependencies:
       '@micro-zoe/micro-app': 1.0.0-rc.4
-      '@oceancode/core': 1.0.4(mitt@3.0.1)(pinia@2.1.7)(vue@3.3.7)
-      '@oceancode/framework-core': 1.0.9(@oceancode/core@1.0.4)(vue@3.3.7)
+      '@oceancode/core': 1.0.9(mitt@3.0.1)(pinia@2.1.7)(vue@3.3.7)
+      '@oceancode/framework-core': 1.0.12(@oceancode/core@1.0.9)(vue@3.3.7)
       '@vicons/antd': 0.12.0
       '@vicons/ionicons5': 0.12.0
       alasql: 4.3.0
@@ -1244,12 +1247,12 @@ packages:
   /@types/eslint-scope@3.7.7:
     resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==, tarball: https://registry.npmmirror.com/@types/eslint-scope/-/eslint-scope-3.7.7.tgz}
     dependencies:
-      '@types/eslint': 8.56.4
+      '@types/eslint': 8.56.5
       '@types/estree': 1.0.5
     dev: true
 
-  /@types/eslint@8.56.4:
-    resolution: {integrity: sha512-lG1GLUnL5vuRBGb3MgWUWLdGMH2Hps+pERuyQXCfWozuGKdnhf9Pbg4pkcrVUHjKrU7Rl+GCZ/299ObBXZFAxg==, tarball: https://registry.npmmirror.com/@types/eslint/-/eslint-8.56.4.tgz}
+  /@types/eslint@8.56.5:
+    resolution: {integrity: sha512-u5/YPJHo1tvkSF2CE0USEkxon82Z5DBy2xR+qfyYNszpX9qcs4sT6uq2kBbj4BXY1+DBGDPnrhMZV3pKWGNukw==, tarball: https://registry.npmmirror.com/@types/eslint/-/eslint-8.56.5.tgz}
     dependencies:
       '@types/estree': 1.0.5
       '@types/json-schema': 7.0.15
@@ -1313,6 +1316,10 @@ packages:
 
   /@types/node@16.18.85:
     resolution: {integrity: sha512-un7Bj6CPCRLxG2qp+9enNVFuRWCDKKOS6Q/FSpJ4xyrpLNJnRdAQERM2sJ6esaGvl02nK6kiGcMTb0pqknm62g==, tarball: https://registry.npmmirror.com/@types/node/-/node-16.18.85.tgz}
+    dev: true
+
+  /@types/node@16.18.86:
+    resolution: {integrity: sha512-QMvdZf+ZTSiv7gspwhqbfB7Y5DmbYgCsUnakS8Ul9uRbJQehDKaM7SL+GbcDS003Lh7VK4YlelHsRm9HCv26eA==, tarball: https://registry.npmmirror.com/@types/node/-/node-16.18.86.tgz}
     dev: true
 
   /@types/node@20.5.1:
@@ -3108,6 +3115,11 @@ packages:
       is-obj: 2.0.0
     dev: true
 
+  /dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==, tarball: https://registry.npmmirror.com/dotenv/-/dotenv-16.4.5.tgz}
+    engines: {node: '>=12'}
+    dev: true
+
   /ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==, tarball: https://registry.npmmirror.com/ee-first/-/ee-first-1.1.1.tgz}
     dev: true
@@ -4614,7 +4626,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==, tarball: https://registry.npmmirror.com/jest-worker/-/jest-worker-27.5.1.tgz}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 16.18.85
+      '@types/node': 16.18.86
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true

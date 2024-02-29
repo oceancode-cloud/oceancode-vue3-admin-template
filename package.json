@@ -5,16 +5,19 @@
     "node": ">=12.0"
   },
   "scripts": {
-    "dev": "vite --host",
-    "build": "vue-tsc --noEmit && vite build",
+    "dev": "vite --mode development",
+    "dev:mock": "vite --mode mock",
+    "build": "vue-tsc --noEmit && vite build --mode production",
     "preview": "vite preview",
     "new": "plop --plopfile ./plop/plopfile.js",
     "postinstall": "husky install",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue src",
-    "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx,.vue src --fix"
+    "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx,.vue src --fix",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "dependencies": {
-    "@oceancode/naive-ui": "^1.0.21",
+    "@oceancode/naive-ui": "^1.0.31",
     "@types/color": "^3.0.6",
     "@types/crypto-js": "^4.2.2",
     "@types/keymaster": "^1.6.33",
@@ -35,7 +38,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
-    "@types/node": "^16.18.84",
+    "@types/node": "^16.18.85",
     "@types/three": "^0.144.0",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
@@ -45,6 +48,7 @@
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "commitlint": "^17.8.1",
     "default-passive-events": "^2.0.0",
+    "dotenv": "^16.4.5",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-import": "^2.29.1",
