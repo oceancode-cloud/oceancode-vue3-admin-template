@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@oceancode/naive-ui':
-    specifier: ^1.0.31
-    version: 1.0.31(lodash@4.17.21)(pinia@2.1.7)(vue@3.3.7)
+    specifier: ^1.0.33
+    version: 1.0.33(lodash@4.17.21)(pinia@2.1.7)(vue@3.3.7)
   '@types/color':
     specifier: ^3.0.6
     version: 3.0.6
@@ -1130,8 +1130,8 @@ packages:
       vue3-sfc-loader: 0.8.4
     dev: false
 
-  /@oceancode/naive-ui@1.0.31(lodash@4.17.21)(pinia@2.1.7)(vue@3.3.7):
-    resolution: {integrity: sha512-1GKUN/YK6+v/c1vy1i/3fRicU4HKnIer96+FAL/iv92RKbIGlPE5qY1wOm3f16MEGMfSkXgss5rywn1Q30P5fw==, tarball: https://registry.npmmirror.com/@oceancode/naive-ui/-/naive-ui-1.0.31.tgz}
+  /@oceancode/naive-ui@1.0.33(lodash@4.17.21)(pinia@2.1.7)(vue@3.3.7):
+    resolution: {integrity: sha512-bixV3FkM1VzzrNZxz59m6rlnVAvgHQbbjP/Luo8H/9qPw2YYNHb/IkJ4umpjizWOsvY5jJOS4cORuwYky9eTrQ==, tarball: https://registry.npmmirror.com/@oceancode/naive-ui/-/naive-ui-1.0.33.tgz}
     peerDependencies:
       vue: ^3.0.0
     dependencies:

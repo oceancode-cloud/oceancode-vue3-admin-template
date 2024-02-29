@@ -17,7 +17,7 @@
     "pre-commit": "lint-staged"
   },
   "dependencies": {
-    "@oceancode/naive-ui": "^1.0.31",
+    "@oceancode/naive-ui": "^1.0.33",
     "@types/color": "^3.0.6",
     "@types/crypto-js": "^4.2.2",
     "@types/keymaster": "^1.6.33",
