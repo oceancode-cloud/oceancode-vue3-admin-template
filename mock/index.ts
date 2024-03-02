@@ -1,15 +1,16 @@
 import { MockMethod } from 'vite-plugin-mock'
-import { RequestHttpEnum } from '@/models/common'
 import test from './test.mock'
+
+import { mockObject as mockApiObject } from './api'
 
 const mockObject: MockMethod[] = [
   {
     // 正则
     // url: /\/mock\/mockData(|\?\S*)$/,
     url: '/ping',
-    method: RequestHttpEnum.GET,
+    method: 'get',
     response: () => test.fetchPingData
   }
 ]
 
-export default mockObject
+export default mockObject.concat(mockApiObject)
