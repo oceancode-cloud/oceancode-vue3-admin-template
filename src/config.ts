@@ -33,6 +33,7 @@ export function loadConfig() {
     router: {
       routes: routes,
       mode: 'hash',
+      base: import.meta.env.VITE_APP_ROUTER,
     }
   }
   return options;

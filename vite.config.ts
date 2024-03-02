@@ -90,7 +90,6 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       // minify: 'terser', // 如果需要用terser混淆，可打开这两行
       // terserOptions: terserOptions,
       rollupOptions: rollupOptions,
-      brotliSize: brotliSize,
       chunkSizeWarningLimit: chunkSizeWarningLimit
     }
   }

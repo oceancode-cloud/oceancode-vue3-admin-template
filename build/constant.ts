@@ -9,6 +9,7 @@ export const brotliSize = false
 
 // 分包
 export const rollupOptions = {
+  brotliSize: brotliSize,
   output: {
     chunkFileNames: 'static/js/[name]-[hash].js',
     entryFileNames: 'static/js/[name]-[hash].js',

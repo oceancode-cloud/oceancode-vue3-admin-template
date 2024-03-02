@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { OcContext } from '@oceancode/framework' 
+import { OcAppContext } from '@oceancode/framework' 
 </script>
 
 <template>
-  <oc-context>
+  <oc-app-context>
     <RouterView />
-  </oc-context>
+  </oc-app-context>
 </template>
