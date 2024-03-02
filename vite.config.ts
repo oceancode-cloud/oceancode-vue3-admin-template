@@ -60,7 +60,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         }
       }),
       viteMockServe({
-        mockPath: './src/api/mock',
+        mockPath: './mock',
         // 开发打包开关
         localEnabled: true,
         // 生产打包开关
