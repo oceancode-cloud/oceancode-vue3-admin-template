@@ -112,9 +112,6 @@ devDependencies:
   eslint-plugin-vue:
     specifier: ^8.7.1
     version: 8.7.1(eslint@8.57.0)
-  husky:
-    specifier: ^8.0.3
-    version: 8.0.3
   lodash:
     specifier: ~4.17.21
     version: 4.17.21
@@ -4288,12 +4285,6 @@ packages:
   /human-signals@2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==, tarball: https://registry.npmmirror.com/human-signals/-/human-signals-2.1.0.tgz}
     engines: {node: '>=10.17.0'}
-    dev: true
-
-  /husky@8.0.3:
-    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==, tarball: https://registry.npmmirror.com/husky/-/husky-8.0.3.tgz}
-    engines: {node: '>=14'}
-    hasBin: true
     dev: true
 
   /iconv-lite@0.4.24:
