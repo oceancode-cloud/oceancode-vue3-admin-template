@@ -4,12 +4,8 @@ export const OUTPUT_DIR = 'dist'
 // chunk 警告大小
 export const chunkSizeWarningLimit = 2000
 
-// 禁用 brotliSize 压缩大小报告
-export const brotliSize = false
-
 // 分包
 export const rollupOptions = {
-  brotliSize: brotliSize,
   output: {
     chunkFileNames: 'static/js/[name]-[hash].js',
     entryFileNames: 'static/js/[name]-[hash].js',
@@ -20,7 +16,6 @@ export const rollupOptions = {
       return `static/[ext]/[name]-[hash].[ext]`
     },
     manualChunks: {
-
     }
   }
 }
