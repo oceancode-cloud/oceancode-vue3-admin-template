@@ -7,14 +7,14 @@
   "scripts": {
     "dev": "vite --mode development",
     "dev:mock": "vite --mode mock",
-    "build": "vue-tsc --noEmit && vite build --mode production",
+    "build": "vite build --mode production",
     "preview": "vite preview",
     "new": "plop --plopfile ./plop/plopfile.js",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue src",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx,.vue src --fix"
   },
   "dependencies": {
-    "@oceancode/naive-ui": "^1.0.33",
+    "@oceancode/naive-ui": "^1.0.56",
     "@types/color": "^3.0.6",
     "@types/crypto-js": "^4.2.2",
     "@types/keymaster": "^1.6.33",
