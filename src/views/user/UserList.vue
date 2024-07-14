@@ -10,7 +10,14 @@
             <o-data-table ref="Table1720936699405"></o-data-table>
           </o-box>
         <o-dialog title="新增分组" action="add-group-form" :width="444" :height="202" :overflow="false">
-            <AddGroupForm></AddGroupForm>
+          <template #default="{options}">
+            <AddGroupForm :value="options"></AddGroupForm>
+          </template>
+        </o-dialog>
+        <o-dialog title="编辑分组" action="edit-group-form" :width="444" :height="202" :overflow="false">
+          <template #default="{options}">
+            <EditGroupForm :value="options"></EditGroupForm>
+          </template>
         </o-dialog>
      </div>
     </div>
@@ -20,7 +27,7 @@
 import { useDataTable,useForm, } from '@oceancode/ocean-wui'
 import { listUser,updateUserStatusById,listUserGroup,loadUserGroupContextmenu,addUserGroup, } from '@/services'
 import AddGroupForm from './user-list/AddGroupForm.vue'
-
+import EditGroupForm from './user-list/EditGroupForm.vue'
 
 const Table1720936699405 = useDataTable({
   columns:[
@@ -78,7 +85,8 @@ const Table1720936699405 = useDataTable({
 
   ],
   on:{
-    load(params){            
+    load(params){
+      console.log(params)            
       return listUser()
     }
   }

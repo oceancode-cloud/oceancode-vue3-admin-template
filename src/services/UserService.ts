@@ -22,16 +22,25 @@ export function listUserGroup(){
           "label":"测试",
           "key":"tester",
           "typeKey":"group",
+          "value":{
+            "name":"测试"
+          },
           "children":[
             {
               "label":"管理",
               "key":"manager",
-              "typeKey":"group"
+              "typeKey":"group",
+              "value":{
+                "name":"管理"
+              },
             },
             {
               "label":"开发",
               "key":"develop",
-              "typeKey":"group"
+              "typeKey":"group",
+              "value":{
+                "name":"开发"
+              },
             }
           ]
         },
@@ -52,6 +61,12 @@ export function loadUserGroupContextmenu(){
       "key":"add-group-form",
       "eventType":"open",
       "groups":["all","group"]
+    },
+    {
+      "label":"编辑分组",
+      "key":"edit-group-form",
+      "eventType":"open",
+      "groups":["group"]
     },
     {
       "label":"新增成员",
@@ -86,5 +101,10 @@ export function updateUserStatusById(row){
 }
 
 export function addUserGroup(params){
+  return Promise.resolve()
+}
+
+export function updateUserGroupById(params){
+  console.log(params)
   return Promise.resolve()
 }
