@@ -29,7 +29,8 @@
     "naive-ui": "2.34.3",
     "pinia": "^2.1.7",
     "vue": "3.3.7",
-    "vue-i18n": "9.2.2"
+    "vue-i18n": "9.2.2",
+    "vue-router": "^4.4.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.8.1",

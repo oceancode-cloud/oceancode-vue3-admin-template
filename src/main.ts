@@ -1,15 +1,12 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import { bootstrap } from './bootstrap'
+import router from './router'
 
-import { getStore, bootstrap } from '@oceancode/framework';
-import '@oceancode/framework/dist/style.css';
+const app = createApp(App)
+bootstrap(app)
+.then(()=>{
+  app.use(router)
+  app.mount('#app')
+})
 
-import { loadConfig } from './config'
-const app = createApp(App).use(getStore())
-bootstrap(app, loadConfig())
-  .then(() => {
-    app.mount('#app')
-  })
-  .catch((err: any) => {
-    throw err
-  })
