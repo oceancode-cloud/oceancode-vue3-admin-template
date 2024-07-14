@@ -2,11 +2,13 @@ import type { UserConfig, ConfigEnv } from 'vite';
 import { loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
-import { OUTPUT_DIR, brotliSize, chunkSizeWarningLimit, terserOptions, rollupOptions } from './build/constant'
+import { OUTPUT_DIR, chunkSizeWarningLimit, terserOptions, rollupOptions } from './build/constant'
 import viteCompression from 'vite-plugin-compression'
 import { viteMockServe } from 'vite-plugin-mock'
 import { wrapperEnv } from './build/utils';
 import { createProxy } from './build/proxy';
+import Components from 'unplugin-vue-components/vite';
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 
 function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir)
@@ -18,6 +20,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   const viteEnv = wrapperEnv(env);
   const { VITE_PUBLIC_PATH, VITE_DROP_CONSOLE, VITE_PORT, VITE_GLOB_PROD_MOCK, VITE_PROXY } =
     viteEnv;
+    const isProduction = mode === 'production'
   return {
     base: VITE_PUBLIC_PATH,
     resolve: {
@@ -35,8 +38,8 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
           replacement: 'vue-i18n/dist/vue-i18n.cjs.js' //解决i8n警告
         },
         {
-          find: '@oceancode/framework',
-          replacement: '@oceancode/naive-ui'
+          find:'naive-ui',
+          replacement: pathResolve('./node_modules/naive-ui')
         },
       ],
       dedupe: ['vue']
@@ -58,6 +61,18 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
             isCustomElement: tag => tag.startsWith('iconify-icon')
           }
         }
+      }),
+      Components({
+        resolvers: [ 
+          NaiveUiResolver(),
+          {
+            type: 'component',
+            resolve: (name: string) => {
+              if (name.match(/^(O[A-Z]|o-[a-z])/))
+                return { name, from: '@oceancode/ocean-wui' }
+            }
+          }
+        ],
       }),
       viteMockServe({
         mockPath: './mock',
@@ -87,8 +102,8 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     build: {
       target: 'es2015',
       outDir: OUTPUT_DIR,
-      // minify: 'terser', // 如果需要用terser混淆，可打开这两行
-      // terserOptions: terserOptions,
+      minify: isProduction ? 'terser': false, // 如果需要用terser混淆，可打开这两行
+      terserOptions: isProduction ? terserOptions : undefined,
       rollupOptions: rollupOptions,
       chunkSizeWarningLimit: chunkSizeWarningLimit
     }
