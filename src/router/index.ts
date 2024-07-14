@@ -16,6 +16,11 @@ router.beforeEach(async(to,from,next)=>{
                 useRouter().toLogin()
                 return
             }
+        }else if(it==='unlogin'){
+            if(useUser().isLogin()){
+                useRouter().toHome()
+                return
+            }
         }
     }
     next()
