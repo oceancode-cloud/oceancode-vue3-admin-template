@@ -9,6 +9,7 @@ import { wrapperEnv } from './build/utils';
 import { createProxy } from './build/proxy';
 import Components from 'unplugin-vue-components/vite';
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+import AutoImport from 'unplugin-auto-import/vite'
 
 function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir)
@@ -61,6 +62,13 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
             isCustomElement: tag => tag.startsWith('iconify-icon')
           }
         }
+      }),
+      AutoImport({
+        imports: ['vue'],
+        dts: './auto-import.d.ts',
+        eslintrc: {
+          enabled: true,
+        },
       }),
       Components({
         resolvers: [ 
