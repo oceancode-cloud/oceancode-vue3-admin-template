@@ -19,16 +19,23 @@
             <EditGroupForm :value="options"></EditGroupForm>
           </template>
         </o-dialog>
+        <o-drawer title="编辑用户信息" action="edit-user-info" :width="444" :height="202" :overflow="false">
+          <template #default="{options}">
+            <EditUserInfo :value="options"></EditUserInfo>
+          </template>
+        </o-drawer>
      </div>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
-import { useDataTable,useForm, } from '@oceancode/ocean-wui'
-import { listUser,updateUserStatusById,listUserGroup,loadUserGroupContextmenu,addUserGroup, } from '@/services'
+import { useDataTable,useRouter,useForm, } from '@oceancode/ocean-wui'
+import { listUser,updateUserStatusById,deleteUserById,listUserGroup,loadUserGroupContextmenu,addUserGroup,updateUserGroupById, } from '@/services'
 import AddGroupForm from './user-list/AddGroupForm.vue'
 import EditGroupForm from './user-list/EditGroupForm.vue'
+import EditUserInfo from './user-list/EditUserInfo.vue'
 
+const router = useRouter()
 const Table1720936699405 = useDataTable({
   columns:[
     {
@@ -82,12 +89,47 @@ const Table1720936699405 = useDataTable({
 
       traits:['timestamp',]
     },
-
+    {
+      title:'操作',
+       type:'action',
+       actions:[
+         {
+           type:'edit',
+           action:'edit-user-info',
+           text:'编辑',
+         },
+         {
+           type:'delete',
+           text:'删除',
+           onClick(row){
+             return deleteUserById(row)
+           },
+         },
+         {
+           type:'custom',
+           text:'函数',
+           onClick(row){
+             return deleteUserById(row)
+           },
+         },
+         {
+           type:'open',
+           action:'edit-user-info',
+           text:'表单',
+         },
+         {
+           type:'custom',
+           text:'页面跳转',
+           onClick(row){
+             router.open({name:'login',query:{id:row.id}})
+           },
+         },
+       ]
+    }
   ],
   on:{
-    load(params){
-      console.log(params)            
-      return listUser()
+    load(params){            
+      return listUser(params)
     }
   }
 });

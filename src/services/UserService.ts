@@ -108,3 +108,8 @@ export function updateUserGroupById(params){
   console.log(params)
   return Promise.resolve()
 }
+
+export function deleteUserById(params){
+  console.log(params)
+  return Promise.resolve()
+}
