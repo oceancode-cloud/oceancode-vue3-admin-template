@@ -1,5 +1,5 @@
 <template>
-  <o-context>
+  <div>
      <div style="position:absolute;left:0;right:0;bottom:0;top:0;overflow-y:auto">
        <div style="top:0px;right:0px;bottom:0px;left:0px;position:absolute;">
           <o-box :left="36.666666666666664" left-unit="%" :top="78.18181818181822" top-unit="px" :width="384.0" >
@@ -32,22 +32,21 @@
           </o-box>
      </div>
     </div>
-  </o-context>
+  </div>
 </template>
 <script lang="ts" setup>
 import { useForm,useUser,useRouter, } from '@oceancode/ocean-wui'
 import { userLogin, } from '@/services'
-
 const user = useUser()
 const router = useRouter()
-
 const Form1720928330467 = useForm({
   props:{
-    labelPlacement: 'top',
+    labelPlacement: 'left',
+    size: 'medium',
   },
   items:[
     {
-      label:'',
+      label:'用户名',
       prop:'username',
       showLabel:false,
       component:{
@@ -55,7 +54,7 @@ const Form1720928330467 = useForm({
       }
    },
     {
-      label:'',
+      label:'登录密码',
       prop:'password',
       showLabel:false,
       component:{

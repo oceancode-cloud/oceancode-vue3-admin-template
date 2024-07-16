@@ -6,6 +6,11 @@
             <o-group-tree :data='listUserGroup'  :on-load-contextmenu="loadUserGroupContextmenu" title="用户分组" key-field="key" label-field="label" :default-expand-all="true" :default-expanded-keys="[]" >
             </o-group-tree>
           </o-box>
+          <o-box :left="309.0" left-unit="px" :top="21.0" top-unit="px" :width="99.0" >
+            <o-add-button type="primary" size="medium" :block="true"  action="add-group-form">
+              新增
+            </o-add-button>
+          </o-box>
           <o-box :left="301.0" left-unit="px" :top="66.25" top-unit="px" :right="1.5" right-unit="px" :bottom="0.0" bottom-unit="px" :width="1137.5" :height="833.75" height-unit="px" >
             <o-data-table ref="Table1720936699405"></o-data-table>
           </o-box>
@@ -119,9 +124,9 @@ const Table1720936699405 = useDataTable({
          },
          {
            type:'custom',
-           text:'页面跳转',
+           text:'详细信息',
            onClick(row){
-             router.open({name:'login',query:{id:row.id}})
+             router.open({name:'UserInfo', query:{id:row.id}})
            },
          },
        ]

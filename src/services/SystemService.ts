@@ -25,6 +25,20 @@ export function loadSystem(){
           }
         }
       ]
+    },
+    {
+      "label":"数据管理",
+      "key":"data",
+      "layoutVisible":{
+        "menu":true
+      },
+      "children":{
+        "label":"字段管理",
+        "key":"dataDict",
+        "router":{
+          name:"dataDict"
+        }
+      }
     }
   ])
 }

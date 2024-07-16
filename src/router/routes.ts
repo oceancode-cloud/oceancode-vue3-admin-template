@@ -36,6 +36,13 @@ const routeList = [
     name:'userList',
     component: () => import('@/views/user/UserList.vue')
   },
+  {
+    id:5,
+    parentId:3,
+    path: '/data/dict',
+    name:'dataDict',
+    component: () => import('@/views/data/DictManager.vue')
+  },
 ]
 
 export const routes = deepTree(routeList)
