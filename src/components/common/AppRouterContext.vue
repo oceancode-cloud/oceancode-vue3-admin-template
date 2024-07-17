@@ -4,7 +4,7 @@
       <keep-alive v-if="$route.meta && $route.meta.keepAlive">
         <component :is="Component"></component>
       </keep-alive>
-      <router-view v-else></router-view>
+      <component :is="Component" v-else></component>
     </o-context>
   </router-view>
 </template>
