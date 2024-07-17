@@ -10,6 +10,34 @@ const router = createRouter({
 
 router.beforeEach(async(to,from,next)=>{
     const permissions = (to.meta?.permissions || []) as Array<string>
+    const mustParams = (to.meta?.mustParams || []) as Array<string>
+    for(const it of mustParams){
+        const type = (it as any).type as string
+        const id = (it as any).id as string
+        let errorCode 
+        if(type==='path' || type==='params'){
+            const val = to.params[id] as any
+            if(!val && val!=0 && val!=false){
+                errorCode = 'parameter.missing'
+            }
+        }else if(type==='query'){
+            const val = to.query[id] as any
+            if(!val && val!=0 && val!=false){
+                errorCode = 'parameter.missing'
+            }
+        }
+
+        if(errorCode){
+            next({
+                name:'notFound',
+                query:{
+                    coce:errorCode,
+                    from:to.name
+                }
+            })
+            return
+        }
+    }
     for(const it of permissions){
         if(it==='login'){
             if(!useUser().isLogin()){
