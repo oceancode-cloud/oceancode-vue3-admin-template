@@ -1,12 +1,12 @@
 <template>
-  <router-view v-slot="{Component}" v-if="$route.meta && $route.meta.keepAlive">
-    <keep-alive>
-      <o-context>
+  <router-view v-slot="{Component}">
+    <o-context>
+      <keep-alive v-if="$route.meta && $route.meta.keepAlive">
         <component :is="Component"></component>
-      </o-context>
-    </keep-alive>
+      </keep-alive>
+      <router-view v-else></router-view>
+    </o-context>
   </router-view>
-  <router-view v-else></router-view>
 </template>
 <script lang="ts">
 export default {
