@@ -35,7 +35,7 @@
 </template>
 <script lang="ts" setup>
 import { useDataTable,useRouter,useForm, } from '@oceancode/ocean-wui'
-import { listUser,orderUserTableCreatedField,filterUserTableStatusField,updateUserStatusById,deleteUserById,listUserGroup,loadUserGroupContextmenu,addUserGroup,updateUserGroupById, } from '@/services'
+import { listUser,orderUserTableCreatedField,filterUserTableStatusField,updateUserStatusById,deleteUserById,loadUserTableMoreDropdowns,listUserGroup,loadUserGroupContextmenu,addUserGroup,updateUserGroupById, } from '@/services'
 import AddGroupForm from './user-list/AddGroupForm.vue'
 import EditGroupForm from './user-list/EditGroupForm.vue'
 import EditUserInfo from './user-list/EditUserInfo.vue'
@@ -94,9 +94,8 @@ const Table1720936699405 = useDataTable({
         return updateUserStatusById(row)
       },
       traits:['status',],
-      filterOptions:filterUserTableStatusField(),
-      filter(value, row) {
-        return row.status===value
+      filter: {
+        options: filterUserTableStatusField,
       },
     },
     {
@@ -133,6 +132,14 @@ const Table1720936699405 = useDataTable({
            onClick(row){
              router.open({name:'UserInfo', query:{id:row.id}})
            },
+         },
+         {
+           type:'more',
+           text:'更多',
+           onClick(row){
+             return loadUserTableMoreDropdowns(row)
+           },
+           dropdowns: loadUserTableMoreDropdowns()
          },
        ]
     }

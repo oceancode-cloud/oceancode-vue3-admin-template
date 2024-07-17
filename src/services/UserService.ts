@@ -149,3 +149,15 @@ export function filterUserTableStatusField(){
     }
   ]
 }
+
+export function loadUserTableMoreDropdowns(){
+  return [
+    {
+      label:'启用',
+      key:'a',
+      onClick(row){
+        console.log(row)
+      }
+    }
+  ]
+}
