@@ -35,7 +35,7 @@
 </template>
 <script lang="ts" setup>
 import { useDataTable,useRouter,useForm, } from '@oceancode/ocean-wui'
-import { listUser,updateUserStatusById,deleteUserById,listUserGroup,loadUserGroupContextmenu,addUserGroup,updateUserGroupById, } from '@/services'
+import { listUser,orderUserTableCreatedField,filterUserTableStatusField,updateUserStatusById,deleteUserById,listUserGroup,loadUserGroupContextmenu,addUserGroup,updateUserGroupById, } from '@/services'
 import AddGroupForm from './user-list/AddGroupForm.vue'
 import EditGroupForm from './user-list/EditGroupForm.vue'
 import EditUserInfo from './user-list/EditUserInfo.vue'
@@ -47,7 +47,7 @@ const Table1720936699405 = useDataTable({
       title:'头像',
       key:'avatar',
 
-      traits:['avatar',]
+      traits:['avatar',],
     },
     {
       title:'用户名',
@@ -68,15 +68,7 @@ const Table1720936699405 = useDataTable({
       title:'角色',
       key:'roles',
 
-      traits:['tags',]
-    },
-    {
-      title:'状态',
-      key:'status',
-      onClick(row){
-        return updateUserStatusById(row)
-      },
-      traits:['status',]
+      traits:['tags',],
     },
     {
       title:'手机号码',
@@ -92,7 +84,20 @@ const Table1720936699405 = useDataTable({
       title:'创建时间',
       key:'created',
 
-      traits:['timestamp',]
+      traits:['timestamp',],
+      sorter: orderUserTableCreatedField ,
+    },
+    {
+      title:'状态',
+      key:'status',
+      onClick(row){
+        return updateUserStatusById(row)
+      },
+      traits:['status',],
+      filterOptions:filterUserTableStatusField(),
+      filter(value, row) {
+        return row.status===value
+      },
     },
     {
       title:'操作',

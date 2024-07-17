@@ -91,6 +91,19 @@ export function listUser(){
       "remark":"游客",
       "created":1720938303857,
       "id":1
+    },
+    {
+      "avatar":"https://show.cool-admin.com/api/public/uploads/20240125/57d6a9ebae7e4d7485a4129a2aa0beb8_a.webp",
+      "username":"张三2",
+      "name":"张三2",
+      "nickname":"小张2",
+      "partName":"游客2",
+      "roles":"游客",
+      "status":true,
+      "tel":"13541741901",
+      "remark":"游客",
+      "created":1720938203800,
+      "id":1
     }
   ])
 }
@@ -112,4 +125,27 @@ export function updateUserGroupById(params){
 export function deleteUserById(params){
   console.log(params)
   return Promise.resolve()
+}
+
+
+export function orderUserTableCreatedField(row1,row2){
+  console.log(row1,row2)
+  return -1
+}
+
+export function filterUserTableStatusField(){
+  return [
+    {
+      label:'正常',
+      value: true,
+    },
+    {
+      label:'异常',
+      value:false
+    },
+    {
+      label:'全部',
+      value: 'all'
+    }
+  ]
 }
