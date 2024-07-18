@@ -10,10 +10,19 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { UserLoginRequest, } from '@/models/request'
 import { useForm, } from '@oceancode/ocean-wui'
 import { addDictGroup, } from '@/services'
 
 const props = defineProps({
+  param: {
+    type: Object as PropType<UserLoginRequest>,
+    required: true
+  },
+  id: {
+    type: Number,
+    required: true
+  },
   value:Object
 })
 

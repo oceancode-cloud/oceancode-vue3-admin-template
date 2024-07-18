@@ -103,7 +103,7 @@ export function listUser(){
       "tel":"13541741901",
       "remark":"游客",
       "created":1720938203800,
-      "id":1
+      "id":2
     }
   ])
 }
@@ -160,4 +160,9 @@ export function loadUserTableMoreDropdowns(){
       }
     }
   ]
+}
+
+export function showUserTableUsernameField(row){
+  console.log('showUserTableUsernameField',row)
+  return row.id===1
 }
