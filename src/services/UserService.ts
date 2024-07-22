@@ -78,7 +78,7 @@ export function loadUserGroupContextmenu(){
 }
 
 export function listUser(){
-  return Promise.resolve([
+  const list = [
     {
       "avatar":"https://show.cool-admin.com/api/public/uploads/20240125/57d6a9ebae7e4d7485a4129a2aa0beb8_a.webp",
       "username":"张三",
@@ -105,7 +105,11 @@ export function listUser(){
       "created":1720938203800,
       "id":2
     }
-  ])
+  ]
+  for(let i = 0;i<20;i++){
+    list.push(list[0])
+  }
+  return Promise.resolve(list)
 }
 
 export function updateUserStatusById(row){
@@ -163,6 +167,5 @@ export function loadUserTableMoreDropdowns(){
 }
 
 export function showUserTableUsernameField(row){
-  console.log('showUserTableUsernameField',row)
   return row.id===1
 }

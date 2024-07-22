@@ -9,11 +9,15 @@ const routeList = [
     }
   },
   {
+    id: -2,
+    component: () => import('@/components/common/AppRouterContext.vue')
+  },
+  {
     id:2,
-    parentId:3,
-    path: '/',
+    path: '/home',
+    parentId: -2,
     name:'home',
-    component: () => import('@/views/home.vue')
+    component: () => import('@/views/home/Home.vue')
   },
   {
     id:3,
@@ -21,9 +25,14 @@ const routeList = [
     component: () => import('@/packages/layout/common/CommonLayout.vue')
   },
   {
+    id: 333,
+    component: () => import('@/packages/layout/common/CommonLayout.vue')
+  },
+  {
     id:4,
     path: '/login',
     name:'login',
+    parentId:-2,
     meta:{
       permissions:['unlogin']
     },
@@ -42,6 +51,36 @@ const routeList = [
     path: '/data/dict',
     name:'dataDict',
     component: () => import('@/views/data/DictManager.vue')
+  },
+  {
+    id: 349,
+    path: '/menu/list',
+    name: 'menuList',
+    parentId: 3,
+    meta:{
+      permissions: ['login', ],
+    },
+    component: () => import('@/views/system/MenuList.vue')
+  },
+  {
+    id: 351,
+    path: '/task/manager',
+    name: 'taskManager',
+    parentId: 333,
+    meta:{
+      permissions: ['login', ],
+    },
+    component: () => import('@/views/system/TaskManager.vue')
+  },
+  {
+    id: 352,
+    path: '/dashoard',
+    name: 'dashoard',
+    parentId: 333,
+    meta:{
+      permissions: ['login', ],
+    },
+    component: () => import('@/views/home/Dashoard.vue')
   },
 ]
 
