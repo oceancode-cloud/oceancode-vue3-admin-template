@@ -58,7 +58,9 @@ export function statisticData(){
     {
       id:1,
       total:123,
-      type:'user-total'
+      type:'user-total',
+      label:'总用户数',
+      count: 3243
     },
     {
       id:2,
@@ -66,4 +68,16 @@ export function statisticData(){
       type:'visit-count'
     }
   ])
+}
+
+export function loadUserAvatarOptions(){
+  return  [
+    {
+      label:'个人中心',
+      key:'user-info',
+      onClick(){
+        console.log('user-info')
+      }
+    }
+  ]
 }
