@@ -12,3 +12,7 @@ export function listMenu(){
     }
   ]
 }
+
+export function showMenuAddField(row){
+  return row.children && row.children.length > 0
+}

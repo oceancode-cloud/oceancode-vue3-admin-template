@@ -3,28 +3,32 @@
    <div style="position:absolute;left:0;right:0;bottom:0;top:0;overflow-y:auto">
      <div style="top:0px;right:15px;bottom:0px;left:0px;background-color:rgba(255,255,255,1);position:absolute;">
 
-          <o-box  :left="0.0" left-unit="px" :top="0.0" top-unit="px" :bottom="0.0" bottom-unit="px" :width="300.0" >
+          <o-box  :left="0.0" left-unit="px" :top="0.0" top-unit="px" :bottom="0.0" bottom-unit="px" :width="300.0" width-unit="px" >
             <o-group-tree :data='listUserGroup'  :on-load-contextmenu="loadUserGroupContextmenu" action="add-group-form" title="分组名称" key-field="key" label-field="label" :default-expand-all="true" :default-expanded-keys="[]" >
             </o-group-tree>
           </o-box>
 
-          <o-box  :left="309.0" left-unit="px" :top="21.0" top-unit="px" :width="99.0" >
-            <o-add-button type="primary" size="medium" :block="true"  action="add-group-form">
+          <o-box  :left="309.0" left-unit="px" :top="21.0" top-unit="px" :width="99.0" width-unit="px" >
+            <o-add-button type="primary" size="medium" :block="true"  action="add-group-form" >
               新增
             </o-add-button>
           </o-box>
 
-          <o-box  :left="423.0" left-unit="px" :top="22.0" top-unit="px" :width="99.0" >
-            <o-refresh-button type="default" size="medium" :block="true"  >
+          <o-box  :top="22.0" top-unit="px" :right="0.0" right-unit="px" :width="300.0" width-unit="px" >
+            <o-search-input size="medium" search-text="搜索" value-field="username" :on-click-search="true" placeholder="请输入关键字" ></o-search-input>
+          </o-box>
+
+          <o-box  :left="423.0" left-unit="px" :top="22.0" top-unit="px" :width="99.0" width-unit="px" >
+            <o-refresh-button type="default" size="medium" :block="true"   >
               刷新
             </o-refresh-button>
           </o-box>
 
-          <o-box  :left="301.0" left-unit="px" :top="66.25" top-unit="px" :right="1.5" right-unit="px" :bottom="93.0" bottom-unit="px" :width="1137.5" :height="740.75" height-unit="px" >
+          <o-box  :left="301.0" left-unit="px" :top="66.25" top-unit="px" :right="1.5" right-unit="px" :bottom="93.0" bottom-unit="px" :width="1137.5" width-unit="px" :height="740.75" height-unit="px" >
             <o-data-table ref="Table1720936699405"></o-data-table>
           </o-box>
 
-          <o-box  :right="0.0" right-unit="px" :bottom="52.79998779296875" bottom-unit="px" :width="617.0" justify="end" >
+          <o-box  :right="0.0" right-unit="px" :bottom="52.79998779296875" bottom-unit="px" :width="617.0" width-unit="px" justify="end" >
             <o-pagination :show-quick-jumper="true" size="medium" ></o-pagination>
           </o-box>
         <o-dialog title="新增分组" action="add-group-form" :width="444" :height="202" :overflow="false">
@@ -47,15 +51,14 @@
   </div>
 </template>
 <script setup>
-import { useDataTable,useRouter,useForm, } from '@oceancode/ocean-wui'
-import { listUser,orderUserTableCreatedField,filterUserTableStatusField,updateUserStatusById,showUserTableUsernameField,deleteUserById,loadUserTableMoreDropdowns,listUserGroup,loadUserGroupContextmenu,addUserGroup,updateUserGroupById, } from '@/services'
+import { useDataTable,useForm, } from '@oceancode/ocean-wui'
+import { listUser,orderUserTableCreatedField,filterUserTableStatusField,updateUserStatusById,showUserTableUsernameField,deleteUserById,listUserGroup,loadUserGroupContextmenu,addUserGroup,updateUserGroupById, } from '@/services'
 import AddGroupForm from './user-list/AddGroupForm.vue'
 import EditGroupForm from './user-list/EditGroupForm.vue'
 import EditUserInfo from './user-list/EditUserInfo.vue'
 import UserInfo from './user-list/UserInfo.vue'
 import CustomComponent from './user-list/CustomComponent.vue'
 
-const router = useRouter()
 const Table1720936699405 = useDataTable({
   props:{
     pagination:false,
@@ -67,37 +70,49 @@ const Table1720936699405 = useDataTable({
       key:'avatar',
 
       traits:['avatar',],
+      width: 58,
     },
     {
       title:'用户名',
       key:'username',
 
+      width: 62,
+      ellipsis: true,
     },
     {
       title:'昵称',
       key:'nickname',
 
+      width: 50,
+      ellipsis: true,
     },
     {
       title:'部门名称',
       key:'partName',
 
+      width: 74,
+      ellipsis: true,
     },
     {
       title:'角色',
       key:'roles',
 
       traits:['tags',],
+      width: 72,
     },
     {
       title:'手机号码',
       key:'tel',
 
+      width: 104,
+      ellipsis: true,
     },
     {
       title:'备注',
       key:'remark',
 
+      width: 50,
+      ellipsis: true,
     },
     {
       title:'创建时间',
@@ -105,6 +120,7 @@ const Table1720936699405 = useDataTable({
 
       traits:['timestamp',],
       sorter: orderUserTableCreatedField ,
+      width: 145,
     },
     {
       title:'状态',
@@ -116,6 +132,7 @@ const Table1720936699405 = useDataTable({
       filter: {
         options: filterUserTableStatusField,
       },
+      width: 64,
     },
     {
       title:'链接',
@@ -123,27 +140,9 @@ const Table1720936699405 = useDataTable({
 
     },
     {
-      title:'用户名2',
-      key:'username',
-
-      fixed:'right',
-    },
-    {
-      title:'用户名',
-      key:'username',
-
-    },
-    {
-      title:'自定义列',
-      key:'username',
-
-      render: (row) => h(CustomComponent, { username:row.username,style:'position:relative' }),
-    },
-    {
       title:'操作',
       type:'action',
       fixed:'right',
-      width: 200,
        actions:[
          {
            type:'edit',
@@ -157,33 +156,6 @@ const Table1720936699405 = useDataTable({
            onClick(row){
              return deleteUserById(row)
            },
-         },
-         {
-           type:'custom',
-           text:'函数',
-           onClick(row){
-             return deleteUserById(row)
-           },
-         },
-         {
-           type:'open',
-           action:'edit-user-info',
-           text:'表单',
-         },
-         {
-           type:'custom',
-           text:'详细信息',
-           onClick(row){
-             router.open({name:'userInfo', query:{id:row.id}})
-           },
-         },
-         {
-           type:'more',
-           text:'更多',
-           onClick(row){
-             return loadUserTableMoreDropdowns(row)
-           },
-           dropdowns: loadUserTableMoreDropdowns()
          },
        ]
     }

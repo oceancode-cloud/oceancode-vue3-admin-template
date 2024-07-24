@@ -77,7 +77,8 @@ export function loadUserGroupContextmenu(){
   ])
 }
 
-export function listUser(){
+export function listUser(params){
+  console.log(params)
   const list = [
     {
       "avatar":"https://show.cool-admin.com/api/public/uploads/20240125/57d6a9ebae7e4d7485a4129a2aa0beb8_a.webp",

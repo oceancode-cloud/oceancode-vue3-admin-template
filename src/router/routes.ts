@@ -82,6 +82,16 @@ const routeList = [
     },
     component: () => import('@/views/home/Dashoard.vue')
   },
+  {
+    id: 357,
+    path: '/role/list',
+    name: 'roleList',
+    parentId: 333,
+    meta:{
+      permissions: ['login', ],
+    },
+    component: () => import('@/views/system/RoleList.vue')
+  },
 ]
 
 export const routes = deepTree(routeList)

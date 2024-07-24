@@ -33,6 +33,13 @@ export function loadSystem(){
           "router":{
             "name":"taskManager"
           }
+        },
+        {
+          label:'角色管理',
+          key:'role_manager',
+          router:{
+            name:'roleList'
+          }
         }
       ]
     },
