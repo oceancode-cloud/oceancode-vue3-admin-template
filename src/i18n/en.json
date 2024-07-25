@@ -1,3 +1,22 @@
 {
-  
+  "errorCode":{
+    "biz_server_error":"Server Error",
+    "biz_client_error":"Request Error",
+    "biz_client_already_exists":"Resource already exists",
+    "biz_client_not_found":"Resource not found",
+    "biz_client_not_login":"Not Login",
+    "biz_client_username_or_password_invalid":"Username or password invalid",
+    "biz_client_parameter_missing":"Parameter missing",
+    "biz_client_parameter_invalid":"Parameter invalid",
+    "biz_client_user_already_exists":"User already exists",
+    "biz_client_user_not_found":"User not found",
+    "biz_client_delete_resource_failed":"Delete failed",
+    "biz_client_timeout":"Timeout",
+    "biz_client_project_id_missing":"ProjectId missing",
+    "biz_client_tenant_id_missing":"TenantId missing",
+    "biz_client_authorization_invalid":"Authorization invalid",
+    "biz_client_authorization_missing":"Authorization missing",
+    "biz_client_access_denied":"Access denied",
+    "biz_client_permission_denied":"Permission denied"
+  }
 }
