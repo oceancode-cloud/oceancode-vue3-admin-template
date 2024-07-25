@@ -124,7 +124,7 @@ function handleErrorWrapper<T>(p: AxiosPromise,filename?:string): Promise<Result
       const status = response.status
       if(status===400){
         const data = response.data
-        // message.error({code:data.code,message:data.message})
+        window['$message'].error({code:data.code,message:data.message})
       }else if(status===401){
         useUser().logout()
         useRouter().toLogin()

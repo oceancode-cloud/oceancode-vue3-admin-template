@@ -1,10 +1,13 @@
 <template>
   <o-root-context>
     <AppContext>
-      <app-router></app-router>
+      <n-message-provider>
+        <app-router></app-router>
+        <MessageContent></MessageContent>
+      </n-message-provider>
     </AppContext>
   </o-root-context>
 </template>
 <script setup>
-import { AppContext } from '@/components';
+import { AppContext,MessageContent } from '@/components';
 </script>
