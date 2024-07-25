@@ -7,6 +7,7 @@ export function loadSystemMenu(){
       parentId:"",
       label:"系统管理",
       key:"38",
+      show:true,
       layoutVisible:{
         menu:true
       },
@@ -16,12 +17,14 @@ export function loadSystemMenu(){
       parentId:"",
       label:"数据管理",
       key:"39",
+      show:true,
     },
     {
       id:"40",
       parentId:"38",
       label:"权限管理",
       key:"40",
+      show:true,
       layoutVisible:{
         menu:true
       },
@@ -31,6 +34,7 @@ export function loadSystemMenu(){
       parentId:"40",
       label:"用户列表",
       key:"userList",
+      show:true,
       router:{
         name:'userList'
       },
@@ -40,6 +44,7 @@ export function loadSystemMenu(){
       parentId:"40",
       label:"菜单列表",
       key:"menuList",
+      show:true,
       router:{
         name:'menuList'
       },
@@ -49,6 +54,7 @@ export function loadSystemMenu(){
       parentId:"40",
       label:"角色列表",
       key:"roleList",
+      show:true,
       router:{
         name:'roleList'
       },
@@ -58,6 +64,7 @@ export function loadSystemMenu(){
       parentId:"38",
       label:"参数配置",
       key:"47",
+      show:true,
       layoutVisible:{
         menu:true
       },
@@ -66,7 +73,51 @@ export function loadSystemMenu(){
       id:"48",
       parentId:"47",
       label:"参数列表",
-      key:"48",
+      key:"paramList",
+      show:true,
+      router:{
+        name:'paramList'
+      },
     },
-  ])
+    {
+      id:"50",
+      parentId:"38",
+      label:"任务管理",
+      key:"50",
+      show:true,
+      layoutVisible:{
+        menu:true
+      },
+    },
+    {
+      id:"51",
+      parentId:"50",
+      label:"任务列表",
+      key:"taskManager",
+      show:true,
+      router:{
+        name:'taskManager'
+      },
+    },
+    {
+      id:"52",
+      parentId:"38",
+      label:"监控管理",
+      key:"52",
+      show:true,
+      layoutVisible:{
+        menu:true
+      },
+    },
+    {
+      id:"53",
+      parentId:"52",
+      label:"请求日志",
+      key:"apiLog",
+      show:true,
+      router:{
+        name:'apiLog'
+      },
+    },
+  ],item=>item.show!=false)
 }

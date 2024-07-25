@@ -92,6 +92,26 @@ const routeList = [
     },
     component: () => import('@/views/system/RoleList.vue')
   },
+  {
+    id: 360,
+    path: '/param/list',
+    name: 'paramList',
+    parentId: 333,
+    meta:{
+      permissions: ['login', ],
+    },
+    component: () => import('@/views/system/ParamList.vue')
+  },
+  {
+    id: 363,
+    path: '/api/log',
+    name: 'apiLog',
+    parentId: 333,
+    meta:{
+      permissions: ['login', ],
+    },
+    component: () => import('@/views/system/ApiLog.vue')
+  },
 ]
 
 export const routes = deepTree(routeList)

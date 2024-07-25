@@ -23,6 +23,6 @@
   </div>
 </template>
 <script setup>
-import {loadUserAvatarOptions, } from '@/services'
-import { loadSystemMenu } from './CommonLayout'
+import { loadSystem,loadUserAvatarOptions, } from '@/services'
+import { loadSystemMenu, } from './CommonLayout'
 </script>
