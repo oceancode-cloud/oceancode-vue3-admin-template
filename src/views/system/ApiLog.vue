@@ -27,6 +27,10 @@
             </o-query>
           </o-box>
 
+          <o-box  :top="16.0" top-unit="px" :right="0.0" right-unit="px" :width="300.0" width-unit="px" >
+            <o-search-input size="medium" search-text="搜索" value-field="name" :on-click-search="true" placeholder="搜索请求地址、ip、ip地址" ></o-search-input>
+          </o-box>
+
           <o-box  :left="77.0" left-unit="px" :top="16.0" top-unit="px" :width="69.0" width-unit="px" >
             <o-button color="rgb(245, 108, 108)" size="medium" :block="true"   :on-click="()=>clearLog()">
               清空

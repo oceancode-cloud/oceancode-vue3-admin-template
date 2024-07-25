@@ -18,6 +18,9 @@ export function loadSystemMenu(){
       label:"数据管理",
       key:"39",
       show:true,
+      layoutVisible:{
+        menu:true
+      },
     },
     {
       id:"40",
@@ -117,6 +120,16 @@ export function loadSystemMenu(){
       show:true,
       router:{
         name:'apiLog'
+      },
+    },
+    {
+      id:"54",
+      parentId:"39",
+      label:"字典管理",
+      key:"dataDict",
+      show:true,
+      router:{
+        name:'dataDict'
       },
     },
   ],item=>item.show!=false)

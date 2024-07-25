@@ -1,3 +1,16 @@
+export function listDict(params){
+  console.log('listDict',params)
+  return [
+    {
+      id:1,
+      value:'http://www.a.com',
+      remark:'',
+      created:new Date().getTime(),
+      updated:new Date().getTime(),
+      sort:1
+    }
+  ]
+}
 export function loadDictGroup(){
   return [
     {
@@ -19,5 +32,9 @@ export function loadDictGroup(){
 
 export function addDictGroup(params){
   console.log('addDictGroup',params)
+  return Promise.resolve()
+}
+export function deleteDictById(row){
+  console.log('deleteDictById',row)
   return Promise.resolve()
 }
