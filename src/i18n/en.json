@@ -17,6 +17,7 @@
     "biz_client_authorization_invalid":"Authorization invalid",
     "biz_client_authorization_missing":"Authorization missing",
     "biz_client_access_denied":"Access denied",
-    "biz_client_permission_denied":"Permission denied"
+    "biz_client_permission_denied":"Permission denied",
+    "biz_client_group_content_not_empty":"Group Not Empty"
   }
 }
