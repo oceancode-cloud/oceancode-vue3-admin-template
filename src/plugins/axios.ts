@@ -122,7 +122,7 @@ function handleErrorWrapper<T>(p: AxiosPromise,filename?:string): Promise<Result
     }).catch((error: AxiosError)=>{
       const response = error.response as any
       const status = response.status
-      if(status===400){
+      if(status===400 && status===500){
         const data = response.data
         window['$message'].error({code:data.code,message:data.message})
       }else if(status===401){
