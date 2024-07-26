@@ -17,6 +17,7 @@
     "biz_client_authorization_invalid":"非法登录",
     "biz_client_authorization_missing":"非法登录",
     "biz_client_access_denied":"访问拒绝",
-    "biz_client_permission_denied":"无访问权限"
+    "biz_client_permission_denied":"无访问权限",
+    "biz_client_group_content_not_empty":"分组不为空"
   }
 }
