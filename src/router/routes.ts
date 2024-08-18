@@ -29,6 +29,10 @@ const routeList = [
     component: () => import('@/packages/layout/common/CommonLayout.vue')
   },
   {
+    id: 367,
+    component: () => import('@/packages/layout/common/DevuiLayout.vue')
+  },
+  {
     id:4,
     path: '/login',
     name:'login',
@@ -111,6 +115,16 @@ const routeList = [
       permissions: ['login', ],
     },
     component: () => import('@/views/system/ApiLog.vue')
+  },
+  {
+    id: 368,
+    path: '/devHome',
+    name: 'devHome',
+    parentId: 367,
+    meta:{
+      permissions: ['login', ],
+    },
+    component: () => import('@/views/devui/Home.vue')
   },
 ]
 
