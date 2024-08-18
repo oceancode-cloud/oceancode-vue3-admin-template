@@ -1,4 +1,4 @@
-import { IResultData, useRequest } from '@oceancode/framework';
+import { IResultData, useRequest } from '@oceancode/ocean-wui';
 const request = useRequest()
 const API_PREFIX = import.meta.env.VITE_GLOB_API_URL || ''
 /**
