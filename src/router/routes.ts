@@ -2,7 +2,7 @@ import { deepTree } from '@oceancode/ocean-wui'
 
 const routeList = [
   {
-    id: 1,
+    id: -1,
     path: '/',
     redirect: {
       name:'home'
@@ -13,11 +13,15 @@ const routeList = [
     component: () => import('@/components/common/AppRouterContext.vue')
   },
   {
-    id:2,
+    id: 378,
+    path: '/user/login',
+    name: 'userLogin',
     parentId: -2,
-    path:'/home',
-    component: () => import('@/views/home.vue')
-  }
+    meta:{
+      permissions: ['login', ],
+    },
+    component: () => import('@/views/user/UserLogin.vue')
+  },
 ]
 
 export const routes = deepTree(routeList)

@@ -30,8 +30,8 @@ export function routerPlugin():RouterPlugin{
     getParams:()=>router.currentRoute.value.params,
     getQuery:()=>router.currentRoute.value.query,
     getMeta:()=>router.currentRoute.value.meta,
-    toLogin:()=>{
-      router.push({name:'login'})
+    toLogin:(params)=>{
+      router.push({...params,name:'login'})
     }
   }
 }

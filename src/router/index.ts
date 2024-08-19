@@ -11,6 +11,13 @@ const router = createRouter({
 router.beforeEach(async(to,from,next)=>{
     const permissions = (to.meta?.permissions || []) as Array<string>
     const mustParams = (to.meta?.mustParams || []) as Array<string>
+    const redirectName = to.query?.redirectName
+    if(redirectName){
+        if(redirectName===to.name){
+            next({name:'NoPermission'})
+            return
+        }
+    }
     for(const it of mustParams){
         const type = (it as any).type as string
         const id = (it as any).id as string
@@ -41,7 +48,7 @@ router.beforeEach(async(to,from,next)=>{
     for(const it of permissions){
         if(it==='login'){
             if(!useUser().isLogin()){
-                useRouter().toLogin()
+                useRouter().toLogin({query:{redirect:to.fullPath,redirectName:to.name}})
                 return
             }
         }else if(it==='unlogin'){
