@@ -19,7 +19,7 @@ const routeList = [
     component: () => import('@/views/NoPermission.vue')
   },
   {
-    id: -3,
+    id: -4,
     path:'/home',
     name:'home',
     component: () => import('@/views/home.vue'),
