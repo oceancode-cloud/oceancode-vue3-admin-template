@@ -13,15 +13,20 @@ const routeList = [
     component: () => import('@/components/common/AppRouterContext.vue')
   },
   {
-    id: 378,
-    path: '/user/login',
-    name: 'userLogin',
-    parentId: -2,
-    meta:{
-      permissions: ['login', ],
-    },
-    component: () => import('@/views/user/UserLogin.vue')
+    id: -3,
+    path:'/no_permission',
+    name:'NoPermission',
+    component: () => import('@/views/NoPermission.vue')
   },
+  {
+    id: -3,
+    path:'/home',
+    name:'home',
+    component: () => import('@/views/home.vue'),
+    meta:{
+      permissions:['login']
+    }
+  }
 ]
 
 export const routes = deepTree(routeList)
