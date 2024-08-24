@@ -2,9 +2,9 @@
   <router-view v-slot="{Component}">
     <o-context ref="contextRef">
       <keep-alive v-if="$route.meta && $route.meta.keepAlive">
-        <component :is="Component"></component>
+        <component :is="Component" :layout="layout"></component>
       </keep-alive>
-      <component :is="Component" v-else></component>
+      <component :is="Component" v-else :layout="layout"></component>
     </o-context>
   </router-view>
 </template>
@@ -16,8 +16,10 @@ export default {
 <script lang="ts" setup>
 import { ref,watch } from 'vue'
 import { useRouter} from 'vue-router'
+import { useLayout } from '@oceancode/ocean-wui'
 const contextRef = ref()
 const router = useRouter()
+const layout = useLayout()
 watch(
   () => router.currentRoute.value,
   (newValue: any) => {
