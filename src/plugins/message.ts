@@ -7,6 +7,9 @@ export function messagePlugin():PermissionPlugin{
     },
     error(message){
       window['$nativeMessage'].error(message)
+    },
+    info(message){
+      window['$nativeMessage'].info(message)
     }
   }
 }
