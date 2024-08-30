@@ -26,7 +26,17 @@ watch(
     if(!newValue.meta || !newValue.meta.keepAlive){
       contextRef.value && contextRef.value.clearAll()
     }
+    if(layout){
+      layout.setSelectMenuByPath(newValue.name)
+    }
   },
   { immediate: true }
 )
+if(layout){
+  layout.onSelectMenu(({data})=>{
+    if(data &&data.router){
+      router.push(data.router)
+    }
+  })
+}
 </script>
