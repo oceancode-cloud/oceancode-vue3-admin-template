@@ -9,7 +9,6 @@ export function validatorWithArtifactId(required:boolean,message: string,value:a
   }
 }
 
-
 export function validatorWithIp(required:boolean,message: string,value:any) {
   const pattern = /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(?!$)|$)){4}$/
   if(required){
