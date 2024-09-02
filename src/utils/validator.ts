@@ -20,3 +20,14 @@ export function validatorWithIp(required:boolean,message: string,value:any) {
     return new Error('IP地址非法')
   }
 }
+
+export function validatorWithVariable(required:boolean,message: string,value:any){
+  if(required){
+    if(!value){
+      return new Error(message)
+    }
+  }
+  if (!/^[a-z]{1}[a-zA-Z0-9]{1,63}[a-z0-9]{1}$/.test(value)) {
+      return new Error("只能包含小写字母，数字，且以字母开头，长度在64个字符以内");
+  }
+}
