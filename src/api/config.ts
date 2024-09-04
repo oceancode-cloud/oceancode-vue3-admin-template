@@ -1,4 +1,3 @@
-import { request_ } from '@/api/config';
 import { ResultData, useRequest, apiResponseWrapper, DataHandle, resolveQueryResult } from '@oceancode/ocean-wui'
 export const request_ = useRequest()
 export const API_PREFIX_ = import.meta.env.VITE_GLOB_API_URL || ''
