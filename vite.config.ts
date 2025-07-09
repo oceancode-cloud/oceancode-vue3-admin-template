@@ -22,6 +22,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   const { VITE_PUBLIC_PATH, VITE_DROP_CONSOLE, VITE_PORT, VITE_GLOB_PROD_MOCK, VITE_PROXY } =
     viteEnv;
     const isProduction = mode === 'production'
+    const isMock = mode === 'mock'
   return {
     base: VITE_PUBLIC_PATH,
     resolve: {
@@ -85,9 +86,9 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       viteMockServe({
         mockPath: './mock',
         // 开发打包开关
-        localEnabled: true,
+        localEnabled: isMock,
         // 生产打包开关
-        prodEnabled: true,
+        prodEnabled: false,
         // 打开后，可以读取 ts 文件模块。 请注意，打开后将无法监视.js 文件
         supportTs: true,
         // 监视文件更改
