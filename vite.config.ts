@@ -108,6 +108,9 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       port: VITE_PORT,
       proxy: createProxy(VITE_PROXY),
     },
+    define: {
+      __DEV__: !isProduction
+    },
     build: {
       target: 'es2015',
       outDir: OUTPUT_DIR,
