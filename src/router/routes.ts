@@ -23,9 +23,6 @@ const routeList = [
     path:'/home',
     name:'home',
     component: () => import('@/views/home.vue'),
-    meta:{
-      permissions:['login']
-    }
   }
 ]
 
