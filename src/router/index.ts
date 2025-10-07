@@ -1,6 +1,7 @@
 import { useRouter, useUser } from '@oceancode/ocean-wui';
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { routes } from './routes'
+import { useGlobal } from '@/store';
 const routerHistory = createWebHashHistory();
 const router = createRouter({
     history: routerHistory,
@@ -9,6 +10,15 @@ const router = createRouter({
 
 
 router.beforeEach(async(to,from,next)=>{
+    if(to.fullPath==='/'){
+        next({name:'home'});
+        return;
+    }
+    const projectId = to.params?.projectId as string;
+    useGlobal().setProjectId(projectId);
+    useGlobal().setQuery(to.query);
+    useGlobal().setParams(to.params);
+
     const permissions = (to.meta?.permissions || []) as Array<string>
     const mustParams = (to.meta?.mustParams || []) as Array<string>
     const redirectName = to.query?.redirectName
