@@ -5,6 +5,7 @@ import { permissionPlg } from './permission'
 import { axoisRequest } from './axios'
 import { setupI18n,i18nPlugin } from './i18n'
 import { messagePlugin } from './message'
+import { useUser } from '@/store/user'
 
 export function setupPlugins(app:App){
   const i18n = setupI18n(app)
@@ -15,7 +16,11 @@ export function setupPlugins(app:App){
     permissionPlg(),
     axoisRequest(),
     messagePlugin(),
-    i81nPlg
+    i81nPlg,
+    {
+      name:'user',
+      get: useUser,
+    },
   ])
   app.config.globalProperties.$t = i81nPlg.t
 }

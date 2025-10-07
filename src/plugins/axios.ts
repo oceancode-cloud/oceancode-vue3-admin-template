@@ -1,3 +1,4 @@
+import { useGlobal } from '@/store'
 import { RequestPlugin,RequestConfig,ResultData,useUser,useRouter,ResultEnum,PluginType } from '@oceancode/ocean-wui'
 import axios, { AxiosError, AxiosInstance, AxiosPromise } from 'axios'
 
@@ -15,7 +16,7 @@ service.interceptors.request.use(
     if (token) {
       config.headers['Authorization'] = ('Bearer ' + token) as any;
     }
-    const projectId = useUser().getProjectId()
+    const projectId = useGlobal().getProjectId()
     if(projectId){
       config.headers['x-project-id'] = projectId
     }
@@ -71,8 +72,17 @@ function parseResonseData(data: any): any {
 }
 
 
-function downloadFile(res:any, fileName:string) {
+function downloadFile(res:any, fileName?:string) {
   const blob = new Blob([res.data]);
+  if(res.headers['content-disposition']){
+    const content = res.headers['content-disposition'];
+    if(content.indexOf('=')!=-1){
+      const name = content.substring(content.indexOf('=')+1);
+      if(name){
+        fileName = decodeURIComponent(name);
+      }
+    }
+  }
   const reader = new FileReader();
   reader.readAsDataURL(blob);
   reader.onload = (e) => {
@@ -129,6 +139,11 @@ function handleErrorWrapper<T>(p: AxiosPromise,filename?:string): Promise<Result
         useUser().logout()
         useRouter().toLogin()
       }else if(status===403){
+        const user = useUser();
+        if(!user.isLogin()){
+          useRouter().toLogin();
+          return;
+        }
         useUser().refreshPermission(true).finally(()=>{
           reject({ error: error, ...parseResonseData(response.data) })
         })
@@ -148,6 +163,6 @@ export function axoisRequest(){
     put: put,
     post: post,
     delete: _delete,
-    postDownload:_postDownload,
+    download:_postDownload,
   }
 }
