@@ -10,7 +10,7 @@ export const libResolves = [
     replacement: resolve(process.cwd(), '.', './node_modules/ocean-admin-api'),
   },
   {
-    find:'@oceancode/ocean-wui',
+    find:'@oceancode/ocean-wui2',
     replacement: resolve(process.cwd(), '.', './node_modules/@oceancode/ocean-wui'),
   },
 ];
