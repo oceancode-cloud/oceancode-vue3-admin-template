@@ -3,6 +3,7 @@ import App from './App.vue'
 import { bootstrap } from './bootstrap'
 import router from './router'
 import store from './store';
+import './config';
 
 const app = createApp(App)
 bootstrap(app)
