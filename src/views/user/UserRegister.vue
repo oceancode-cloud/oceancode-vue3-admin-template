@@ -85,7 +85,7 @@ import { userRegister } from '@/api/user/UserFunction';
 import { h } from 'vue';
 import { UserRegisterRequest } from '@/models/user/UserRegisterRequest';
 import { useForm, OCaptchaInput, OPasswordInput, useRouter } from '@oceancode/ocean-wui';
-import { UserLogin } from '@/meta/pages/user';
+import { UserLogin } from '@/meta/pages/user/index';
 import { sendUserRegisterEmailCode } from '@/api/common/CommonFunction';
 
 const router = useRouter();

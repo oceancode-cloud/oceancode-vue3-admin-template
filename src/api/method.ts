@@ -39,6 +39,9 @@ export function appMenus(id:string, fields?: Array<string | object>): string {
     return buildDsl('app_menus', [{ key: 'id', value: id }], fields || ['id', 'name', 'type', 'visible', 'createdAt', 'updatedAt'])
 }
 
+export function menusGroup(){
+  
+}
 export function datasources(fields?: Array<string | object>): string {
     return buildDsl('datasources', [], fields || ['id', 'name', 'datasourceId', 'type','accountId','description'])
 }

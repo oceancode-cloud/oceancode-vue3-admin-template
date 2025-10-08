@@ -20,7 +20,7 @@
 <script lang="ts" setup>
 import { listAccountOption } from '@/api/account/AccountFunction';
 import { AddDatasource } from '@/models/datasource/AddDatasource';
-import { AccountList } from '@/meta/pages/app';
+import { AccountList } from '@/meta/pages/app/index';
 import { useForm, useRouter } from '@oceancode/ocean-wui';
 import { DatasourceType } from '@/models/datasource/DatasourceType';
 import { addDatasource } from '@/api/datasource/DatasourceFunction';
