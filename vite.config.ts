@@ -1,15 +1,16 @@
 import type { UserConfig, ConfigEnv } from 'vite';
 import { loadEnv } from 'vite';
-import vue from '@vitejs/plugin-vue'
-import { resolve } from 'path'
-import { OUTPUT_DIR, chunkSizeWarningLimit, terserOptions, rollupOptions } from './build/constant'
-import viteCompression from 'vite-plugin-compression'
-import { viteMockServe } from 'vite-plugin-mock'
+import vue from '@vitejs/plugin-vue';
+import { resolve } from 'path';
+import { OUTPUT_DIR, chunkSizeWarningLimit, terserOptions, rollupOptions } from './build/constant';
+import viteCompression from 'vite-plugin-compression';
+import { viteMockServe } from 'vite-plugin-mock';
 import { wrapperEnv } from './build/utils';
 import { createProxy } from './build/proxy';
 import Components from 'unplugin-vue-components/vite';
-import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
-import AutoImport from 'unplugin-auto-import/vite'
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
+import AutoImport from 'unplugin-auto-import/vite';
+import { libResolves } from './vite.lib.config';
 
 function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir)
@@ -29,20 +30,21 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       alias: [
         {
           find: /\/#\//,
-          replacement: pathResolve('types')
+          replacement: pathResolve('types'),
         },
         {
           find: '@',
-          replacement: pathResolve('src')
+          replacement: pathResolve('src'),
         },
         {
           find: 'vue-i18n',
-          replacement: 'vue-i18n/dist/vue-i18n.cjs.js' //解决i8n警告
+          replacement: 'vue-i18n/dist/vue-i18n.cjs.js', //解决i8n警告
         },
         {
           find:'naive-ui',
-          replacement: pathResolve('./node_modules/naive-ui')
+          replacement: pathResolve('./node_modules/naive-ui'),
         },
+        ...libResolves,
       ],
       dedupe: ['vue']
     },
