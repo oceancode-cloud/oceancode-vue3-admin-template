@@ -18,13 +18,13 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { AddModel } from 'ocean-admin-api/models/model/AddModel';
-import { ModelType } from 'ocean-admin-api/models/model/ModelType';
-import { ModelEnumType } from 'ocean-admin-api/models/model/ModelEnumType';
-import { addModel } from 'ocean-admin-api/api/model/ModelFunction';
-import { listDatasources } from 'ocean-admin-api/api/datasource/DatasourceFunction';
+import { ModelType } from '@common-api/models/model/ModelType';
+import { AddModel } from '@common-api/models/model/AddModel';
 import { h, defineProps } from 'vue';
 import { useForm } from '@oceancode/ocean-wui';
+import { addModel } from '@common-api/api/model/ModelFunction';
+import { ModelEnumType } from '@common-api/models/model/ModelEnumType';
+import { listDatasources } from '@common-api/api/datasource/DatasourceFunction';
 import { ModelSelect } from '@/components';
 
 const props = defineProps({

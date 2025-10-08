@@ -10,6 +10,10 @@ export const libResolves = [
     replacement: resolve(process.cwd(), '.', './node_modules/ocean-admin-api'),
   },
   {
+    find: '@common-api',
+    replacement: resolve(process.cwd(), '.', './node_modules/ocean-admin-api'),
+  },
+  {
     find: '@ui-framework',
     replacement: resolve(process.cwd(), '.', './node_modules/@oceancode/ocean-wui'),
   },

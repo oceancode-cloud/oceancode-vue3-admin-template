@@ -18,12 +18,12 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { listAccountOption } from 'ocean-admin-api/api/account/AccountFunction';
-import { AddDatasource } from 'ocean-admin-api/models/datasource/AddDatasource';
-import { addDatasource } from 'ocean-admin-api/api/datasource/DatasourceFunction';
+import { listAccountOption } from '@common-api/api/account/AccountFunction';
+import { AddDatasource } from '@common-api/models/datasource/AddDatasource';
 import { useForm, useRouter } from '@oceancode/ocean-wui';
-import { AccountList } from 'ocean-admin-api/meta/pages/app/index';
-import { DatasourceType } from 'ocean-admin-api/models/datasource/DatasourceType';
+import { DatasourceType } from '@common-api/models/datasource/DatasourceType';
+import { AccountList } from '@common-api/meta/pages/app/index';
+import { addDatasource } from '@common-api/api/datasource/DatasourceFunction';
 
 const router = useRouter();
 const Form = useForm({

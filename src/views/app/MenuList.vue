@@ -129,11 +129,11 @@
 </template>
 <script lang="ts" setup>
 import { loadContextMenu } from './menu-list/ContextMenu';
-import { MenuType } from 'ocean-admin-api/models/menu/MenuType';
-import { listMenuGroups, listGroupMenusById, updateMenuVisibleById, deleteMenuById } from 'ocean-admin-api/api/menu/AppMenuFunction';
+import { listMenuGroups, listGroupMenusById, updateMenuVisibleById, deleteMenuById } from '@common-api/api/menu/AppMenuFunction';
 import UpdateGroupForm from './menu-list/UpdateGroupForm.vue';
 import { useDataTable, formatDateTime } from '@oceancode/ocean-wui';
 import { isEmpty } from '@/utils';
+import { MenuType } from '@common-api/models/menu/MenuType';
 import AddGroupForm from './menu-list/AddGroupForm.vue';
 import { AddMenu, UpdateMenu } from '@/components';
 

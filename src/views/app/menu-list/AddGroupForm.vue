@@ -18,8 +18,8 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { AddAppMenuGroup } from 'ocean-admin-api/models/menu/AddAppMenuGroup';
-import { addMenuGroup } from 'ocean-admin-api/api/menu/AppMenuFunction';
+import { addMenuGroup } from '@common-api/api/menu/AppMenuFunction';
+import { AddAppMenuGroup } from '@common-api/models/menu/AddAppMenuGroup';
 import { useForm } from '@oceancode/ocean-wui';
 
 const Form = useForm({

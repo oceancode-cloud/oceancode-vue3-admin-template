@@ -18,10 +18,10 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { UpdateAppMenuGroup } from 'ocean-admin-api/models/menu/UpdateAppMenuGroup';
+import { updateMenuGroupById } from '@common-api/api/menu/AppMenuFunction';
 import { defineProps } from 'vue';
-import { updateMenuGroupById } from 'ocean-admin-api/api/menu/AppMenuFunction';
 import { useForm } from '@oceancode/ocean-wui';
+import { UpdateAppMenuGroup } from '@common-api/models/menu/UpdateAppMenuGroup';
 
 const props = defineProps({
   value: {

@@ -1,7 +1,7 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
-import { userLogout } from 'ocean-admin-api/api/user/UserFunction';
+import { userLogout } from '@common-api/api/user/UserFunction';
 
 export function loadContextMenu(param: any) {
   return [

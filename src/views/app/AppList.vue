@@ -87,11 +87,11 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { AppPackageStatus } from 'ocean-admin-api/models/app/AppPackageStatus';
-import { listAppPackages, deleteAppPackageById, updateAppPackageBuildById } from 'ocean-admin-api/api/app/AppFunction';
+import { AppPackageStatus } from '@common-api/models/app/AppPackageStatus';
 import AddForm from './app-list/AddForm.vue';
 import { useDataTable, formatDateTime } from '@oceancode/ocean-wui';
 import EditForm from './app-list/EditForm.vue';
+import { listAppPackages, deleteAppPackageById, updateAppPackageBuildById } from '@common-api/api/app/AppFunction';
 
 const Table1725369451273 = useDataTable({
   columns: [

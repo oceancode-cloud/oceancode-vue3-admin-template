@@ -18,10 +18,10 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { UpdateFunctionPackage } from '@common-api/models/function/UpdateFunctionPackage';
 import { defineProps } from 'vue';
 import { useForm } from '@oceancode/ocean-wui';
-import { updateFunctionPackageById } from 'ocean-admin-api/api/function/MethodFunction';
-import { UpdateFunctionPackage } from 'ocean-admin-api/models/function/UpdateFunctionPackage';
+import { updateFunctionPackageById } from '@common-api/api/function/MethodFunction';
 
 const props = defineProps({
   value: {

@@ -1,7 +1,7 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
-import { deleteFunctionGroupById } from 'ocean-admin-api/api/function/MethodFunction';
+import { deleteFunctionGroupById } from '@common-api/api/function/MethodFunction';
 
 export function loadContextMenu(param: any) {
   return [

@@ -81,12 +81,12 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { userResetPassword } from 'ocean-admin-api/api/user/UserFunction';
-import { RestPasswordParam } from 'ocean-admin-api/models/user/RestPasswordParam';
+import { userResetPassword } from '@common-api/api/user/UserFunction';
+import { RestPasswordParam } from '@common-api/models/user/RestPasswordParam';
 import { h, defineProps } from 'vue';
 import { useForm, OCaptchaInput, OPasswordInput, useRouter } from '@oceancode/ocean-wui';
-import { updateEmailResetPassword } from 'ocean-admin-api/api/common/CommonFunction';
-import { UserLogin } from 'ocean-admin-api/meta/pages/user/index';
+import { updateEmailResetPassword } from '@common-api/api/common/CommonFunction';
+import { UserLogin } from '@common-api/meta/pages/user/index';
 
 const props = defineProps({
   value: {

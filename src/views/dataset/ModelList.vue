@@ -117,10 +117,10 @@
 </template>
 <script lang="ts" setup>
 import AddGroupForm from './model-list/AddGroupForm.vue';
-import { ModelType } from 'ocean-admin-api/models/model/ModelType';
+import { ModelType } from '@common-api/models/model/ModelType';
 import AddModelForm from './model-list/AddModelForm.vue';
-import { listModelGroupsById, listModelsGroup } from 'ocean-admin-api/api/model/ModelFunction';
 import { useDataTable } from '@oceancode/ocean-wui';
+import { listModelGroupsById, listModelsGroup } from '@common-api/api/model/ModelFunction';
 import UpdateGroupForm from './model-list/UpdateGroupForm.vue';
 import { isEmpty } from '@/utils';
 import { loadContextMenu } from '@/packages/components/model/ModelGroupContext';

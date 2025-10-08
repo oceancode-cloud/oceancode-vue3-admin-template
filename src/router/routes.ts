@@ -8,7 +8,7 @@ const routeList = [
   {
     id: 24,
     path: '/user/user/login',
-    name: 'userLogin',
+    name: 'login',
     parentId: -2,
     component: () => import('@/views/user/UserLogin.vue'),
     meta:{
@@ -120,10 +120,6 @@ const routeList = [
   {
     id: 1364,
     component: () => import('@/packages/layout/common/CommonLayout.vue'),
-  },
-  {
-    id: 1365,
-    component: () => import('@/packages/layout/common/common-layout/Header.vue'),
   },
   {
     id: 1444,
