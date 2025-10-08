@@ -1,17 +1,29 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
+export interface InnerQueryParam_<T> {
+  fields?: Array<string | { key: string, fields: string[]}>;
+  params: T;
+}
+
+export function test(param: InnerQueryParam_<{id: string, username:2}>){
+
+}
+
+export function aaa(param: InnerQueryParam_<void>){
+
+}
 
 export function userSessionInfo(fields?: Array<string | object>): string {
   return buildDsl('user_session_info', [], fields || ['username', 'nickname', 'userId'])
 }
 
-export function username(id: string, fields?: Array<string | object>): string {
-  return buildDsl('username', [{ key: 'id', value: id }], fields || ['username'])
+export function username(param: InnerQueryParam_<{id: string}>): string {
+  return buildDsl('username', [{ key: 'id', value: param.params.id }], param.fields || ['username'])
 }
 
-export function accounts(param, fields?: Array<string | object>): string {
-  return buildDsl('accounts', [{ key:"param", value: param || {}}], fields || ['id', 'name', 'used', 'type', 'expireStartTime', 'expireEndTime', 'config'])
+export function accounts(param:InnerQueryParam_<any>, fields?: Array<string | object>): string {
+  return buildDsl('accounts', [{ key:"param", value: param.params || {}}], fields || ['id', 'name', 'used', 'type', 'expireStartTime', 'expireEndTime', 'config'])
 }
 
 export function appPackages(fields?: Array<string | object>): string {
