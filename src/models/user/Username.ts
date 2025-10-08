@@ -6,6 +6,6 @@ export interface Username {
   /**
    * 登录账号
    */
-  username:string
+  username: string
 
 }

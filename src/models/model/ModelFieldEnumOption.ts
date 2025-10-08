@@ -6,21 +6,21 @@ export interface ModelFieldEnumOption {
   /**
    * field
    */
-  field:string
+  field: string
 
   /**
    * name
    */
-  name:string
+  name: string
 
   /**
    * value
    */
-  value:string
+  value: string
 
   /**
    * 自增主键
    */
-  id:string
+  id: string
 
 }

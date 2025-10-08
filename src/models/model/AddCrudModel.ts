@@ -1,36 +1,37 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
+import { ModelType } from '@/models/model/ModelType';
 
 export interface AddCrudModel {
   /**
    * category
    */
-  category:string
+  category: string
 
   /**
    * modelId
    */
-  modelId:string
+  modelId: string
 
   /**
    * 名称
    */
-  name:string
+  name: string
 
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
   /**
    * type
    */
-  type:ModelType
+  type: ModelType.ModelType
 
   /**
    * fields
    */
-  fields:Array<AddCrudModelField>
+  fields: Array<AddCrudModelField>
 
 }

@@ -6,11 +6,11 @@ export interface AppTemplateInfo {
   /**
    * 名称
    */
-  name:string
+  name: string
 
   /**
    * 模板ID
    */
-  templateId:string
+  templateId: string
 
 }

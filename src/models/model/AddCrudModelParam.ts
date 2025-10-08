@@ -6,11 +6,11 @@ export interface AddCrudModelParam {
   /**
    * models
    */
-  models:Array<AddCrudModel>
+  models: Array<AddCrudModel>
 
   /**
    * modelId
    */
-  modelId:string
+  modelId: string
 
 }

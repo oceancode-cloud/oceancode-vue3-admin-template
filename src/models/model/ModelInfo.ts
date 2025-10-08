@@ -1,76 +1,79 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
+import { ModelFieldInfo } from '@/models/model/ModelFieldInfo';
+import { ModelEnumType } from '@/models/model/ModelEnumType';
+import { ModelType } from '@/models/model/ModelType';
 
 export interface ModelInfo {
   /**
    * parentId
    */
-  parentId?:string
+  parentId?: string
 
   /**
    * fields
    */
-  fields?:Array<ModelFieldInfo>
+  fields?: Array<ModelFieldInfo>
 
   /**
    * groupId
    */
-  groupId:string
+  groupId: string
 
   /**
    * traits
    */
-  traits?:Array<any>
+  traits?: Array<any>
 
   /**
    * 自增主键
    */
-  id:string
+  id: string
 
   /**
    * 名称
    */
-  name:string
+  name: string
 
   /**
    * primaryField
    */
-  primaryField?:ModelFieldInfo
+  primaryField?: ModelFieldInfo
 
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
   /**
    * enumType
    */
-  enumType?:ModelEnumType
+  enumType?: ModelEnumType.ModelEnumType
 
   /**
    * type
    */
-  type:ModelType
+  type: ModelType.ModelType
 
   /**
    * modelId
    */
-  modelId:string
+  modelId: string
 
   /**
    * datasourceId
    */
-  datasourceId?:string
+  datasourceId?: string
 
   /**
    * parentIds
    */
-  parentIds?:Array<any>
+  parentIds?: Array<any>
 
   /**
    * referenceIds
    */
-  referenceIds?:Array<any>
+  referenceIds?: Array<any>
 
 }

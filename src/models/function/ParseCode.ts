@@ -6,11 +6,11 @@ export interface ParseCode {
   /**
    * 函数ID
    */
-  id:string
+  id: string
 
   /**
    * 语言
    */
-  language:string
+  language: string
 
 }

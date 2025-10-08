@@ -1,96 +1,100 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
+import { FunctonMethodType } from '@/models/function/FunctonMethodType';
+import { FunctionMethodReturnType } from '@/models/function/FunctionMethodReturnType';
+import { FunctionMethodImplType } from '@/models/function/FunctionMethodImplType';
+import { FunctionCallType } from '@/models/function/FunctionCallType';
 
 export interface FunctionMethodInfo {
   /**
    * 类型
    */
-  type:FunctonMethodType
+  type: FunctonMethodType.FunctonMethodType
 
   /**
    * 名称
    */
-  name:string
+  name: string
 
   /**
    * implType
    */
-  implType:FunctionMethodImplType
+  implType: FunctionMethodImplType.FunctionMethodImplType
 
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
   /**
    * aggConfigs
    */
-  aggConfigs?:Array<FunctionMethodResAggOption>
+  aggConfigs?: Array<FunctionMethodResAggOption>
 
   /**
    * external
    */
-  external?:boolean
+  external?: boolean
 
   /**
    * callType
    */
-  callType:FunctionCallType
+  callType: FunctionCallType.FunctionCallType
 
   /**
    * inputModelId
    */
-  inputModelId?:string
+  inputModelId?: string
 
   /**
    * traits
    */
-  traits?:Array<any>
+  traits?: Array<any>
 
   /**
    * permissions
    */
-  permissions?:Array<any>
+  permissions?: Array<any>
 
   /**
    * resultCount
    */
-  resultCount?:FunctionMethodReturnType
+  resultCount?: FunctionMethodReturnType.FunctionMethodReturnType
 
   /**
    * path
    */
-  path:string
+  path: string
 
   /**
    * returnModelId
    */
-  returnModelId?:string
+  returnModelId?: string
 
   /**
    * 配置
    */
-  config?:string
+  config?: string
 
   /**
    * inputRequired
    */
-  inputRequired?:boolean
+  inputRequired?: boolean
 
   /**
    * packageId
    */
-  packageId:string
+  packageId: string
 
   /**
    * 自增主键
    */
-  id:string
+  id: string
 
   /**
    * method
    */
-  method?:string
+  method?: string
 
 }

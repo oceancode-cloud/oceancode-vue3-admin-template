@@ -6,36 +6,36 @@ export interface UpdateAppMenu {
   /**
    * 名称
    */
-  name:string
+  name: string
 
   /**
    * 排序
    */
-  orderNum:number
+  orderNum: number
 
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
   /**
    * traits
    */
-  traits?:Array<any>
+  traits?: Array<any>
 
   /**
    * 自增主键
    */
-  id:string
+  id: string
 
   /**
    * 图标
    */
-  icon?:string
+  icon?: string
 
   /**
    * 组件
    */
-  componentId?:string
+  componentId?: string
 
 }

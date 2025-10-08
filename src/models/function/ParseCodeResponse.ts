@@ -6,6 +6,6 @@ export interface ParseCodeResponse {
   /**
    * code
    */
-  code?:string
+  code?: string
 
 }

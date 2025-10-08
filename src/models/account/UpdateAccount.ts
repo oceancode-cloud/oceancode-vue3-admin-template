@@ -6,36 +6,36 @@ export interface UpdateAccount {
   /**
    * 自增主键
    */
-  id:string
+  id: string
 
   /**
    * 名称
    */
-  name:string
+  name: string
 
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
   /**
    * 配置
    */
-  config?:Map<String,Any>
+  config?: Map<String, any>
 
   /**
    * 是否使用
    */
-  used?:boolean
+  used?: boolean
 
   /**
    * 启用时间
    */
-  expireStartTime?:string
+  expireStartTime?: string
 
   /**
    * 失效时间
    */
-  expireEndTime?:string
+  expireEndTime?: string
 
 }

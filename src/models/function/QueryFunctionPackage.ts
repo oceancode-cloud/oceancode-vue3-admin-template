@@ -6,6 +6,6 @@ export interface QueryFunctionPackage {
   /**
    * groupId
    */
-  groupId:string
+  groupId: string
 
 }

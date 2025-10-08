@@ -1,46 +1,47 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
+import { AppPackageStatus } from '@/models/app/AppPackageStatus';
 
 export interface AppPackageInfo {
   /**
    * 自增主键
    */
-  id:string
+  id: string
 
   /**
    * 名称
    */
-  name:string
+  name: string
 
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
   /**
    * 包名
    */
-  packageName:string
+  packageName: string
 
   /**
    * 状态
    */
-  status:AppPackageStatus
+  status: AppPackageStatus.AppPackageStatus
 
   /**
    * 创建时间
    */
-  createdAt:string
+  createdAt: string
 
   /**
    * 更新时间
    */
-  updatedAt:string
+  updatedAt: string
 
   /**
    * 模板ID
    */
-  templateId:string
+  templateId: string
 
 }

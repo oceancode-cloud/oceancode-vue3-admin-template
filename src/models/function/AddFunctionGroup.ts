@@ -6,16 +6,16 @@ export interface AddFunctionGroup {
   /**
    * 名称
    */
-  name:string
+  name: string
 
   /**
    * 编码
    */
-  code:string
+  code: string
 
   /**
    * parentId
    */
-  parentId?:string
+  parentId?: string
 
 }

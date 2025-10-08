@@ -6,11 +6,11 @@ export interface QueryLog {
   /**
    * sessionId
    */
-  sessionId?:string
+  sessionId?: string
 
   /**
    * stepId
    */
-  stepId?:string
+  stepId?: string
 
 }

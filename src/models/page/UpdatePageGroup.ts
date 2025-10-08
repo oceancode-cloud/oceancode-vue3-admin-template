@@ -6,16 +6,16 @@ export interface UpdatePageGroup {
   /**
    * code
    */
-  code:string
+  code: string
 
   /**
    * 自增主键
    */
-  id:string
+  id: string
 
   /**
    * 名称
    */
-  name:string
+  name: string
 
 }

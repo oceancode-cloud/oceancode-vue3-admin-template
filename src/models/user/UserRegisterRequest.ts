@@ -6,16 +6,16 @@ export interface UserRegisterRequest {
   /**
    * 电子邮箱
    */
-  email:string
+  email: string
 
   /**
    * 注册码
    */
-  code:string
+  code: string
 
   /**
    * password
    */
-  password?:string
+  password?: string
 
 }

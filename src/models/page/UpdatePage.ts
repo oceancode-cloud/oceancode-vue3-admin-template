@@ -1,46 +1,47 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
+import { PageImplType } from '@/models/page/PageImplType';
 
 export interface UpdatePage {
   /**
    * 自增主键
    */
-  id:string
+  id: string
 
   /**
    * title
    */
-  title:string
+  title: string
 
   /**
    * pageId
    */
-  pageId:string
+  pageId: string
 
   /**
    * implType
    */
-  implType:PageImplType
+  implType: PageImplType.PageImplType
 
   /**
    * 配置
    */
-  config?:string
+  config?: string
 
   /**
    * permissions
    */
-  permissions?:Array<any>
+  permissions?: Array<any>
 
   /**
    * traits
    */
-  traits?:Array<any>
+  traits?: Array<any>
 
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
 }

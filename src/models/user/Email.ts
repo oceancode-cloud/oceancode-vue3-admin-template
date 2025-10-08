@@ -6,6 +6,6 @@ export interface Email {
   /**
    * email
    */
-  email:string
+  email: string
 
 }

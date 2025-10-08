@@ -6,26 +6,26 @@ export interface UpdateDatasource {
   /**
    * 自增主键
    */
-  id:string
+  id: string
 
   /**
    * 名称
    */
-  name:string
+  name: string
 
   /**
    * 关联账号
    */
-  accountId?:string
+  accountId?: string
 
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
   /**
    * 唯一ID
    */
-  datasourceId:string
+  datasourceId: string
 
 }

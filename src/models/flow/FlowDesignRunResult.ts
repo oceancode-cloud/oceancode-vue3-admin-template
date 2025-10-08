@@ -6,6 +6,6 @@ export interface FlowDesignRunResult {
   /**
    * sessionId
    */
-  sessionId:string
+  sessionId: string
 
 }

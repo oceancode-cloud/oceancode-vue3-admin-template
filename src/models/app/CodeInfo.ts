@@ -6,21 +6,21 @@ export interface CodeInfo {
   /**
    * 版本号
    */
-  versionId:string
+  versionId: string
 
   /**
    * 代码
    */
-  code?:string
+  code?: string
 
   /**
    * 更新时间
    */
-  updatedAt:string
+  updatedAt: string
 
   /**
    * language
    */
-  language:string
+  language: string
 
 }

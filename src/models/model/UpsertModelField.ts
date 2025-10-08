@@ -1,116 +1,118 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
+import { FieldRelateModel } from '@/models/model/FieldRelateModel';
+import { ModelFieldType } from '@/models/model/ModelFieldType';
 
 export interface UpsertModelField {
   /**
    * primaryKey
    */
-  primaryKey?:boolean
+  primaryKey?: boolean
 
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
   /**
    * refId
    */
-  refId?:string
+  refId?: string
 
   /**
    * 名称
    */
-  name:string
+  name: string
 
   /**
    * required
    */
-  required?:boolean
+  required?: boolean
 
   /**
    * defaultValue
    */
-  defaultValue?:string
+  defaultValue?: string
 
   /**
    * type
    */
-  type:ModelFieldType
+  type: ModelFieldType.ModelFieldType
 
   /**
    * elementType
    */
-  elementType?:string
+  elementType?: string
 
   /**
    * example
    */
-  example?:string
+  example?: string
 
   /**
    * traits
    */
-  traits?:Array<any>
+  traits?: Array<any>
 
   /**
    * field
    */
-  field:string
+  field: string
 
   /**
    * modelId
    */
-  modelId:string
+  modelId: string
 
   /**
    * length
    */
-  length?:number
+  length?: number
 
   /**
    * constVal
    */
-  constVal?:string
+  constVal?: string
 
   /**
    * min
    */
-  min?:string
+  min?: string
 
   /**
    * relatedField
    */
-  relatedField?:FieldRelateModel
+  relatedField?: FieldRelateModel
 
   /**
    * max
    */
-  max?:string
+  max?: string
 
   /**
    * precision
    */
-  precision?:number
+  precision?: number
 
   /**
    * 自增主键
    */
-  id?:string
+  id?: string
 
   /**
    * column
    */
-  column?:string
+  column?: string
 
   /**
    * orderNum
    */
-  orderNum?:number
+  orderNum?: number
 
   /**
    * format
    */
-  format?:string
+  format?: string
 
 }

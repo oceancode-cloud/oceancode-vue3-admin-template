@@ -6,11 +6,11 @@ export interface QueryFunctionCode {
   /**
    * 自增主键
    */
-  id:string
+  id: string
 
   /**
    * language
    */
-  language:string
+  language: string
 
 }

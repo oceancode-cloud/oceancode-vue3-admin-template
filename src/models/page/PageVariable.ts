@@ -6,26 +6,26 @@ export interface PageVariable {
   /**
    * id
    */
-  id:string
+  id: string
 
   /**
    * 名称
    */
-  name:string
+  name: string
 
   /**
    * required
    */
-  required:boolean
+  required: boolean
 
   /**
    * dataType
    */
-  dataType?:string
+  dataType?: string
 
   /**
    * type
    */
-  type:string
+  type: string
 
 }

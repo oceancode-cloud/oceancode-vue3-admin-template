@@ -1,66 +1,68 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
+import { PageImplType } from '@/models/page/PageImplType';
+import { PageType } from '@/models/page/PageType';
 
 export interface PageInfo {
   /**
    * title
    */
-  title:string
+  title: string
 
   /**
    * pageId
    */
-  pageId:string
+  pageId: string
 
   /**
    * type
    */
-  type:PageType
+  type: PageType.PageType
 
   /**
    * implType
    */
-  implType:PageImplType
+  implType: PageImplType.PageImplType
 
   /**
    * 更新时间
    */
-  updatedAt:string
+  updatedAt: string
 
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
   /**
    * parentId
    */
-  parentId:string
+  parentId: string
 
   /**
    * config
    */
-  config?:string
+  config?: string
 
   /**
    * groupId
    */
-  groupId:string
+  groupId: string
 
   /**
    * 变量
    */
-  variables?:Array<PageVariable>
+  variables?: Array<PageVariable>
 
   /**
    * traits
    */
-  traits?:Array<any>
+  traits?: Array<any>
 
   /**
    * 自增主键
    */
-  id:string
+  id: string
 
 }

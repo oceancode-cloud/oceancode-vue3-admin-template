@@ -6,6 +6,6 @@ export interface FlowConfig {
   /**
    * config
    */
-  config?:string
+  config?: string
 
 }

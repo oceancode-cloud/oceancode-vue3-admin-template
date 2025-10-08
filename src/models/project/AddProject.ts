@@ -6,11 +6,11 @@ export interface AddProject {
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
   /**
    * 名称
    */
-  name:string
+  name: string
 
 }

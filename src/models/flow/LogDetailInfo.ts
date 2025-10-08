@@ -6,36 +6,36 @@ export interface LogDetailInfo {
   /**
    * success
    */
-  success:boolean
+  success: boolean
 
   /**
    * 更新时间
    */
-  updatedAt:string
+  updatedAt: string
 
   /**
    * 创建时间
    */
-  createdAt:string
+  createdAt: string
 
   /**
    * content
    */
-  content?:string
+  content?: string
 
   /**
    * timeout
    */
-  timeout?:string
+  timeout?: string
 
   /**
    * endTime
    */
-  endTime?:string
+  endTime?: string
 
   /**
    * startTime
    */
-  startTime?:string
+  startTime?: string
 
 }

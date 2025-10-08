@@ -1,21 +1,22 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
+import { FlowCategory } from '@/models/flow/FlowCategory';
 
 export interface UpsertFlowConfig {
   /**
    * sourceId
    */
-  sourceId:string
+  sourceId: string
 
   /**
    * category
    */
-  category:FlowCategory
+  category: FlowCategory.FlowCategory
 
   /**
    * config
    */
-  config?:string
+  config?: string
 
 }

@@ -1,46 +1,47 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
+import { MenuType } from '@/models/menu/MenuType';
 
 export interface AddMenu {
   /**
    * 名称
    */
-  name:string
+  name: string
 
   /**
    * 分组ID
    */
-  groupId?:string
+  groupId?: string
 
   /**
    * 类型
    */
-  type:MenuType
+  type: MenuType.MenuType
 
   /**
    * 是否显示
    */
-  visible?:boolean
+  visible?: boolean
 
   /**
    * 排序
    */
-  orderNum:number
+  orderNum: number
 
   /**
    * 关联组件
    */
-  componentId?:string
+  componentId?: string
 
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
   /**
    * 父页面
    */
-  parentId?:string
+  parentId?: string
 
 }

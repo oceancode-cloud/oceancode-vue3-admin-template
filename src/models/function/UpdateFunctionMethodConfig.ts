@@ -6,11 +6,11 @@ export interface UpdateFunctionMethodConfig {
   /**
    * 自增主键
    */
-  id:string
+  id: string
 
   /**
    * 配置
    */
-  config:string
+  config: string
 
 }

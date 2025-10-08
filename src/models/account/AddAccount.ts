@@ -1,41 +1,42 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
+import { AccountType } from '@/models/account/AccountType';
 
 export interface AddAccount {
   /**
    * 配置
    */
-  config?:Map<String,Any>
+  config?: Map<String, any>
 
   /**
    * 启用时间
    */
-  expireStartTime?:string
+  expireStartTime?: string
 
   /**
    * 失效时间
    */
-  expireEndTime?:string
+  expireEndTime?: string
 
   /**
    * 名称
    */
-  name:string
+  name: string
 
   /**
    * 类型
    */
-  type:AccountType
+  type: AccountType.AccountType
 
   /**
    * 是否使用
    */
-  used?:boolean
+  used?: boolean
 
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
 }

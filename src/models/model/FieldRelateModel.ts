@@ -6,11 +6,11 @@ export interface FieldRelateModel {
   /**
    * field
    */
-  field:string
+  field: string
 
   /**
    * modelId
    */
-  modelId:string
+  modelId: string
 
 }

@@ -2,7 +2,7 @@
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
 import { AddProject } from '@/models/project/AddProject';
-import { workspace, workspacesUser as userWorkspace } from '@/api/method';
+import { workspace, userWorkspace } from '@/api/method';
 import { ResultData, apiResponseWrapper, deepTree, useRouter } from '@oceancode/ocean-wui';
 import { ProjectInfo } from '@/models/project/ProjectInfo';
 import { queryWithDsl as queryWithDsl_, request_, API_PREFIX_ } from '@/api/config';

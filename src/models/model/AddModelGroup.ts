@@ -6,16 +6,16 @@ export interface AddModelGroup {
   /**
    * code
    */
-  code:string
+  code: string
 
   /**
    * parentId
    */
-  parentId?:string
+  parentId?: string
 
   /**
    * 名称
    */
-  name:string
+  name: string
 
 }

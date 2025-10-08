@@ -6,16 +6,16 @@ export interface UserSessionInfo {
   /**
    * 登录账号
    */
-  username:string
+  username: string
 
   /**
    * 昵称
    */
-  nickname?:string
+  nickname?: string
 
   /**
    * 账号ID
    */
-  userId:string
+  userId: string
 
 }

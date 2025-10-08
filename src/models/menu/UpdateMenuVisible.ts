@@ -6,11 +6,11 @@ export interface UpdateMenuVisible {
   /**
    * 自增主键
    */
-  id:string
+  id: string
 
   /**
    * visible
    */
-  visible:boolean
+  visible: boolean
 
 }

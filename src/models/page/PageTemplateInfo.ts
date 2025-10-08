@@ -6,81 +6,81 @@ export interface PageTemplateInfo {
   /**
    * componentGroup
    */
-  componentGroup?:string
+  componentGroup?: string
 
   /**
    * platform
    */
-  platform:string
+  platform: string
 
   /**
    * 创建时间
    */
-  createdAt:string
+  createdAt: string
 
   /**
    * 配置
    */
-  config?:string
+  config?: string
 
   /**
    * 更新时间
    */
-  updatedAt:string
+  updatedAt: string
 
   /**
    * 缩略图
    */
-  shortcutImg:string
+  shortcutImg: string
 
   /**
    * 自增主键
    */
-  id:string
+  id: string
 
   /**
    * 图片
    */
-  images?:Array<any>
+  images?: Array<any>
 
   /**
    * 是否发布
    */
-  published:boolean
+  published: boolean
 
   /**
    * 类型
    */
-  type:string
+  type: string
 
   /**
    * 分组
    */
-  group:string
+  group: string
 
   /**
    * 模型ID
    */
-  templateId:string
+  templateId: string
 
   /**
    * 用户
    */
-  userId?:string
+  userId?: string
 
   /**
    * 标题
    */
-  title:string
+  title: string
 
   /**
    * keywords
    */
-  keywords?:Array<any>
+  keywords?: Array<any>
 
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
 }

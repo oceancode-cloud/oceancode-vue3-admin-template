@@ -1,136 +1,139 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
+import { ModelEnumType } from '@/models/model/ModelEnumType';
+import { FieldRelateModel } from '@/models/model/FieldRelateModel';
+import { ModelFieldType } from '@/models/model/ModelFieldType';
 
 export interface ModelFieldInfo {
   /**
    * field
    */
-  field:string
+  field: string
 
   /**
    * column
    */
-  column?:string
+  column?: string
 
   /**
    * example
    */
-  example?:string
+  example?: string
 
   /**
    * format
    */
-  format?:string
+  format?: string
 
   /**
    * primaryKey
    */
-  primaryKey:boolean
+  primaryKey: boolean
 
   /**
    * required
    */
-  required:boolean
+  required: boolean
 
   /**
    * elementType
    */
-  elementType?:string
+  elementType?: string
 
   /**
    * elementTypeId
    */
-  elementTypeId?:string
+  elementTypeId?: string
 
   /**
    * refId
    */
-  refId?:string
+  refId?: string
 
   /**
    * enumType
    */
-  enumType?:ModelEnumType
+  enumType?: ModelEnumType.ModelEnumType
 
   /**
    * constVal
    */
-  constVal?:string
+  constVal?: string
 
   /**
    * refModelId
    */
-  refModelId?:string
+  refModelId?: string
 
   /**
    * 自增主键
    */
-  id:string
+  id: string
 
   /**
    * 名称
    */
-  name:string
+  name: string
 
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
   /**
    * type
    */
-  type:ModelFieldType
+  type: ModelFieldType.ModelFieldType
 
   /**
    * length
    */
-  length?:number
+  length?: number
 
   /**
    * precision
    */
-  precision?:number
+  precision?: number
 
   /**
    * defaultValue
    */
-  defaultValue?:string
+  defaultValue?: string
 
   /**
    * min
    */
-  min?:string
+  min?: string
 
   /**
    * max
    */
-  max?:string
+  max?: string
 
   /**
    * relatedField
    */
-  relatedField?:FieldRelateModel
+  relatedField?: FieldRelateModel
 
   /**
    * enumValues
    */
-  enumValues?:Array<ModelFieldEnumOption>
+  enumValues?: Array<ModelFieldEnumOption>
 
   /**
    * orderNum
    */
-  orderNum?:number
+  orderNum?: number
 
   /**
    * traits
    */
-  traits?:Array<any>
+  traits?: Array<any>
 
   /**
    * ellipsis
    */
-  ellipsis?:boolean
+  ellipsis?: boolean
 
 }

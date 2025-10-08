@@ -6,6 +6,6 @@ export interface AddAppMenuGroup {
   /**
    * 名称
    */
-  name:string
+  name: string
 
 }

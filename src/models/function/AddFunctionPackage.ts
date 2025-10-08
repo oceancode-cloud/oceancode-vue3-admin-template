@@ -6,21 +6,21 @@ export interface AddFunctionPackage {
   /**
    * 名称
    */
-  name:string
+  name: string
 
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
   /**
    * 包名
    */
-  packageName:string
+  packageName: string
 
   /**
    * 分组ID
    */
-  groupId:string
+  groupId: string
 
 }

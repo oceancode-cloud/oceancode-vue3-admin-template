@@ -6,16 +6,16 @@ export interface AddCommit {
   /**
    * appId
    */
-  appId:string
+  appId: string
 
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
   /**
    * 标题
    */
-  title:string
+  title: string
 
 }

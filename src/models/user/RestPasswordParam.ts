@@ -6,16 +6,16 @@ export interface RestPasswordParam {
   /**
    * 邮箱地址
    */
-  email:string
+  email: string
 
   /**
    * 登录密码
    */
-  password:string
+  password: string
 
   /**
    * 验证码
    */
-  code:string
+  code: string
 
 }

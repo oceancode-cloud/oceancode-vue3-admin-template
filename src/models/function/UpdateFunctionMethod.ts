@@ -1,96 +1,100 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
+import { FunctonMethodType } from '@/models/function/FunctonMethodType';
+import { FunctionMethodReturnType } from '@/models/function/FunctionMethodReturnType';
+import { FunctionMethodImplType } from '@/models/function/FunctionMethodImplType';
+import { FunctionCallType } from '@/models/function/FunctionCallType';
 
 export interface UpdateFunctionMethod {
   /**
    * 自增主键
    */
-  id:string
+  id: string
 
   /**
    * returnModelId
    */
-  returnModelId?:string
+  returnModelId?: string
 
   /**
    * path
    */
-  path?:string
+  path?: string
 
   /**
    * inputRequired
    */
-  inputRequired?:boolean
+  inputRequired?: boolean
 
   /**
    * 名称
    */
-  name:string
+  name: string
 
   /**
    * caseId
    */
-  caseId?:string
+  caseId?: string
 
   /**
    * packageId
    */
-  packageId?:string
+  packageId?: string
 
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
   /**
    * aggConfigs
    */
-  aggConfigs?:Array<FunctionMethodResAggOption>
+  aggConfigs?: Array<FunctionMethodResAggOption>
 
   /**
    * permissions
    */
-  permissions?:Array<any>
+  permissions?: Array<any>
 
   /**
    * external
    */
-  external?:boolean
+  external?: boolean
 
   /**
    * callType
    */
-  callType:FunctionCallType
+  callType: FunctionCallType.FunctionCallType
 
   /**
    * inputModelId
    */
-  inputModelId?:string
+  inputModelId?: string
 
   /**
    * 类型
    */
-  type:FunctonMethodType
+  type: FunctonMethodType.FunctonMethodType
 
   /**
    * 方法
    */
-  method?:string
+  method?: string
 
   /**
    * traits
    */
-  traits?:Array<any>
+  traits?: Array<any>
 
   /**
    * resultCount
    */
-  resultCount?:FunctionMethodReturnType
+  resultCount?: FunctionMethodReturnType.FunctionMethodReturnType
 
   /**
    * implType
    */
-  implType:FunctionMethodImplType
+  implType: FunctionMethodImplType.FunctionMethodImplType
 
 }

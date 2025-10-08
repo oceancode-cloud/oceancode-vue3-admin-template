@@ -6,31 +6,31 @@ export interface AppPackageRequest {
   /**
    * traits
    */
-  traits?:Array<any>
+  traits?: Array<any>
 
   /**
    * 名称
    */
-  name:string
+  name: string
 
   /**
    * 包名
    */
-  packageName:string
+  packageName: string
 
   /**
    * group
    */
-  group:string
+  group: string
 
   /**
    * 模板ID
    */
-  templateId:string
+  templateId: string
 
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
 }

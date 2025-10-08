@@ -6,26 +6,26 @@ export interface FunctionMethodResAggOption {
   /**
    * fields
    */
-  fields?:Array<any>
+  fields?: Array<any>
 
   /**
    * functionId
    */
-  functionId:string
+  functionId: string
 
   /**
    * modelId
    */
-  modelId:string
+  modelId: string
 
   /**
    * inputs
    */
-  inputs?:Array<any>
+  inputs?: Array<any>
 
   /**
    * field
    */
-  field:string
+  field: string
 
 }

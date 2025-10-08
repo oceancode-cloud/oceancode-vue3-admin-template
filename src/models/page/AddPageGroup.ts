@@ -1,26 +1,27 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
+import { PageGroupType } from '@/models/page/PageGroupType';
 
 export interface AddPageGroup {
   /**
    * 名称
    */
-  name:string
+  name: string
 
   /**
    * type
    */
-  type?:PageGroupType
+  type?: PageGroupType.PageGroupType
 
   /**
    * code
    */
-  code:string
+  code: string
 
   /**
    * parentId
    */
-  parentId?:string
+  parentId?: string
 
 }

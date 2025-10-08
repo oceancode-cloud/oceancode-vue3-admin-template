@@ -6,11 +6,11 @@ export interface UpdateAccountUsed {
   /**
    * 自增主键
    */
-  id:string
+  id: string
 
   /**
    * 是否使用
    */
-  used:boolean
+  used: boolean
 
 }

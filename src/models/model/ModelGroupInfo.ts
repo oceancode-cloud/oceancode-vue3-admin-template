@@ -6,21 +6,21 @@ export interface ModelGroupInfo {
   /**
    * code
    */
-  code:string
+  code: string
 
   /**
    * parentId
    */
-  parentId?:string
+  parentId?: string
 
   /**
    * 自增主键
    */
-  id:string
+  id: string
 
   /**
    * 名称
    */
-  name:string
+  name: string
 
 }

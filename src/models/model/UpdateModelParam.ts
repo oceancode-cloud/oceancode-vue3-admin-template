@@ -6,31 +6,31 @@ export interface UpdateModelParam {
   /**
    * 自增主键
    */
-  id:string
+  id: string
 
   /**
    * 名称
    */
-  name:string
+  name: string
 
   /**
    * modelId
    */
-  modelId:string
+  modelId: string
 
   /**
    * parentId
    */
-  parentId?:string
+  parentId?: string
 
   /**
    * 描述
    */
-  description?:string
+  description?: string
 
   /**
    * traits
    */
-  traits?:Array<any>
+  traits?: Array<any>
 
 }
