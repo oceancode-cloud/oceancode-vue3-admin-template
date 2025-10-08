@@ -136,9 +136,9 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { AppList } from '@/meta/pages/app/index';
 import { useRouter } from '@oceancode/ocean-wui';
 import { listUserWorkspace } from '@/api/workspace/WorkspaceFunction';
+import { AppList } from 'ocean-admin-api/meta/pages/app/index';
 import AddForm from './workspace-list/AddForm.vue';
 
 const router = useRouter();

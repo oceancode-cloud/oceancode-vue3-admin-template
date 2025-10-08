@@ -85,8 +85,8 @@ import { userResetPassword } from '@/api/user/UserFunction';
 import { RestPasswordParam } from 'ocean-admin-api/models/user/RestPasswordParam';
 import { h, defineProps } from 'vue';
 import { useForm, OCaptchaInput, OPasswordInput, useRouter } from '@oceancode/ocean-wui';
-import { UserLogin } from '@/meta/pages/user/index';
 import { updateEmailResetPassword } from '@/api/common/CommonFunction';
+import { UserLogin } from 'ocean-admin-api/meta/pages/user/index';
 
 const props = defineProps({
   value: {

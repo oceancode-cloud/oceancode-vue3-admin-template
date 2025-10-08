@@ -85,8 +85,8 @@ import { userRegister } from '@/api/user/UserFunction';
 import { UserRegisterRequest } from 'ocean-admin-api/models/user/UserRegisterRequest';
 import { h } from 'vue';
 import { useForm, OCaptchaInput, OPasswordInput, useRouter } from '@oceancode/ocean-wui';
-import { UserLogin } from '@/meta/pages/user/index';
 import { sendUserRegisterEmailCode } from '@/api/common/CommonFunction';
+import { UserLogin } from 'ocean-admin-api/meta/pages/user/index';
 
 const router = useRouter();
 const Form = useForm({

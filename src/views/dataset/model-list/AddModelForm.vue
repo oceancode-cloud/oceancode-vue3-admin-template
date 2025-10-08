@@ -18,9 +18,9 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ModelEnumType } from 'ocean-admin-api/models/model/ModelEnumType';
 import { AddModel } from 'ocean-admin-api/models/model/AddModel';
 import { ModelType } from 'ocean-admin-api/models/model/ModelType';
+import { ModelEnumType } from 'ocean-admin-api/models/model/ModelEnumType';
 import { h, defineProps } from 'vue';
 import { addModel } from '@/api/model/ModelFunction';
 import { useForm } from '@oceancode/ocean-wui';
