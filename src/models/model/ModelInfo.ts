@@ -3,7 +3,7 @@
  */
 import { ModelFieldInfo } from '@/models/model/ModelFieldInfo';
 import { ModelEnumType } from '@/models/model/ModelEnumType';
-import { ModelType } from '@/models/model/ModelType';
+import { ModelType } from 'common-api/models/model/ModelType';
 
 export interface ModelInfo {
   /**

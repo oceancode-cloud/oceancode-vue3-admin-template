@@ -20,7 +20,7 @@
 <script lang="ts" setup>
 import { ModelEnumType } from '@/models/model/ModelEnumType';
 import { AddModel } from '@/models/model/AddModel';
-import { ModelType } from '@/models/model/ModelType';
+import { ModelType } from 'common-api/models/model/ModelType';
 import { h, defineProps } from 'vue';
 import { addModel } from '@/api/model/ModelFunction';
 import { useForm } from '@oceancode/ocean-wui';
