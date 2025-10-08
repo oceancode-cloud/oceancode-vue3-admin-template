@@ -131,12 +131,12 @@
 import UpdateGroupForm from './function-list/UpdateGroupForm.vue';
 import AddFunctionPackageForm from './function-list/AddFunctionPackageForm.vue';
 import UpdateFunctionPackage from './function-list/UpdateFunctionPackage.vue';
+import { listFunctionGroups, listFunctionPackages, deleteFunctionPackageById } from 'ocean-admin-api/api/function/MethodFunction';
 import { useDataTable, formatDateTime, useRouter } from '@oceancode/ocean-wui';
 import { FunctionMethodManager } from 'ocean-admin-api/meta/pages/dataset/index';
 import { loadContextMenu } from './function-list/ContextMenu';
 import { isEmpty } from '@/utils';
 import AddGroupForm from './function-list/AddGroupForm.vue';
-import { listFunctionGroups, listFunctionPackages, deleteFunctionPackageById } from '@/api/function/MethodFunction';
 
 const router = useRouter();
 const Table1725369927476 = useDataTable({

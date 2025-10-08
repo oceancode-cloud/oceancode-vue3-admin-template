@@ -18,8 +18,8 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { updateAppPackageById } from '@/api/app/AppFunction';
 import { UpdateAppPackageRequest } from 'ocean-admin-api/models/app/UpdateAppPackageRequest';
+import { updateAppPackageById } from 'ocean-admin-api/api/app/AppFunction';
 import { defineProps } from 'vue';
 import { useForm } from '@oceancode/ocean-wui';
 

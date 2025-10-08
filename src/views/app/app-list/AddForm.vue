@@ -19,7 +19,7 @@
 </template>
 <script lang="ts" setup>
 import { AppPackageRequest } from 'ocean-admin-api/models/app/AppPackageRequest';
-import { listAllTemplateOptions, addAppPackage } from '@/api/app/AppFunction';
+import { listAllTemplateOptions, addAppPackage } from 'ocean-admin-api/api/app/AppFunction';
 import { defineProps } from 'vue';
 import { useForm } from '@oceancode/ocean-wui';
 

@@ -18,9 +18,9 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { addWorkspace } from 'ocean-admin-api/api/workspace/WorkspaceFunction';
 import { useForm } from '@oceancode/ocean-wui';
 import { AddProject } from 'ocean-admin-api/models/project/AddProject';
-import { addWorkspace } from '@/api/workspace/WorkspaceFunction';
 
 const Form = useForm({
   props:{

@@ -1,7 +1,7 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
-import { deleteMenuGroupById } from '@/api/menu/AppMenuFunction';
+import { deleteMenuGroupById } from 'ocean-admin-api/api/menu/AppMenuFunction';
 
 export function loadContextMenu(param: any) {
   return [

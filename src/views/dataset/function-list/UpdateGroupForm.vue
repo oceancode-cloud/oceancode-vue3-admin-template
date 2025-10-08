@@ -21,7 +21,7 @@
 import { UpdateFunctionGroup } from 'ocean-admin-api/models/function/UpdateFunctionGroup';
 import { defineProps } from 'vue';
 import { useForm } from '@oceancode/ocean-wui';
-import { updateFunctionGroupById } from '@/api/function/MethodFunction';
+import { updateFunctionGroupById } from 'ocean-admin-api/api/function/MethodFunction';
 
 const props = defineProps({
   value: {

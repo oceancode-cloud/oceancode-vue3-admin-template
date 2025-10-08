@@ -85,7 +85,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { listAccounts, updateAccountUsedById, deleteAccountById } from '@/api/account/AccountFunction';
+import { listAccounts, updateAccountUsedById, deleteAccountById } from 'ocean-admin-api/api/account/AccountFunction';
 import { AccountType } from 'ocean-admin-api/models/account/AccountType';
 import { useDataTable, formatDateTime } from '@oceancode/ocean-wui';
 import { AddAccount, UpdateAccount } from '@/components';

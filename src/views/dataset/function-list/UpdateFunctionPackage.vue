@@ -20,7 +20,7 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue';
 import { useForm } from '@oceancode/ocean-wui';
-import { updateFunctionPackageById } from '@/api/function/MethodFunction';
+import { updateFunctionPackageById } from 'ocean-admin-api/api/function/MethodFunction';
 import { UpdateFunctionPackage } from 'ocean-admin-api/models/function/UpdateFunctionPackage';
 
 const props = defineProps({

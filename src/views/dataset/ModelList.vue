@@ -119,7 +119,7 @@
 import AddGroupForm from './model-list/AddGroupForm.vue';
 import { ModelType } from 'ocean-admin-api/models/model/ModelType';
 import AddModelForm from './model-list/AddModelForm.vue';
-import { listModelGroupsById, listModelsGroup } from '@/api/model/ModelFunction';
+import { listModelGroupsById, listModelsGroup } from 'ocean-admin-api/api/model/ModelFunction';
 import { useDataTable } from '@oceancode/ocean-wui';
 import UpdateGroupForm from './model-list/UpdateGroupForm.vue';
 import { isEmpty } from '@/utils';

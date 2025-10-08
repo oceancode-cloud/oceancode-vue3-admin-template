@@ -87,11 +87,11 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { listDatasources, deleteDatasourceById } from 'ocean-admin-api/api/datasource/DatasourceFunction';
 import { useDataTable } from '@oceancode/ocean-wui';
 import UpdateForm from './datasource-list/UpdateForm.vue';
 import { DatasourceType } from 'ocean-admin-api/models/datasource/DatasourceType';
 import AddForm from './datasource-list/AddForm.vue';
-import { listDatasources, deleteDatasourceById } from '@/api/datasource/DatasourceFunction';
 
 const Table1725369451273 = useDataTable({
   columns: [

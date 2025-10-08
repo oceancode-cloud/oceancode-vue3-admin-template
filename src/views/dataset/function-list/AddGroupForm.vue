@@ -20,8 +20,8 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue';
 import { useForm } from '@oceancode/ocean-wui';
+import { addFunctionGroup } from 'ocean-admin-api/api/function/MethodFunction';
 import { AddFunctionGroup } from 'ocean-admin-api/models/function/AddFunctionGroup';
-import { addFunctionGroup } from '@/api/function/MethodFunction';
 
 const props = defineProps({
   value: {

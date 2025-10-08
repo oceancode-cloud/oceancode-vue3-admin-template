@@ -18,9 +18,9 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { updateMenuGroupById } from '@/api/menu/AppMenuFunction';
 import { UpdateAppMenuGroup } from 'ocean-admin-api/models/menu/UpdateAppMenuGroup';
 import { defineProps } from 'vue';
+import { updateMenuGroupById } from 'ocean-admin-api/api/menu/AppMenuFunction';
 import { useForm } from '@oceancode/ocean-wui';
 
 const props = defineProps({

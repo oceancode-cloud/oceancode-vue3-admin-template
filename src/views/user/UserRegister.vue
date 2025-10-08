@@ -81,11 +81,11 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { userRegister } from '@/api/user/UserFunction';
+import { userRegister } from 'ocean-admin-api/api/user/UserFunction';
 import { UserRegisterRequest } from 'ocean-admin-api/models/user/UserRegisterRequest';
 import { h } from 'vue';
 import { useForm, OCaptchaInput, OPasswordInput, useRouter } from '@oceancode/ocean-wui';
-import { sendUserRegisterEmailCode } from '@/api/common/CommonFunction';
+import { sendUserRegisterEmailCode } from 'ocean-admin-api/api/common/CommonFunction';
 import { UserLogin } from 'ocean-admin-api/meta/pages/user/index';
 
 const router = useRouter();

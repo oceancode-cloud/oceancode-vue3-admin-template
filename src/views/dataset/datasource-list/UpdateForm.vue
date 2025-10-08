@@ -18,12 +18,12 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { listAccountOption } from '@/api/account/AccountFunction';
+import { listAccountOption } from 'ocean-admin-api/api/account/AccountFunction';
 import { UpdateDatasource } from 'ocean-admin-api/models/datasource/UpdateDatasource';
+import { updateDatasourceById } from 'ocean-admin-api/api/datasource/DatasourceFunction';
 import { defineProps } from 'vue';
 import { useForm, useRouter } from '@oceancode/ocean-wui';
 import { AccountList } from 'ocean-admin-api/meta/pages/app/index';
-import { updateDatasourceById } from '@/api/datasource/DatasourceFunction';
 
 const props = defineProps({
   value: {

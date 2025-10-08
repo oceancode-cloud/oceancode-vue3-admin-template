@@ -21,10 +21,10 @@
 import { AddModel } from 'ocean-admin-api/models/model/AddModel';
 import { ModelType } from 'ocean-admin-api/models/model/ModelType';
 import { ModelEnumType } from 'ocean-admin-api/models/model/ModelEnumType';
+import { addModel } from 'ocean-admin-api/api/model/ModelFunction';
+import { listDatasources } from 'ocean-admin-api/api/datasource/DatasourceFunction';
 import { h, defineProps } from 'vue';
-import { addModel } from '@/api/model/ModelFunction';
 import { useForm } from '@oceancode/ocean-wui';
-import { listDatasources } from '@/api/datasource/DatasourceFunction';
 import { ModelSelect } from '@/components';
 
 const props = defineProps({

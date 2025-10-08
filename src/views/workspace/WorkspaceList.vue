@@ -136,8 +136,8 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { listUserWorkspace } from 'ocean-admin-api/api/workspace/WorkspaceFunction';
 import { useRouter } from '@oceancode/ocean-wui';
-import { listUserWorkspace } from '@/api/workspace/WorkspaceFunction';
 import { AppList } from 'ocean-admin-api/meta/pages/app/index';
 import AddForm from './workspace-list/AddForm.vue';
 

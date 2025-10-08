@@ -19,7 +19,7 @@
 </template>
 <script lang="ts" setup>
 import { AddAppMenuGroup } from 'ocean-admin-api/models/menu/AddAppMenuGroup';
-import { addMenuGroup } from '@/api/menu/AppMenuFunction';
+import { addMenuGroup } from 'ocean-admin-api/api/menu/AppMenuFunction';
 import { useForm } from '@oceancode/ocean-wui';
 
 const Form = useForm({

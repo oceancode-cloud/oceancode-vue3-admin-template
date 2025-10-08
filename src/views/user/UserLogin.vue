@@ -132,7 +132,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { userLogin } from '@/api/user/UserFunction';
+import { userLogin } from 'ocean-admin-api/api/user/UserFunction';
 import { WorkspaceList } from 'ocean-admin-api/meta/pages/workspace/index';
 import { h } from 'vue';
 import { useForm, OUsernameInput, OPasswordInput, useUser, useRouter } from '@oceancode/ocean-wui';

@@ -21,7 +21,7 @@
 import { AddFunctionPackage } from 'ocean-admin-api/models/function/AddFunctionPackage';
 import { defineProps } from 'vue';
 import { useForm } from '@oceancode/ocean-wui';
-import { addFunctionPackage } from '@/api/function/MethodFunction';
+import { addFunctionPackage } from 'ocean-admin-api/api/function/MethodFunction';
 
 const props = defineProps({
   value: {

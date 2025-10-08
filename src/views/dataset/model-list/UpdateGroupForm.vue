@@ -19,7 +19,7 @@
 </template>
 <script lang="ts" setup>
 import { UpdateModelGroup } from 'ocean-admin-api/models/model/UpdateModelGroup';
-import { updateModelGroupById } from '@/api/model/ModelFunction';
+import { updateModelGroupById } from 'ocean-admin-api/api/model/ModelFunction';
 import { defineProps } from 'vue';
 import { useForm } from '@oceancode/ocean-wui';
 
