@@ -1,9 +1,13 @@
 export * from './validator'
 export * from './router'
 export * from './event'
-import { uniqueId } from "lodash";
+import { isEmpty, uniqueId } from "lodash";
 export * from './validator';
 export * from './router';
 export * from './event';
+export * from './uuid';
 
-export const uuid = uniqueId
+export {
+  isEmpty,
+  uniqueId
+}
