@@ -72,6 +72,7 @@
           height: '40px',
         }"
       >
+      modelType: {{ ModelType.ModelType.ENTITY }} == {{ModelType.ModelType.RESPONSE_MODEL}}
         <o-submit-button
           type="primary"
           size="large"
@@ -132,15 +133,19 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { userLogin } from '@/api/user/UserFunction';
 import { UserLoginRequest } from '@/models/user/UserLoginRequest';
 import { WorkspaceList } from '@/meta/pages/workspace/index';
-import { h } from 'vue';
+import { h, onMounted } from 'vue';
 import { useForm, OUsernameInput, OPasswordInput, useUser, useRouter } from '@oceancode/ocean-wui';
 import { UserRegister, ResetPassword } from '@/meta/pages/user/index';
+import { ModelType } from 'ocean-admin-api/models/model/ModelType';
+import { userLogin222 } from 'ocean-admin-api/api/user/UserTest';
 
 const user = useUser();
 const router = useRouter();
+onMounted(()=>{
+  console.log("ModelType.ModelType.ENTITY",ModelType)
+})
 const Form = useForm({
   props:{
     labelPlacement: "left",
@@ -184,7 +189,7 @@ const Form = useForm({
   ],
   on: {
     submit(param: UserLoginRequest, option: any): any | void {
-      const res = userLogin(param);
+      const res = userLogin222(param);
       res.then(async (data) => {
         user.setLoginResponse(data);
         await user.refreshPermission();
