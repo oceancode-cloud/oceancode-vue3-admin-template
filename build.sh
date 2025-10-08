@@ -8,6 +8,9 @@ if [ -d $output_path ]; then
   rm -rf $output_path
 fi
 mkdir $output_path
+if [ -f $WORKDIR/build_lib.sh ]; then
+  sh $WORKDIR/build_lib.sh
+fi
 pnpm i
 pnpm build
 web_home=""
