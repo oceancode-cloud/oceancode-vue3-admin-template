@@ -1,14 +1,14 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
-import { AccountInfo } from '@/models/account/AccountInfo';
-import { UpdateAccount } from '@/models/account/UpdateAccount';
+import { AccountInfo } from 'ocean-admin-api/models/account/AccountInfo';
 import { accounts } from '@/api/method';
+import { AccountType } from 'ocean-admin-api/models/account/AccountType';
 import { ResultData, apiResponseWrapper, deepTree, useRouter } from '@oceancode/ocean-wui';
-import { AccountType } from '@/models/account/AccountType';
+import { UpdateAccount } from 'ocean-admin-api/models/account/UpdateAccount';
+import { UpdateAccountUsed } from 'ocean-admin-api/models/account/UpdateAccountUsed';
 import { queryWithDsl as queryWithDsl_, request_, API_PREFIX_ } from '@/api/config';
-import { UpdateAccountUsed } from '@/models/account/UpdateAccountUsed';
-import { AddAccount } from '@/models/account/AddAccount';
+import { AddAccount } from 'ocean-admin-api/models/account/AddAccount';
 
 export function listAccounts(AccountType): Promise<ResultData<AccountInfo[]>> {
   return queryWithDsl_<any>({

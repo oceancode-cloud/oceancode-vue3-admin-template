@@ -1,15 +1,15 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
-import { UpsertFunctionCode } from '@/models/function/UpsertFunctionCode';
-import { ParseCodeResponse } from '@/models/function/ParseCodeResponse';
-import { AddFunctionGroup } from '@/models/function/AddFunctionGroup';
-import { UpdateFunctionPackage } from '@/models/function/UpdateFunctionPackage';
+import { AddFunctionMethod } from 'ocean-admin-api/models/function/AddFunctionMethod';
+import { AddFunctionPackage } from 'ocean-admin-api/models/function/AddFunctionPackage';
+import { AddFunctionGroup } from 'ocean-admin-api/models/function/AddFunctionGroup';
+import { UpsertFunctionCode } from 'ocean-admin-api/models/function/UpsertFunctionCode';
 import { queryWithDsl as queryWithDsl_, request_, API_PREFIX_ } from '@/api/config';
-import { CodeInfo } from '@/models/app/CodeInfo';
-import { QueryFunctionPackage } from '@/models/function/QueryFunctionPackage';
-import { FunctionGroupInfo } from '@/models/function/FunctionGroupInfo';
-import { AddFunctionMethod } from '@/models/function/AddFunctionMethod';
+import { CodeInfo } from 'ocean-admin-api/models/app/CodeInfo';
+import { ParseCodeResponse } from 'ocean-admin-api/models/function/ParseCodeResponse';
+import { FunctionPackageInfo } from 'ocean-admin-api/models/function/FunctionPackageInfo';
+import { UpdateFunctionMethodConfig } from 'ocean-admin-api/models/function/UpdateFunctionMethodConfig';
 import { functionGroups,
 functionPackages,
 functionMethod,
@@ -17,15 +17,15 @@ functionMethods,
 methodFunctionPackage,
 functionCode,
 codeParse } from '@/api/method';
+import { UpdateFunctionGroup } from 'ocean-admin-api/models/function/UpdateFunctionGroup';
+import { QueryFunctionCode } from 'ocean-admin-api/models/function/QueryFunctionCode';
+import { UpdateFunctionMethod } from 'ocean-admin-api/models/function/UpdateFunctionMethod';
 import { ResultData, apiResponseWrapper, deepTree, useRouter } from '@oceancode/ocean-wui';
-import { FunctionPackageInfo } from '@/models/function/FunctionPackageInfo';
-import { FunctionMethodInfo } from '@/models/function/FunctionMethodInfo';
-import { UpdateFunctionMethodConfig } from '@/models/function/UpdateFunctionMethodConfig';
-import { ParseCode } from '@/models/function/ParseCode';
-import { UpdateFunctionMethod } from '@/models/function/UpdateFunctionMethod';
-import { AddFunctionPackage } from '@/models/function/AddFunctionPackage';
-import { UpdateFunctionGroup } from '@/models/function/UpdateFunctionGroup';
-import { QueryFunctionCode } from '@/models/function/QueryFunctionCode';
+import { QueryFunctionPackage } from 'ocean-admin-api/models/function/QueryFunctionPackage';
+import { ParseCode } from 'ocean-admin-api/models/function/ParseCode';
+import { FunctionGroupInfo } from 'ocean-admin-api/models/function/FunctionGroupInfo';
+import { UpdateFunctionPackage } from 'ocean-admin-api/models/function/UpdateFunctionPackage';
+import { FunctionMethodInfo } from 'ocean-admin-api/models/function/FunctionMethodInfo';
 
 export function addFunctionGroup(AddFunctionGroup): Promise<void> {
   return apiResponseWrapper(request_.post(API_PREFIX_ + '/function/group', param))

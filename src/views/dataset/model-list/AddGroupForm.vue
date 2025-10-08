@@ -19,9 +19,9 @@
 </template>
 <script lang="ts" setup>
 import { addModelGroup } from '@/api/model/ModelFunction';
+import { AddModelGroup } from 'ocean-admin-api/models/model/AddModelGroup';
 import { defineProps } from 'vue';
 import { useForm } from '@oceancode/ocean-wui';
-import { AddModelGroup } from '@/models/model/AddModelGroup';
 
 const props = defineProps({
   value: {

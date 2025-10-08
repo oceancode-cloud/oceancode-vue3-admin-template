@@ -1,15 +1,15 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
-import { AppMenuGroupInfo } from '@/models/menu/AppMenuGroupInfo';
-import { AddMenu } from '@/models/menu/AddMenu';
-import { AddAppMenuGroup } from '@/models/menu/AddAppMenuGroup';
+import { AddMenu } from 'ocean-admin-api/models/menu/AddMenu';
+import { AddAppMenuGroup } from 'ocean-admin-api/models/menu/AddAppMenuGroup';
+import { UpdateAppMenuGroup } from 'ocean-admin-api/models/menu/UpdateAppMenuGroup';
+import { UpdateMenuVisible } from 'ocean-admin-api/models/menu/UpdateMenuVisible';
 import { menuGroups, menusGroup, groupMenus } from '@/api/method';
-import { UpdateAppMenu } from '@/models/menu/UpdateAppMenu';
-import { UpdateAppMenuGroup } from '@/models/menu/UpdateAppMenuGroup';
-import { UpdateMenuVisible } from '@/models/menu/UpdateMenuVisible';
+import { MenuInfo } from 'ocean-admin-api/models/menu/MenuInfo';
+import { UpdateAppMenu } from 'ocean-admin-api/models/menu/UpdateAppMenu';
 import { ResultData, apiResponseWrapper, deepTree, useRouter } from '@oceancode/ocean-wui';
-import { MenuInfo } from '@/models/menu/MenuInfo';
+import { AppMenuGroupInfo } from 'ocean-admin-api/models/menu/AppMenuGroupInfo';
 import { queryWithDsl as queryWithDsl_, request_, API_PREFIX_ } from '@/api/config';
 
 export function addMenuGroup(AddAppMenuGroup): Promise<void> {

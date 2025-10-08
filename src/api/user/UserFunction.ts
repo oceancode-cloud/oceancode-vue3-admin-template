@@ -1,14 +1,14 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
-import { UserSessionInfo } from '@/models/user/UserSessionInfo';
-import { UserLoginRequest } from '@/models/user/UserLoginRequest';
-import { UserLoginResponse } from '@/models/user/UserLoginResponse';
+import { UserSessionInfo } from 'ocean-admin-api/models/user/UserSessionInfo';
+import { UserRegisterRequest } from 'ocean-admin-api/models/user/UserRegisterRequest';
+import { RestPasswordParam } from 'ocean-admin-api/models/user/RestPasswordParam';
 import { userSessionInfo } from '@/api/method';
-import { UserRegisterRequest } from '@/models/user/UserRegisterRequest';
 import { ResultData, apiResponseWrapper, deepTree, useRouter } from '@oceancode/ocean-wui';
+import { UserLoginRequest } from 'ocean-admin-api/models/user/UserLoginRequest';
+import { UserLoginResponse } from 'ocean-admin-api/models/user/UserLoginResponse';
 import { queryWithDsl as queryWithDsl_, request_, API_PREFIX_ } from '@/api/config';
-import { RestPasswordParam } from '@/models/user/RestPasswordParam';
 
 export function userLogin(UserLoginRequest): Promise<ResultData<UserLoginResponse>> {
   return apiResponseWrapper(request_.post(API_PREFIX_ + '/user/login', param))

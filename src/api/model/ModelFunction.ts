@@ -1,18 +1,18 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
-import { ModelInfo } from '@/models/model/ModelInfo';
-import { AddModel } from '@/models/model/AddModel';
+import { UpdateModelGroup } from 'ocean-admin-api/models/model/UpdateModelGroup';
+import { AddModel } from 'ocean-admin-api/models/model/AddModel';
+import { QueryModel } from 'ocean-admin-api/models/model/QueryModel';
 import { modelsGroup, model, modelGroupPath, modelGroups } from '@/api/method';
-import { UpdateModelParam } from '@/models/model/UpdateModelParam';
+import { ModelGroupInfo } from 'ocean-admin-api/models/model/ModelGroupInfo';
+import { AddModelGroup } from 'ocean-admin-api/models/model/AddModelGroup';
 import { ResultData, apiResponseWrapper, deepTree, useRouter } from '@oceancode/ocean-wui';
-import { QueryModel } from '@/models/model/QueryModel';
+import { UpdateModelParam } from 'ocean-admin-api/models/model/UpdateModelParam';
+import { ModelInfo } from 'ocean-admin-api/models/model/ModelInfo';
 import { queryWithDsl as queryWithDsl_, request_, API_PREFIX_ } from '@/api/config';
-import { UpdateModelGroup } from '@/models/model/UpdateModelGroup';
-import { AddCrudModelParam } from '@/models/model/AddCrudModelParam';
-import { ModelGroupInfo } from '@/models/model/ModelGroupInfo';
-import { AddModelGroup } from '@/models/model/AddModelGroup';
-import { UpsertModelField } from '@/models/model/UpsertModelField';
+import { UpsertModelField } from 'ocean-admin-api/models/model/UpsertModelField';
+import { AddCrudModelParam } from 'ocean-admin-api/models/model/AddCrudModelParam';
 
 export function addModelGroup(AddModelGroup): Promise<void> {
   return apiResponseWrapper(request_.post(API_PREFIX_ + '/model/group', param))

@@ -117,9 +117,9 @@
 </template>
 <script lang="ts" setup>
 import AddGroupForm from './model-list/AddGroupForm.vue';
+import { ModelType } from 'ocean-admin-api/models/model/ModelType';
 import AddModelForm from './model-list/AddModelForm.vue';
 import { listModelGroupsById, listModelsGroup } from '@/api/model/ModelFunction';
-import { ModelType } from 'ocean-admin-api/models/model/ModelType';
 import { useDataTable } from '@oceancode/ocean-wui';
 import UpdateGroupForm from './model-list/UpdateGroupForm.vue';
 import { isEmpty } from '@/utils';

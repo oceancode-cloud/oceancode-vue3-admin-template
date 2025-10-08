@@ -1,12 +1,12 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
-import { AddProject } from '@/models/project/AddProject';
+import { UpdateProject } from 'ocean-admin-api/models/project/UpdateProject';
 import { workspace, userWorkspace } from '@/api/method';
+import { ProjectInfo } from 'ocean-admin-api/models/project/ProjectInfo';
 import { ResultData, apiResponseWrapper, deepTree, useRouter } from '@oceancode/ocean-wui';
-import { ProjectInfo } from '@/models/project/ProjectInfo';
+import { AddProject } from 'ocean-admin-api/models/project/AddProject';
 import { queryWithDsl as queryWithDsl_, request_, API_PREFIX_ } from '@/api/config';
-import { UpdateProject } from '@/models/project/UpdateProject';
 
 export function addWorkspace(AddProject): Promise<void> {
   return apiResponseWrapper(request_.post(API_PREFIX_ + '/workspace', param))

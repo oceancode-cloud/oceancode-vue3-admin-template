@@ -18,9 +18,9 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { AddFunctionGroup } from '@/models/function/AddFunctionGroup';
 import { defineProps } from 'vue';
 import { useForm } from '@oceancode/ocean-wui';
+import { AddFunctionGroup } from 'ocean-admin-api/models/function/AddFunctionGroup';
 import { addFunctionGroup } from '@/api/function/MethodFunction';
 
 const props = defineProps({

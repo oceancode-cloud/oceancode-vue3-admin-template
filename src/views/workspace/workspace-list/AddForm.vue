@@ -18,8 +18,8 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { AddProject } from '@/models/project/AddProject';
 import { useForm } from '@oceancode/ocean-wui';
+import { AddProject } from 'ocean-admin-api/models/project/AddProject';
 import { addWorkspace } from '@/api/workspace/WorkspaceFunction';
 
 const Form = useForm({

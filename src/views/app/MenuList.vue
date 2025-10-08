@@ -129,8 +129,8 @@
 </template>
 <script lang="ts" setup>
 import { loadContextMenu } from './menu-list/ContextMenu';
-import { MenuType } from '@/models/menu/MenuType';
 import { listMenuGroups, listGroupMenusById, updateMenuVisibleById, deleteMenuById } from '@/api/menu/AppMenuFunction';
+import { MenuType } from 'ocean-admin-api/models/menu/MenuType';
 import UpdateGroupForm from './menu-list/UpdateGroupForm.vue';
 import { useDataTable, formatDateTime } from '@oceancode/ocean-wui';
 import { isEmpty } from '@/utils';

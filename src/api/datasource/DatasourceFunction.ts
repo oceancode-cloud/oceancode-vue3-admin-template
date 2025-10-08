@@ -1,12 +1,12 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
-import { UpdateDatasource } from '@/models/datasource/UpdateDatasource';
+import { UpdateDatasource } from 'ocean-admin-api/models/datasource/UpdateDatasource';
+import { AddDatasource } from 'ocean-admin-api/models/datasource/AddDatasource';
 import { datasources } from '@/api/method';
-import { AddDatasource } from '@/models/datasource/AddDatasource';
 import { ResultData, apiResponseWrapper, deepTree, useRouter } from '@oceancode/ocean-wui';
-import { DatasourceDetail } from '@/models/datasource/DatasourceDetail';
 import { queryWithDsl as queryWithDsl_, request_, API_PREFIX_ } from '@/api/config';
+import { DatasourceDetail } from 'ocean-admin-api/models/datasource/DatasourceDetail';
 
 export function addDatasource(AddDatasource): Promise<void> {
   return apiResponseWrapper(request_.post(API_PREFIX_ + '/datasource', param))

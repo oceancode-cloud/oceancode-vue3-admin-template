@@ -19,8 +19,8 @@
 </template>
 <script lang="ts" setup>
 import { updateAppPackageById } from '@/api/app/AppFunction';
+import { UpdateAppPackageRequest } from 'ocean-admin-api/models/app/UpdateAppPackageRequest';
 import { defineProps } from 'vue';
-import { UpdateAppPackageRequest } from '@/models/app/UpdateAppPackageRequest';
 import { useForm } from '@oceancode/ocean-wui';
 
 const props = defineProps({

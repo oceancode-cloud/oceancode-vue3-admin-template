@@ -19,7 +19,7 @@
 </template>
 <script lang="ts" setup>
 import { listAccountOption } from '@/api/account/AccountFunction';
-import { UpdateDatasource } from '@/models/datasource/UpdateDatasource';
+import { UpdateDatasource } from 'ocean-admin-api/models/datasource/UpdateDatasource';
 import { AccountList } from '@/meta/pages/app/index';
 import { defineProps } from 'vue';
 import { useForm, useRouter } from '@oceancode/ocean-wui';

@@ -86,8 +86,8 @@
 </template>
 <script lang="ts" setup>
 import { listAccounts, updateAccountUsedById, deleteAccountById } from '@/api/account/AccountFunction';
+import { AccountType } from 'ocean-admin-api/models/account/AccountType';
 import { useDataTable, formatDateTime } from '@oceancode/ocean-wui';
-import { AccountType } from '@/models/account/AccountType';
 import { AddAccount, UpdateAccount } from '@/components';
 
 const Table1725369451273 = useDataTable({

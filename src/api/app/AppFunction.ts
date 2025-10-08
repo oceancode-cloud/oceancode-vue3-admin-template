@@ -1,15 +1,15 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
+import { AppPackageRequest } from 'ocean-admin-api/models/app/AppPackageRequest';
+import { AppTemplateInfo } from 'ocean-admin-api/models/app/AppTemplateInfo';
 import { appPackages, appPackage, code } from '@/api/method';
-import { UpdateAppPackageRequest } from '@/models/app/UpdateAppPackageRequest';
+import { UpdateAppPackageRequest } from 'ocean-admin-api/models/app/UpdateAppPackageRequest';
 import { ResultData, apiResponseWrapper, deepTree, useRouter } from '@oceancode/ocean-wui';
-import { AppPackageRequest } from '@/models/app/AppPackageRequest';
-import { AppPackageInfo } from '@/models/app/AppPackageInfo';
+import { QueryCode } from 'ocean-admin-api/models/app/QueryCode';
+import { AppPackageInfo } from 'ocean-admin-api/models/app/AppPackageInfo';
 import { queryWithDsl as queryWithDsl_, request_, API_PREFIX_ } from '@/api/config';
-import { AppTemplateInfo } from '@/models/app/AppTemplateInfo';
-import { QueryCode } from '@/models/app/QueryCode';
-import { CodeInfo } from '@/models/app/CodeInfo';
+import { CodeInfo } from 'ocean-admin-api/models/app/CodeInfo';
 
 export function addAppPackage(AppPackageRequest): Promise<void> {
   return apiResponseWrapper(request_.post(API_PREFIX_ + '/app/package', param))

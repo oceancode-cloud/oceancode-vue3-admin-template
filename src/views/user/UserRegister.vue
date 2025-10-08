@@ -82,8 +82,8 @@
 </template>
 <script lang="ts" setup>
 import { userRegister } from '@/api/user/UserFunction';
+import { UserRegisterRequest } from 'ocean-admin-api/models/user/UserRegisterRequest';
 import { h } from 'vue';
-import { UserRegisterRequest } from '@/models/user/UserRegisterRequest';
 import { useForm, OCaptchaInput, OPasswordInput, useRouter } from '@oceancode/ocean-wui';
 import { UserLogin } from '@/meta/pages/user/index';
 import { sendUserRegisterEmailCode } from '@/api/common/CommonFunction';

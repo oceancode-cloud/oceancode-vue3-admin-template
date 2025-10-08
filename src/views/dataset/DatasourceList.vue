@@ -89,7 +89,7 @@
 <script lang="ts" setup>
 import { useDataTable } from '@oceancode/ocean-wui';
 import UpdateForm from './datasource-list/UpdateForm.vue';
-import { DatasourceType } from '@/models/datasource/DatasourceType';
+import { DatasourceType } from 'ocean-admin-api/models/datasource/DatasourceType';
 import AddForm from './datasource-list/AddForm.vue';
 import { listDatasources, deleteDatasourceById } from '@/api/datasource/DatasourceFunction';
 

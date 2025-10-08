@@ -1,10 +1,10 @@
 /**
  * Copyright (C) Ocean Code Cloud. 2025-2025 .All Rights Reserved.
  */
-import { UpdatePageGroup } from '@/models/page/UpdatePageGroup';
-import { UpdatePage } from '@/models/page/UpdatePage';
-import { AddPageGroup } from '@/models/page/AddPageGroup';
-import { PageTemplateInfo } from '@/models/page/PageTemplateInfo';
+import { PageGroupInfo } from 'ocean-admin-api/models/page/PageGroupInfo';
+import { UpdatePageGroup } from 'ocean-admin-api/models/page/UpdatePageGroup';
+import { UpdatePageConfig } from 'ocean-admin-api/models/page/UpdatePageConfig';
+import { PageInfo } from 'ocean-admin-api/models/page/PageInfo';
 import { page,
 pageGroupPaths,
 pages,
@@ -12,12 +12,12 @@ pageGroups,
 pageChildren,
 pageTemplates,
 pageTemplate } from '@/api/method';
-import { PageInfo } from '@/models/page/PageInfo';
+import { PageTemplateInfo } from 'ocean-admin-api/models/page/PageTemplateInfo';
 import { ResultData, apiResponseWrapper, deepTree, useRouter } from '@oceancode/ocean-wui';
-import { AddPage } from '@/models/page/AddPage';
-import { PageGroupInfo } from '@/models/page/PageGroupInfo';
 import { queryWithDsl as queryWithDsl_, request_, API_PREFIX_ } from '@/api/config';
-import { UpdatePageConfig } from '@/models/page/UpdatePageConfig';
+import { AddPageGroup } from 'ocean-admin-api/models/page/AddPageGroup';
+import { AddPage } from 'ocean-admin-api/models/page/AddPage';
+import { UpdatePage } from 'ocean-admin-api/models/page/UpdatePage';
 
 export function addPageGroup(AddPageGroup): Promise<void> {
   return apiResponseWrapper(request_.post(API_PREFIX_ + '/page/group', param))

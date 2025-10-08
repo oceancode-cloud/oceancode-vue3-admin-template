@@ -19,7 +19,7 @@
 </template>
 <script lang="ts" setup>
 import { updateMenuGroupById } from '@/api/menu/AppMenuFunction';
-import { UpdateAppMenuGroup } from '@/models/menu/UpdateAppMenuGroup';
+import { UpdateAppMenuGroup } from 'ocean-admin-api/models/menu/UpdateAppMenuGroup';
 import { defineProps } from 'vue';
 import { useForm } from '@oceancode/ocean-wui';
 
