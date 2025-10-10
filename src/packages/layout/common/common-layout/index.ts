@@ -24,31 +24,41 @@ export function loadMenuMethod(route: any) {
       visible: true,
       children: [
         {
-          id: 20,
-          label: "应用列表",
-          key: "appList",
+          id: 34,
+          label: "开发管理",
+          key: "34",
           parentId: 19,
           visible: true,
-          router: {
-            meta: {
-              title: "应用列表",
+          children: [
+            {
+              id: 20,
+              label: "应用列表",
+              key: "appList",
+              parentId: 34,
+              visible: true,
+              router: {
+                meta: {
+                  title: "应用列表",
+                },
+                name: "appList",
+              },
+              show: () => checkRouterParams(route, ['projectId']),
             },
-            name: "appList",
-          },
+            {
+              id: 21,
+              label: "菜单列表",
+              key: "menuList",
+              parentId: 34,
+              visible: true,
+              router: {
+                meta: {
+                  title: "菜单列表",
+                },
+                name: "menuList",
+              },
+            },
+          ],
           show: () => checkRouterParams(route, ['projectId']),
-        },
-        {
-          id: 21,
-          label: "菜单列表",
-          key: "menuList",
-          parentId: 19,
-          visible: true,
-          router: {
-            meta: {
-              title: "菜单列表",
-            },
-            name: "menuList",
-          },
         },
       ],
       show: () => checkRouterParams(route, ['projectId']),
