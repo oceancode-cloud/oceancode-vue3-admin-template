@@ -148,7 +148,7 @@ const Table1725369451273 = useDataTable({
   ],
   on: {
     load(param: any) {
-      return listAccounts({ MYSQL: param.MYSQL, H2: param.H2, TOKEN: param.TOKEN });
+      return listAccounts();
     }
   },
 });

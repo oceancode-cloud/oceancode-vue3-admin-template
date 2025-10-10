@@ -83,17 +83,10 @@
 <script lang="ts" setup>
 import { userResetPassword } from '@common-api/api/user/UserFunction';
 import { RestPasswordParam } from '@common-api/models/user/RestPasswordParam';
-import { h, defineProps } from 'vue';
+import { h } from 'vue';
 import { useForm, OCaptchaInput, OPasswordInput, useRouter } from '@oceancode/ocean-wui';
 import { updateEmailResetPassword } from '@common-api/api/common/CommonFunction';
 import { UserLogin } from '@common-api/meta/pages/user/index';
-
-const props = defineProps({
-  value: {
-    type: Object,
-    required: true,
-  },
-});
 
 const router = useRouter();
 const Form = useForm({
@@ -101,7 +94,6 @@ const Form = useForm({
     labelPlacement: "top",
     size: "medium",
   },
-  formValue: props.value,
   items: [
     {
       label: '邮箱地址',
