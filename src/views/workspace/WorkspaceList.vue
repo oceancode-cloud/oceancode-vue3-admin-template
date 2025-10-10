@@ -77,7 +77,7 @@
                 left: '15.0px',
                 width: '413px',
                 position: 'absolute',
-                height: '24px',
+                height: '22px',
               }"
             >
               <o-text
@@ -101,7 +101,7 @@
                 left: '15.0px',
                 width: '119px',
                 position: 'absolute',
-                height: '24px',
+                height: '22px',
               }"
             >
               <o-text

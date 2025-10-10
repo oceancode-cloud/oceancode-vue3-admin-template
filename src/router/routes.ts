@@ -20,7 +20,7 @@ const routeList = [
     id: 152,
     path: '/workspace/workspace/list',
     name: 'home',
-    parentId: -2,
+    parentId: 1364,
     component: () => import('@/views/workspace/WorkspaceList.vue'),
     meta:{
       title: '工作区',
