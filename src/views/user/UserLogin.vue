@@ -54,7 +54,7 @@
           left: '68.375px',
           width: '328px',
           position: 'absolute',
-          height: '128px',
+          height: '130px',
         }"
       >
         <div
@@ -158,6 +158,7 @@ const Form = useForm({
       component: {
         props: {
           maxlength: 32,
+          showCount: true,
         },
         render(param: any): any | void {
           return h(OUsernameInput);
@@ -175,6 +176,7 @@ const Form = useForm({
       component: {
         props: {
           maxlength: 32,
+          showCount: false,
         },
         render(param: any): any | void {
           return h(OPasswordInput);
