@@ -49,9 +49,9 @@ const routeList = [
   },
   {
     id: 622,
-    path: '/:projectId/:projectId/:projectId/app/app/list',
+    path: '/:projectId/app/app/list',
     name: 'appList',
-    parentId: -2,
+    parentId: 1364,
     component: () => import('@/views/app/AppList.vue'),
     meta:{
       title: '应用列表',
