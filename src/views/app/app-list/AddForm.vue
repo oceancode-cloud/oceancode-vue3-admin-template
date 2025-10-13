@@ -20,8 +20,8 @@
 <script lang="ts" setup>
 import { AppPackageRequest } from '@common-api/models/app/AppPackageRequest';
 import { defineProps } from 'vue';
-import { useForm } from '@oceancode/ocean-wui';
-import { listAllTemplateOptions, addAppPackage } from '@common-api/api/app/AppFunction';
+import { useForm, validators, validatorArtifactId, validatorVariable } from '@oceancode/ocean-wui';
+import { listAllTemplateOptions, handleAddAppPackage } from '@common-api/api/app/AppFunction';
 
 const props = defineProps({
   value: {
@@ -56,7 +56,15 @@ const Form = useForm({
       prop: 'packageName',
       rules: {
         required: true,
-        message: '包名不能为空',
+        validator(value, param) {
+          if (!value) {
+            return new Error('包名不能为空')
+          }
+          const ret = validators(value, param, [validatorArtifactId, validatorVariable])
+          if(ret) {
+            return ret;
+          }
+        },
       },
       component: {
         props: {
@@ -98,7 +106,7 @@ const Form = useForm({
   on: {
     submit(param: AppPackageRequest, option: any): any | void {
       option = { ...props.value,...option };
-      const res = addAppPackage({ ...param, traits: option?.traits, group: option?.group });
+      const res = handleAddAppPackage({ ...param, traits: option?.traits, group: option?.group });
       res.then(async (data) => {
       });
       return res;
