@@ -20,7 +20,7 @@
 <script lang="ts" setup>
 import { AppPackageRequest } from '@common-api/models/app/AppPackageRequest';
 import { defineProps } from 'vue';
-import { useForm, validators, validatorArtifactId, validatorVariable } from '@oceancode/ocean-wui';
+import { useForm, validators, validatorArtifactId } from '@oceancode/ocean-wui';
 import { listAllTemplateOptions, handleAddAppPackage } from '@common-api/api/app/AppFunction';
 
 const props = defineProps({
@@ -60,7 +60,7 @@ const Form = useForm({
           if (!value) {
             return new Error('包名不能为空')
           }
-          const ret = validators(value, param, [validatorArtifactId, validatorVariable])
+          const ret = validators(value, param, [validatorArtifactId])
           if(ret) {
             return ret;
           }

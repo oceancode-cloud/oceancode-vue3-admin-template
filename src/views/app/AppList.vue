@@ -91,7 +91,7 @@ import { AppPackageStatus } from '@common-api/models/app/AppPackageStatus';
 import AddForm from './app-list/AddForm.vue';
 import { useDataTable, formatDateTime } from '@oceancode/ocean-wui';
 import EditForm from './app-list/EditForm.vue';
-import { listAppPackages, deleteAppPackageById, updateAppPackageBuildById } from '@common-api/api/app/AppFunction';
+import { showAppTableBuildActionItem, listAppPackages, deleteAppPackageById, handleAppPackageBuild } from '@common-api/api/app/AppFunction';
 
 const Table1725369451273 = useDataTable({
   columns: [
@@ -127,6 +127,7 @@ const Table1725369451273 = useDataTable({
       title: '操作',
       type: 'action',
       fixed:'right',
+      width: 230.3,
       actions: [
         {
           type: 'edit',
@@ -144,7 +145,10 @@ const Table1725369451273 = useDataTable({
           type: 'custom',
           text: '构建',
           onClick(param, option, ctx) {
-            return updateAppPackageBuildById(param.id)
+            return handleAppPackageBuild(param)
+          },
+          show(param) {
+            return showAppTableBuildActionItem(param);
           },
         },
       ],
