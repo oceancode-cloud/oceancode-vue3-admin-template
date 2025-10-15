@@ -19,13 +19,13 @@ export function loadMenuMethod(route: any) {
     },
     {
       id: 19,
-      label: "应用管理",
+      label: "开发管理",
       key: "19",
       visible: true,
       children: [
         {
           id: 34,
-          label: "开发管理",
+          label: "应用管理",
           key: "34",
           parentId: 19,
           visible: true,
@@ -56,6 +56,20 @@ export function loadMenuMethod(route: any) {
                 },
                 name: "menuList",
               },
+            },
+            {
+              id: 35,
+              label: "账号列表",
+              key: "accountList",
+              parentId: 34,
+              visible: true,
+              router: {
+                meta: {
+                  title: "账号列表",
+                },
+                name: "accountList",
+              },
+              show: () => checkRouterParams(route, ['projectId']),
             },
           ],
           show: () => checkRouterParams(route, ['projectId']),
