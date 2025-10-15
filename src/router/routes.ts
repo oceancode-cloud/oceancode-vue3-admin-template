@@ -61,7 +61,7 @@ const routeList = [
     id: 742,
     path: '/:projectId/app/account/list',
     name: 'accountList',
-    parentId: -2,
+    parentId: 1364,
     component: () => import('@/views/app/AccountList.vue'),
     meta:{
       title: '账号列表',
