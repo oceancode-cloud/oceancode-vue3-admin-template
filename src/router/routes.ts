@@ -109,9 +109,9 @@ const routeList = [
   },
   {
     id: 1260,
-    path: '/app/menu/list',
+    path: '/:projectId/app/menu/list',
     name: 'menuList',
-    parentId: -2,
+    parentId: 1364,
     component: () => import('@/views/app/MenuList.vue'),
     meta:{
       title: '菜单列表',

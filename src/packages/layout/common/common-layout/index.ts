@@ -56,6 +56,7 @@ export function loadMenuMethod(route: any) {
                 },
                 name: "menuList",
               },
+              show: () => checkRouterParams(route, ['projectId']),
             },
             {
               id: 35,
