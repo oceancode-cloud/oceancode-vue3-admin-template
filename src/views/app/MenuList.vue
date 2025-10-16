@@ -38,7 +38,7 @@
     >
       <o-group-tree
         title="菜单分组"
-        key-field="key"
+        key-field="id"
         label-field="name"
         :default-expand-all="true"
         :default-expanded-keys="[]"
