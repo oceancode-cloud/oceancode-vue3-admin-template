@@ -129,7 +129,12 @@
 </template>
 <script lang="ts" setup>
 import { loadContextMenu } from './menu-list/ContextMenu';
-import { listMenuGroups, listGroupMenusById, updateMenuVisibleById, deleteMenuById } from '@common-api/api/menu/AppMenuFunction';
+import { listMenuGroups,
+showAddMenuActionItem,
+showDeleteMenuActionItem,
+listGroupMenusById,
+updateMenuVisibleById,
+deleteMenuById } from '@common-api/api/menu/AppMenuFunction';
 import UpdateGroupForm from './menu-list/UpdateGroupForm.vue';
 import { useDataTable, formatDateTime } from '@oceancode/ocean-wui';
 import { isEmpty } from '@/utils';
@@ -181,6 +186,9 @@ const Table1725369927476 = useDataTable({
           type: 'add',
           text: '新增',
           action: 'add-menu',
+          show(param) {
+            return showAddMenuActionItem(param);
+          },
         },
         {
           type: 'edit',
@@ -192,6 +200,9 @@ const Table1725369927476 = useDataTable({
           text: '删除',
           onClick(param, option, ctx) {
             return deleteMenuById(param.id)
+          },
+          show(param) {
+            return showDeleteMenuActionItem(param);
           },
         },
       ],
