@@ -18,10 +18,8 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { listAccountOption } from '@common-api/api/account/AccountFunction';
 import { defineProps } from 'vue';
-import { useForm, useRouter } from '@oceancode/ocean-wui';
-import { AccountList } from '@common-api/meta/pages/app/index';
+import { useForm } from '@oceancode/ocean-wui';
 import { UpdateDatasource } from '@common-api/models/datasource/UpdateDatasource';
 import { updateDatasourceById } from '@common-api/api/datasource/DatasourceFunction';
 
@@ -32,7 +30,6 @@ const props = defineProps({
   },
 });
 
-const router = useRouter();
 const Form = useForm({
   props:{
     labelPlacement: "top",
@@ -66,27 +63,6 @@ const Form = useForm({
           maxlength: 32,
         },
         name: 'input',
-      },
-    },
-    {
-      label: '关联账号',
-      prop: 'accountId',
-       show: (param) => {
-        return showAccountFormItem(param)
-      },
-      component: {
-        props: {
-          action: {
-            text:'新建账号',
-            onClick() {
-              router.open({ name: AccountList.ROUTER_NAME});
-            }
-          },
-          labelField: "name",
-          valueField: "id",
-        },
-        options: listAccountOption,
-        name: 'select',
       },
     },
     {
