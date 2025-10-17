@@ -101,8 +101,6 @@ const Form = useForm({
     {
       label: '标识映射',
       prop: 'mappingId',
-      rules: {
-      },
       component: {
         props: {
           maxlength: 32,
@@ -129,8 +127,6 @@ const Form = useForm({
     {
       label: '父模型',
       prop: 'parentId',
-      rules: {
-      },
       component: {
         props: {
         },
@@ -147,8 +143,6 @@ const Form = useForm({
     {
       label: '标签',
       prop: 'traits',
-      rules: {
-      },
       component: {
         props: {
           labelField: "label",
@@ -160,8 +154,6 @@ const Form = useForm({
     {
       label: '描述',
       prop: 'description',
-      rules: {
-      },
       component: {
         name: 'input',
       },

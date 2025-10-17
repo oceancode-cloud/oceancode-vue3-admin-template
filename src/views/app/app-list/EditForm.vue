@@ -68,8 +68,6 @@ const Form = useForm({
     {
       label: '描述',
       prop: 'description',
-      rules: {
-      },
       component: {
         props: {
           rows: 3,

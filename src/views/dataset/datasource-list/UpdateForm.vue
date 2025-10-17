@@ -71,7 +71,8 @@ const Form = useForm({
     {
       label: '关联账号',
       prop: 'accountId',
-      rules: {
+       show: (param) => {
+        return showAccountFormItem(param)
       },
       component: {
         props: {
@@ -91,8 +92,6 @@ const Form = useForm({
     {
       label: '描述',
       prop: 'description',
-      rules: {
-      },
       component: {
         props: {
           rows: 3,

@@ -23,7 +23,7 @@ import { AddDatasource } from '@common-api/models/datasource/AddDatasource';
 import { useForm, useRouter } from '@oceancode/ocean-wui';
 import { DatasourceType } from '@common-api/models/datasource/DatasourceType';
 import { AccountList } from '@common-api/meta/pages/app/index';
-import { addDatasource } from '@common-api/api/datasource/DatasourceFunction';
+import { addDatasource, showAccountFormItem } from '@common-api/api/datasource/DatasourceFunction';
 
 const router = useRouter();
 const Form = useForm({
@@ -79,6 +79,11 @@ const Form = useForm({
       label: '关联账号',
       prop: 'accountId',
       rules: {
+        required: true,
+        message:'账号不能为空',
+      },
+       show: (param) => {
+        return showAccountFormItem(param.type)
       },
       component: {
         props: {
@@ -98,8 +103,6 @@ const Form = useForm({
     {
       label: '描述',
       prop: 'description',
-      rules: {
-      },
       component: {
         props: {
           rows: 3,
