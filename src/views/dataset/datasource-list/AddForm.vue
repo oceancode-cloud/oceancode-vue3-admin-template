@@ -84,7 +84,7 @@ const Form = useForm({
       rules: {
         required: true,
         message: '请关联账号',
-        type:'number',
+        type:'string',
       },
       component: {
         props: {
