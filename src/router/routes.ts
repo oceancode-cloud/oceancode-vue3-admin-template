@@ -71,7 +71,7 @@ const routeList = [
     id: 774,
     path: '/:projectId/dataset/datasource/list',
     name: 'datasourceList',
-    parentId: -2,
+    parentId: 1364,
     component: () => import('@/views/dataset/DatasourceList.vue'),
     meta:{
       title: '数据源列表',

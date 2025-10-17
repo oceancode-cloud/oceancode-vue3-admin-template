@@ -75,6 +75,30 @@ export function loadMenuMethod(route: any) {
           ],
           show: () => checkRouterParams(route, ['projectId']),
         },
+        {
+          id: 46,
+          label: "数据开发",
+          key: "46",
+          parentId: 19,
+          visible: true,
+          children: [
+            {
+              id: 47,
+              label: "数据源列表",
+              key: "datasourceList",
+              parentId: 46,
+              visible: true,
+              router: {
+                meta: {
+                  title: "数据源列表",
+                },
+                name: "datasourceList",
+              },
+              show: () => checkRouterParams(route, ['projectId']),
+            },
+          ],
+          show: () => checkRouterParams(route, ['projectId']),
+        },
       ],
       show: () => checkRouterParams(route, ['projectId']),
     },
