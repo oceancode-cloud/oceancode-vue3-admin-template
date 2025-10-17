@@ -1,7 +1,5 @@
-import AddMenu from './AddMenu.vue';
-import UpdateMenu from './UpdateMenu.vue';
+import AddMenu from "./AddMenu.vue";
 
-export {
-  AddMenu,
-  UpdateMenu
+export{
+  AddMenu
 }
