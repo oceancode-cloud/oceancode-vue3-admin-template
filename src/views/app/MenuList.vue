@@ -132,7 +132,7 @@ import { loadContextMenu } from './menu-list/ContextMenu';
 import { listMenuGroups,
 showAddMenuActionItem,
 showDeleteMenuActionItem,
-listGroupMenusById,
+loadGroupMenusById,
 updateMenuVisibleById,
 deleteMenuById } from '@common-api/api/menu/AppMenuFunction';
 import UpdateGroupForm from './menu-list/UpdateGroupForm.vue';
@@ -213,7 +213,7 @@ const Table1725369927476 = useDataTable({
       if (isEmpty(param)) {
         return [];
       }
-      return listGroupMenusById(param.id);
+      return loadGroupMenusById(param.id);
     }
   },
 });
