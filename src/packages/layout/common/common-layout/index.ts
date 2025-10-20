@@ -96,6 +96,20 @@ export function loadMenuMethod(route: any) {
               },
               show: () => checkRouterParams(route, ['projectId']),
             },
+            {
+              id: 49,
+              label: "模型列表",
+              key: "modelList",
+              parentId: 46,
+              visible: true,
+              router: {
+                meta: {
+                  title: "模型列表",
+                },
+                name: "modelList",
+              },
+              show: () => checkRouterParams(route, ['projectId']),
+            },
           ],
           show: () => checkRouterParams(route, ['projectId']),
         },

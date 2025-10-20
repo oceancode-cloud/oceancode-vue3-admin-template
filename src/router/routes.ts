@@ -81,7 +81,7 @@ const routeList = [
     id: 842,
     path: '/:projectId/dataset/model/list',
     name: 'modelList',
-    parentId: -2,
+    parentId: 1364,
     component: () => import('@/views/dataset/ModelList.vue'),
     meta:{
       title: '模型列表',
