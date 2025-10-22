@@ -119,11 +119,11 @@
 import AddGroupForm from './model-list/AddGroupForm.vue';
 import { ModelType } from '@common-api/models/model/ModelType';
 import AddModelForm from './model-list/AddModelForm.vue';
+import { loadContextMenu } from './model-list/ModelGroupContext';
 import { useDataTable } from '@oceancode/ocean-wui';
 import { listModelGroupsById, listModelsGroup } from '@common-api/api/model/ModelFunction';
 import UpdateGroupForm from './model-list/UpdateGroupForm.vue';
 import { isEmpty } from '@/utils';
-import { loadContextMenu } from '@/packages/components/dataset/model-list/ModelGroupContext';
 
 const Table1725369927476 = useDataTable({
   columns: [
