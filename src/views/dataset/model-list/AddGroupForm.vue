@@ -20,7 +20,7 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue';
 import { useForm } from '@oceancode/ocean-wui';
-import { addModelGroup } from '@common-api/api/model/ModelFunction';
+import { showModelGroupEnumTypeItem, addModelGroup } from '@common-api/api/model/ModelFunction';
 import { AddModelGroup } from '@common-api/models/model/AddModelGroup';
 
 const props = defineProps({
@@ -63,6 +63,22 @@ const Form = useForm({
           maxlength: 32,
         },
         name: 'input',
+      },
+    },
+    {
+      label: '值类型',
+      prop: 'enumType',
+      show: (param) => {
+        return showModelGroupEnumTypeItem(param);
+      },
+      rules: {
+        required: true,
+        message: '值类型不能为空',
+      },
+      component: {
+        props: {
+        },
+        name: 'select',
       },
     },
   ],
