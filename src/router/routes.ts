@@ -91,7 +91,7 @@ const routeList = [
     id: 1123,
     path: '/:projectId/dataset/function/list',
     name: 'functionList',
-    parentId: -2,
+    parentId: 1364,
     component: () => import('@/views/dataset/FunctionList.vue'),
     meta:{
       title: '函数开发',

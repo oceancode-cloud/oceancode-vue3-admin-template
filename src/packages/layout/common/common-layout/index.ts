@@ -110,6 +110,20 @@ export function loadMenuMethod(route: any) {
               },
               show: () => checkRouterParams(route, ['projectId']),
             },
+            {
+              id: 50,
+              label: "函数开发",
+              key: "functionList",
+              parentId: 46,
+              visible: true,
+              router: {
+                meta: {
+                  title: "函数开发",
+                },
+                name: "functionList",
+              },
+              show: () => checkRouterParams(route, ['projectId']),
+            },
           ],
           show: () => checkRouterParams(route, ['projectId']),
         },
