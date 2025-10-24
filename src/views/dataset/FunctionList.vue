@@ -39,7 +39,7 @@
       <o-group-tree
         title="函数分组"
         key-field="id"
-        label-field="label"
+        label-field="name"
         :default-expand-all="true"
         :default-expanded-keys="[]"
         :data="listFunctionGroups"
