@@ -184,7 +184,7 @@ const Table1725369927476 = useDataTable({
           type: 'custom',
           text: '管理',
           onClick(param, option, ctx) {
-            router.open({ name: FunctionMethodManager.ROUTER_NAME,  query: { packageId: param.id }});
+            router.open({ name: FunctionMethodManager.ROUTER_NAME,  params: { packageId: param.id }});
           },
         },
       ],
@@ -195,7 +195,7 @@ const Table1725369927476 = useDataTable({
       if (isEmpty(param)) {
         return [];
       }
-      return listFunctionPackages({ groupId: param?.id });
+      return listFunctionPackages({ groupId: param.id });
     }
   },
 });
