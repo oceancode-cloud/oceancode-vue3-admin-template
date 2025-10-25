@@ -113,6 +113,30 @@
         <AddPageForm :value="option" />
       </template>
     </o-drawer>
+    <o-drawer
+      title="新增页面"
+      :overflow="true"
+      :block="true"
+      :show-footer="true"
+      action="add-page-form"
+      :width="384.0"
+      >
+      <template #default="{ option }">
+        <AddPageForm :value="option" />
+      </template>
+    </o-drawer>
+    <o-drawer
+      title="编辑页面"
+      :overflow="true"
+      :block="true"
+      :show-footer="true"
+      action="update-page-form"
+      :width="384.0"
+      >
+      <template #default="{ option }">
+        <UpdatePageForm :value="option" />
+      </template>
+    </o-drawer>
   </div>
 </template>
 <script lang="ts" setup>
@@ -121,8 +145,9 @@ import AddGroupForm from './page-list/AddGroupForm.vue';
 import { useDataTable } from '@oceancode/ocean-wui';
 import UpdateGroupForm from './page-list/UpdateGroupForm.vue';
 import { isEmpty } from '@/utils';
-import { listPageGroupsTree, listPages } from '@common-api/api/page/PageFunction';
+import { listPageGroupsTree, listPages, deletePageById } from '@common-api/api/page/PageFunction';
 import { loadContextMenu } from './page-list/Contextmenu';
+import UpdatePageForm from './page-list/UpdatePageForm.vue';
 
 const Table1725369927476 = useDataTable({
   columns: [
@@ -154,15 +179,18 @@ const Table1725369927476 = useDataTable({
         {
           type: 'add',
           text: '新增',
+          action: 'add-page-form',
         },
         {
           type: 'edit',
           text: '编辑',
+          action: 'update-page-form',
         },
         {
           type: 'delete',
           text: '删除',
           onClick(param, option, ctx) {
+            return deletePageById(param.id)
           },
         },
       ],
