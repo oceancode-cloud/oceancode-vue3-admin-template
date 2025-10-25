@@ -39,7 +39,7 @@
       <o-group-tree
         title="页面分组"
         key-field="id"
-        label-field="label"
+        label-field="name"
         :default-expand-all="true"
         :default-expanded-keys="[]"
         :data="listPageGroupsTree"
@@ -120,7 +120,8 @@ import AddPageForm from './page-list/AddPageForm.vue';
 import AddGroupForm from './page-list/AddGroupForm.vue';
 import { useDataTable } from '@oceancode/ocean-wui';
 import UpdateGroupForm from './page-list/UpdateGroupForm.vue';
-import { listPageGroupsTree } from '@common-api/api/page/PageFunction';
+import { isEmpty } from '@/utils';
+import { listPageGroupsTree, listPages } from '@common-api/api/page/PageFunction';
 import { loadContextMenu } from './page-list/Contextmenu';
 
 const Table1725369927476 = useDataTable({
@@ -169,12 +170,15 @@ const Table1725369927476 = useDataTable({
   ],
   on: {
     load(param: any) {
-      return [];
+      if (isEmpty(param)) {
+        return [];
+      }
+      return listPages(param?.id);
     }
   },
 });
 async function handleItemClick1725369886925(param): Promise<void> {
-  Table1725369927476.value.refresh(param);
+  Table1725369927476.value.refresh({ ...param, id: param?.id });
 }
 
 </script>
