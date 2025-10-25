@@ -123,7 +123,7 @@ const Form = useForm({
         props: {
           maxlength: 32,
         },
-        render(param: any): any | void {
+        render(param: any): any {
           return h(OCaptchaInput, {
             requireFields: ['email'],
             seconds: 60,
@@ -144,7 +144,7 @@ const Form = useForm({
         props: {
           maxlength: 32,
         },
-        render(param: any): any | void {
+        render(param: any): any {
           return h(OPasswordInput);
         },
       },

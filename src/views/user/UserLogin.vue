@@ -160,7 +160,7 @@ const Form = useForm({
           maxlength: 32,
           showCount: true,
         },
-        render(param: any): any | void {
+        render(param: any): any {
           return h(OUsernameInput);
         },
       },
@@ -178,7 +178,7 @@ const Form = useForm({
           maxlength: 32,
           showCount: false,
         },
-        render(param: any): any | void {
+        render(param: any): any {
           return h(OPasswordInput);
         },
       },
