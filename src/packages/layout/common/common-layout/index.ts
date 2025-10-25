@@ -83,6 +83,19 @@ export function loadMenuMethod(route: any) {
           visible: true,
           children: [
             {
+              id: 51,
+              label: "函数管理",
+              key: "functionMethodManager",
+              parentId: 46,
+              router: {
+                meta: {
+                  title: "函数管理",
+                },
+                name: "functionMethodManager",
+              },
+              show: () => checkRouterParams(route, ['projectId', 'packageId']),
+            },
+            {
               id: 47,
               label: "数据源列表",
               key: "datasourceList",
