@@ -153,6 +153,16 @@ const routeList = [
     id: 1669,
     component: () => import('@/packages/layout/common/FunctionPackageLayout.vue'),
   },
+  {
+    id: 2080,
+    path: '/:projectId/page/page/list',
+    name: 'pageList',
+    parentId: 1364,
+    component: () => import('@/views/page/PageList.vue'),
+    meta:{
+      title: '页面列表',
+    },
+  },
 ]
 
 export const routes = deepTree([...commonRoutes, ...routeList]);
