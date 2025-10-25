@@ -39,7 +39,7 @@
       <o-group-tree
         title="页面分组"
         key-field="id"
-        label-field="name"
+        label-field="label"
         :default-expand-all="true"
         :default-expanded-keys="[]"
         :data="listPageGroupsTree"
