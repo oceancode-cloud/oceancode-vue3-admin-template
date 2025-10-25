@@ -36,5 +36,16 @@ export function loadContextMenu(param: any) {
         return deletePageGroupById(param?.id);
       }
     },
+    {
+      label:'新增组件',
+      key: '1761414842915_3',
+      eventType: 'open',
+      dialog: {
+        id: 'add-page-form',
+        value: {
+          groupId: param?.id,
+        },
+      },
+    },
   ]
 }
