@@ -18,15 +18,24 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { h } from 'vue';
+import { h, defineProps } from 'vue';
 import { useForm, ORender } from '@oceancode/ocean-wui';
-import { renderParentModelFormItem } from '@common-api/api/model/ModelFunction';
+import { showFormDatasourceItem, listDatasourceOptions, renderParentModelFormItem, listModelTraits, updateModelById } from '@common-api/api/model/ModelFunction';
+import { UpdateModelParam } from '@common-api/models/model/UpdateModelParam';
+
+const props = defineProps({
+  value: {
+    type: Object,
+    required: true,
+  },
+});
 
 const Form = useForm({
   props:{
     labelPlacement: "top",
     size: "medium",
   },
+  formValue: props.value,
   items: [
     {
       label: '名称',
@@ -57,6 +66,21 @@ const Form = useForm({
       },
     },
     {
+      label: '数据源',
+      prop: 'datasourceId',
+      show: (param) => {
+        return showFormDatasourceItem(param);
+      },
+      component: {
+        props: {
+          labelField: "name",
+          valueField: "datasourceId",
+        },
+        options: listDatasourceOptions,
+        name: 'select',
+      },
+    },
+    {
       label: '父模型',
       prop: 'parentId',
       component: {
@@ -72,9 +96,8 @@ const Form = useForm({
       prop: 'traits',
       component: {
         props: {
-          labelField: "label",
-          valueField: "value",
         },
+        options: listModelTraits,
         name: 'select',
       },
     },
@@ -87,7 +110,12 @@ const Form = useForm({
     },
   ],
   on: {
-    submit(param: any, option: any): any | void {
+    submit(param: UpdateModelParam, option: any): any | void {
+      option = { ...props.value,...option };
+      const res = updateModelById({...param, id:  option.id});
+      res.then(async (data) => {
+      });
+      return res;
     },
   },
 });
