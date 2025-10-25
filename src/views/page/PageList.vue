@@ -43,6 +43,9 @@
         :default-expand-all="true"
         :default-expanded-keys="[]"
         :data="listPageGroupsTree"
+        action="add-group-form"
+        :actions="['add']"
+        :on-load-contextmenu="loadContextMenu"
         :on-item-click='handleItemClick1725369886925'
       >
       </o-group-tree>
@@ -62,11 +65,26 @@
         <o-data-table ref="Table1725369927476" ></o-data-table>
       </div>
     </div>
+    <o-drawer
+      title="新增分组"
+      :overflow="true"
+      :block="true"
+      :show-footer="true"
+      action="add-group-form"
+      :width="384.0"
+      >
+      <template #default="{ option }">
+        <AddGroupForm :value="option" />
+      </template>
+    </o-drawer>
   </div>
 </template>
 <script lang="ts" setup>
+import AddGroupForm from './page-list/AddGroupForm.vue';
 import { useDataTable } from '@oceancode/ocean-wui';
+import UpdateGroupForm from './page-list/UpdateGroupForm.vue';
 import { listPageGroupsTree } from '@common-api/api/page/PageFunction';
+import { loadContextMenu } from './page-list/Contextmenu';
 
 const Table1725369927476 = useDataTable({
   columns: [
