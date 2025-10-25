@@ -74,7 +74,7 @@ const Form = useForm({
       component: {
         props: {
           labelField: "name",
-          valueField: "datasourceId",
+          valueField: "id",
         },
         options: listDatasourceOptions,
         name: 'select',
