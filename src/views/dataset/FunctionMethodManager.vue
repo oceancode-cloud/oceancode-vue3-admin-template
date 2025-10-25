@@ -2,9 +2,6 @@
 
 <template>
   <div
-     style="
-      background-color: null;
-    "
     >
   </div>
 </template>
