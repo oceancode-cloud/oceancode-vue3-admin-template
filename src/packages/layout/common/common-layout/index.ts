@@ -141,6 +141,30 @@ export function loadMenuMethod(route: any) {
           ],
           show: () => checkRouterParams(route, ['projectId']),
         },
+        {
+          id: 52,
+          label: "客户端开发",
+          key: "52",
+          parentId: 19,
+          visible: true,
+          children: [
+            {
+              id: 53,
+              label: "页面列表",
+              key: "pageList",
+              parentId: 52,
+              visible: true,
+              router: {
+                meta: {
+                  title: "页面列表",
+                },
+                name: "pageList",
+              },
+              show: () => checkRouterParams(route, ['projectId']),
+            },
+          ],
+          show: () => checkRouterParams(route, ['projectId']),
+        },
       ],
       show: () => checkRouterParams(route, ['projectId']),
     },
