@@ -101,7 +101,7 @@ const routeList = [
     id: 1229,
     path: '/:projectId/:packageId/dataset/function/method/manager',
     name: 'functionMethodManager',
-    parentId: -2,
+    parentId: 1669,
     component: () => import('@/views/dataset/FunctionMethodManager.vue'),
     meta:{
       title: '函数包管理',
