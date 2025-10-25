@@ -113,6 +113,18 @@
         <UpdateGroupForm :value="option" />
       </template>
     </o-drawer>
+    <o-drawer
+      title="修改模型"
+      :overflow="true"
+      :block="true"
+      :show-footer="true"
+      action="update-model-form"
+      :width="384.0"
+      >
+      <template #default="{ option }">
+        <UpdateModelForm :value="option" />
+      </template>
+    </o-drawer>
   </div>
 </template>
 <script lang="ts" setup>
@@ -124,6 +136,7 @@ import { useDataTable } from '@oceancode/ocean-wui';
 import { listModelGroupsById, listModelsGroup } from '@common-api/api/model/ModelFunction';
 import UpdateGroupForm from './model-list/UpdateGroupForm.vue';
 import { isEmpty } from '@/utils';
+import UpdateModelForm from './model-list/UpdateModelForm.vue';
 
 const Table1725369927476 = useDataTable({
   columns: [
@@ -153,6 +166,7 @@ const Table1725369927476 = useDataTable({
         {
           type: 'edit',
           text: '编辑',
+          action: 'update-model-form',
         },
         {
           type: 'delete',
