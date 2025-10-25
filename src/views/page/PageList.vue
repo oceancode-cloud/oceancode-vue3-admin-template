@@ -101,9 +101,22 @@
         <UpdateGroupForm :value="option" />
       </template>
     </o-drawer>
+    <o-drawer
+      title="新增页面"
+      :overflow="true"
+      :block="true"
+      :show-footer="true"
+      action="add-page-form"
+      :width="384.0"
+      >
+      <template #default="{ option }">
+        <AddPageForm :value="option" />
+      </template>
+    </o-drawer>
   </div>
 </template>
 <script lang="ts" setup>
+import AddPageForm from './page-list/AddPageForm.vue';
 import AddGroupForm from './page-list/AddGroupForm.vue';
 import { useDataTable } from '@oceancode/ocean-wui';
 import UpdateGroupForm from './page-list/UpdateGroupForm.vue';
