@@ -87,6 +87,7 @@ export function loadMenuMethod(route: any) {
               label: "函数管理",
               key: "functionMethodManager",
               parentId: 46,
+              visible: false,
               router: {
                 meta: {
                   title: "函数管理",
