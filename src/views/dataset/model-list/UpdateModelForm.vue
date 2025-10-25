@@ -96,6 +96,9 @@ const Form = useForm({
       prop: 'traits',
       component: {
         props: {
+          labelField: "label",
+          valueField: "value",
+          multiple: true,
         },
         options: listModelTraits,
         name: 'select',
