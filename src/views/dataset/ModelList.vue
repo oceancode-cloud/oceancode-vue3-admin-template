@@ -174,7 +174,7 @@ const Table1725369927476 = useDataTable({
       if (isEmpty(param)) {
         return [];
       }
-      return listModelsGroup({ groupId: param?.groupId, type: param?.type, types: param?.types });
+      return listModelsGroup({groupId: param?.groupId, type: param?.type});
     }
   },
 });
