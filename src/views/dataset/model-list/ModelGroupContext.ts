@@ -39,6 +39,7 @@ export function loadContextMenu(param: any) {
                         dialog: {
                           id: 'add-model-form',
                           value: {
+                            groupId:param.id,
                             type: ModelType.ModelType.TABLE_BASE,
                           },
                         },
