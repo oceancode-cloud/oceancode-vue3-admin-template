@@ -77,6 +77,30 @@
         <AddGroupForm :value="option" />
       </template>
     </o-drawer>
+    <o-drawer
+      title="新增分组"
+      :overflow="true"
+      :block="true"
+      :show-footer="true"
+      action="add-group-form"
+      :width="384.0"
+      >
+      <template #default="{ option }">
+        <AddGroupForm :value="option" />
+      </template>
+    </o-drawer>
+    <o-drawer
+      title="修改分组"
+      :overflow="true"
+      :block="true"
+      :show-footer="true"
+      action="update-group-form"
+      :width="384.0"
+      >
+      <template #default="{ option }">
+        <UpdateGroupForm :value="option" />
+      </template>
+    </o-drawer>
   </div>
 </template>
 <script lang="ts" setup>
