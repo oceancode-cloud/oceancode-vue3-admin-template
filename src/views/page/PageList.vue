@@ -39,7 +39,7 @@
       <o-group-tree
         title="页面分组"
         key-field="id"
-        label-field="name"
+        label-field="label"
         :default-expand-all="true"
         :default-expanded-keys="[]"
         :data="listPageGroupsTree"
@@ -128,7 +128,7 @@ const Table1725369927476 = useDataTable({
   columns: [
     {
       title:'名称',
-      key:'name',
+      key:'title',
     },
     {
       title:'唯一标识',
