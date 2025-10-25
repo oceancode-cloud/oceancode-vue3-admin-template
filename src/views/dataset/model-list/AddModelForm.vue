@@ -21,11 +21,10 @@
 import { ModelType } from '@common-api/models/model/ModelType';
 import { AddModel } from '@common-api/models/model/AddModel';
 import { h, defineProps } from 'vue';
-import { useForm } from '@oceancode/ocean-wui';
-import { addModel } from '@common-api/api/model/ModelFunction';
+import { useForm, ORender } from '@oceancode/ocean-wui';
+import { showModelGroupEnumTypeItem, showFormDatasourceItem, renderParentModelFormItem, addModel } from '@common-api/api/model/ModelFunction';
 import { ModelEnumType } from '@common-api/models/model/ModelEnumType';
 import { listDatasources } from '@common-api/api/datasource/DatasourceFunction';
-import { ModelSelect } from '@/components';
 
 const props = defineProps({
   value: {
@@ -60,7 +59,7 @@ const Form = useForm({
       prop: 'type',
       rules: {
         required: true,
-        message: 'type不能为空',
+        message: '类型不能为空',
         type:'number',
       },
       component: {
@@ -73,6 +72,9 @@ const Form = useForm({
     {
       label: '值类型',
       prop: 'enumType',
+      show: (param) => {
+        return showModelGroupEnumTypeItem(param);
+      },
       rules: {
         required: true,
         message: '值类型不能为空',
@@ -111,6 +113,9 @@ const Form = useForm({
     {
       label: '数据源',
       prop: 'datasourceId',
+      show: (param) => {
+        return showFormDatasourceItem(param);
+      },
       rules: {
         required: true,
         message: '数据源不能为空',
@@ -118,7 +123,7 @@ const Form = useForm({
       component: {
         props: {
           labelField: "name",
-          valueField: "datasourceId",
+          valueField: "id",
         },
         options: listDatasources,
         name: 'select',
@@ -130,13 +135,8 @@ const Form = useForm({
       component: {
         props: {
         },
-        render(param: any): any | void {
-          return h(ModelSelect, {
-            value: param?.parentId,
-            onUpdateValue(val: any) {
-              param.parentId = val;
-            },
-          });
+        render(param: any): any {
+          return renderParentModelFormItem(param);
         },
       },
     },
