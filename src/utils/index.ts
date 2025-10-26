@@ -31,13 +31,18 @@ export function toRedirect(): boolean {
   return false
 }
 
-const LOGIN_URL = import.meta.env.VITE_LOGIN_URL || ''
-export function toUserLoginPage() {
+const SSO_URL = import.meta.env.VITE_SSO_URL || '';
+
+export function isSsoEnabled() {
+  return !isEmpty(SSO_URL);
+}
+
+export function toSsoPage() {
   if(isEmpty(useUser().getToken())){
     return false;
   }
-  if (LOGIN_URL && LOGIN_URL.trim().length > 0) {
-    let url = LOGIN_URL.trim()
+  if (isSsoEnabled()) {
+    let url = SSO_URL.trim()
     if (url.indexOf('?') === -1) {
       url += '?'
     }
@@ -46,7 +51,7 @@ export function toUserLoginPage() {
     }
     url += 'redirect=' + encodeURIComponent(window.location.href)
     window.location.href = url
-    return
+    return true;
   }
-  return true;
+  return false;
 }

@@ -2,7 +2,7 @@ import { useRouter, useUser } from '@oceancode/ocean-wui'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { routes } from './routes'
 import { useGlobal } from '@/store'
-import { isEmpty, toUserLoginPage } from '@/utils'
+import { isEmpty, isSsoEnabled, toSsoPage } from '@/utils'
 const routerHistory = createWebHashHistory()
 const router = createRouter({
   history: routerHistory,
@@ -15,11 +15,11 @@ router.beforeEach(async (to, from, next) => {
     return
   }
   if(to.name==='login'){
-    if (toUserLoginPage()) {
+    if (toSsoPage()) {
         return
      }
   }
-  if (to.query.token) {
+  if (to.query.token && isSsoEnabled()) {
     const user = useUser()
     user.setToken(to.query.token)
     const path = to.path
@@ -70,7 +70,7 @@ router.beforeEach(async (to, from, next) => {
   for (const it of permissions) {
     if (it === 'login') {
       if (!useUser().isLogin()) {
-        if (toUserLoginPage()) {
+        if (toSsoPage()) {
            return
         }
         useRouter().toLogin({ query: { redirect: to.fullPath, redirectName: to.name } })
