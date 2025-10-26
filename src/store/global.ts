@@ -1,5 +1,7 @@
 import { defineStore } from "pinia";
 
+const PLUGIN_BASE_URL = import.meta.env.VITE_PLUGIN_BASE_URL || '/plugins';
+
 export const useGlobal = defineStore('global', {
   state: () => {
     return {
@@ -7,6 +9,7 @@ export const useGlobal = defineStore('global', {
         projectId: '',
         query:{} as any,
         params:{} as any,
+        pluginBaseUrl: PLUGIN_BASE_URL as string,
       }
     }
   },
@@ -14,6 +17,7 @@ export const useGlobal = defineStore('global', {
     projectId:(state)=>state.data.projectId,
     query: (state) => state.data.query,
     params: (state) => state.data.params,
+    pluginBaseUrl: (state) => state.data.pluginBaseUrl,
   },
   actions: {
     getProjectId() {
