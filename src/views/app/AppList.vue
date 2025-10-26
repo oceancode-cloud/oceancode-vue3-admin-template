@@ -115,7 +115,7 @@ const Table1725369451273 = useDataTable({
       dict: AppPackageStatus.options(),
       render(param) {
         return renderAppStatusColumn(param)
-      }
+      },
     },
     {
       title:'创建时间',
