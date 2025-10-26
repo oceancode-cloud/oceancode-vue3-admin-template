@@ -146,7 +146,7 @@ import AddGroupForm from './page-list/AddGroupForm.vue';
 import { useDataTable } from '@oceancode/ocean-wui';
 import UpdateGroupForm from './page-list/UpdateGroupForm.vue';
 import { isEmpty } from '@/utils';
-import { listPageGroupsTree, listPages, deletePageById } from '@common-api/api/page/PageFunction';
+import { listPageGroupsTree, showAddMenuTableActionItem, listPages, deletePageById, openPageEditor } from '@common-api/api/page/PageFunction';
 import { PageType } from '@common-api/models/page/PageType';
 import { loadContextMenu } from './page-list/Contextmenu';
 import UpdatePageForm from './page-list/UpdatePageForm.vue';
@@ -185,6 +185,9 @@ const Table1725369927476 = useDataTable({
           type: 'add',
           text: '新增',
           action: 'add-page-form',
+          show(param) {
+            return showAddMenuTableActionItem(param);
+          },
         },
         {
           type: 'edit',
@@ -196,6 +199,13 @@ const Table1725369927476 = useDataTable({
           text: '删除',
           onClick(param, option, ctx) {
             return deletePageById(param.id)
+          },
+        },
+        {
+          type: 'custom',
+          text: '设计',
+          onClick(param, option, ctx) {
+            return openPageEditor(param)
           },
         },
       ],
