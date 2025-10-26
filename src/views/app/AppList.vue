@@ -91,7 +91,8 @@ import { AppPackageStatus } from '@common-api/models/app/AppPackageStatus';
 import AddForm from './app-list/AddForm.vue';
 import { useDataTable, formatDateTime } from '@oceancode/ocean-wui';
 import EditForm from './app-list/EditForm.vue';
-import { showAppTableBuildActionItem,
+import { renderAppStatusColumn,
+showAppTableBuildActionItem,
 listAppPackages,
 deleteAppPackageById,
 handleAppPackageBuild,
@@ -112,6 +113,9 @@ const Table1725369451273 = useDataTable({
       title:'状态',
       key:'status',
       dict: AppPackageStatus.options(),
+      render(param) {
+        return renderAppStatusColumn(param)
+      }
     },
     {
       title:'创建时间',
