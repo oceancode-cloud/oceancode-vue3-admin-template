@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { useGlobal } from "./global";
 export interface UserInfo {
   userId: number;
   username: string;
@@ -47,7 +48,6 @@ export const useUser = defineStore('user',{
       this.data.userInfo.username = '';
     },
     async refreshPermission(): Promise<void> {
-
     }
   }
 });

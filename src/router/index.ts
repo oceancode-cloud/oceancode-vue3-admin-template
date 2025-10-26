@@ -1,76 +1,95 @@
-import { useRouter, useUser } from '@oceancode/ocean-wui';
+import { useRouter, useUser } from '@oceancode/ocean-wui'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { routes } from './routes'
-import { useGlobal } from '@/store';
-const routerHistory = createWebHashHistory();
+import { useGlobal } from '@/store'
+import { isEmpty, toUserLoginPage } from '@/utils'
+const routerHistory = createWebHashHistory()
 const router = createRouter({
-    history: routerHistory,
-    routes: routes
+  history: routerHistory,
+  routes: routes
 })
 
+router.beforeEach(async (to, from, next) => {
+  if (to.fullPath === '/') {
+    next({ name: 'home' })
+    return
+  }
+  if(to.name==='login'){
+    if (toUserLoginPage()) {
+        return
+     }
+  }
+  if (to.query.token) {
+    const user = useUser()
+    user.setToken(to.query.token)
+    const path = to.path
+    next({ path: path })
+    return
+  }
+  const projectId = to.params?.projectId as string
+  useGlobal().setProjectId(projectId)
+  useGlobal().setQuery(to.query)
+  useGlobal().setParams(to.params)
 
-router.beforeEach(async(to,from,next)=>{
-    if(to.fullPath==='/'){
-        next({name:'home'});
-        return;
+  const permissions = (to.meta?.permissions || []) as Array<string>
+  const mustParams = (to.meta?.mustParams || []) as Array<string>
+  const redirectName = to.query?.redirectName
+  if (redirectName) {
+    if (redirectName === to.name) {
+      next({ name: 'NoPermission' })
+      return
     }
-    const projectId = to.params?.projectId as string;
-    useGlobal().setProjectId(projectId);
-    useGlobal().setQuery(to.query);
-    useGlobal().setParams(to.params);
+  }
+  for (const it of mustParams) {
+    const type = (it as any).type as string
+    const id = (it as any).id as string
+    let errorCode
+    if (type === 'path' || type === 'params') {
+      const val = to.params[id] as any
+      if (!val && val != 0 && val != false) {
+        errorCode = 'parameter.missing'
+      }
+    } else if (type === 'query') {
+      const val = to.query[id] as any
+      if (!val && val != 0 && val != false) {
+        errorCode = 'parameter.missing'
+      }
+    }
 
-    const permissions = (to.meta?.permissions || []) as Array<string>
-    const mustParams = (to.meta?.mustParams || []) as Array<string>
-    const redirectName = to.query?.redirectName
-    if(redirectName){
-        if(redirectName===to.name){
-            next({name:'NoPermission'})
-            return
+    if (errorCode) {
+      next({
+        name: 'notFound',
+        query: {
+          coce: errorCode,
+          from: to.name
         }
+      })
+      return
     }
-    for(const it of mustParams){
-        const type = (it as any).type as string
-        const id = (it as any).id as string
-        let errorCode 
-        if(type==='path' || type==='params'){
-            const val = to.params[id] as any
-            if(!val && val!=0 && val!=false){
-                errorCode = 'parameter.missing'
-            }
-        }else if(type==='query'){
-            const val = to.query[id] as any
-            if(!val && val!=0 && val!=false){
-                errorCode = 'parameter.missing'
-            }
+  }
+  for (const it of permissions) {
+    if (it === 'login') {
+      if (!useUser().isLogin()) {
+        if (toUserLoginPage()) {
+           return
         }
-
-        if(errorCode){
-            next({
-                name:'notFound',
-                query:{
-                    coce:errorCode,
-                    from:to.name
-                }
-            })
-            return
-        }
+        useRouter().toLogin({ query: { redirect: to.fullPath, redirectName: to.name } })
+        return
+      }
+      if (isEmpty(useUser().getToken())) {
+        useRouter().toLogin({ query: { redirect: to.fullPath, redirectName: to.name } })
+        return
+      }
+    } else if (it === 'unlogin') {
+      if (to.name === 'login' || to.name === 'home') {
+        break
+      }
+      if (useUser().isLogin()) {
+        useRouter().toHome()
+        return
+      }
     }
-    for(const it of permissions){
-        if(it==='login'){
-            if(!useUser().isLogin()){
-                useRouter().toLogin({query:{redirect:to.fullPath,redirectName:to.name}})
-                return
-            }
-        }else if(it==='unlogin'){
-            if(to.name==='login' || to.name==='home'){
-                break
-            }
-            if(useUser().isLogin()){
-                useRouter().toHome()
-                return
-            }
-        }
-    }
-    next()
+  }
+  next()
 })
 export default router
