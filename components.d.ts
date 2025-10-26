@@ -31,6 +31,7 @@ declare module 'vue' {
     ORootContext: typeof import('@oceancode/ocean-wui')['ORootContext']
     OSelect: typeof import('@oceancode/ocean-wui')['OSelect']
     OSpace: typeof import('@oceancode/ocean-wui')['OSpace']
+    OSubmitButton: typeof import('@oceancode/ocean-wui')['OSubmitButton']
     OSwitch: typeof import('@oceancode/ocean-wui')['OSwitch']
     OText: typeof import('@oceancode/ocean-wui')['OText']
     OTreeSelect: typeof import('@oceancode/ocean-wui')['OTreeSelect']
