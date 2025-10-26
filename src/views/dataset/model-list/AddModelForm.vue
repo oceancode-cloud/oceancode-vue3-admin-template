@@ -22,9 +22,8 @@ import { ModelType } from '@common-api/models/model/ModelType';
 import { AddModel } from '@common-api/models/model/AddModel';
 import { h, defineProps } from 'vue';
 import { useForm, ORender } from '@oceancode/ocean-wui';
-import { showModelGroupEnumTypeItem, showFormDatasourceItem, renderParentModelFormItem, addModel } from '@common-api/api/model/ModelFunction';
+import { showModelGroupEnumTypeItem, showFormDatasourceItem, listDatasourceOptions, renderParentModelFormItem, addModel } from '@common-api/api/model/ModelFunction';
 import { ModelEnumType } from '@common-api/models/model/ModelEnumType';
-import { listDatasources } from '@common-api/api/datasource/DatasourceFunction';
 
 const props = defineProps({
   value: {
@@ -125,7 +124,7 @@ const Form = useForm({
           labelField: "name",
           valueField: "id",
         },
-        options: listDatasources,
+        options: listDatasourceOptions,
         name: 'select',
       },
     },
