@@ -140,12 +140,14 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { PageImplType } from '@common-api/models/page/PageImplType';
 import AddPageForm from './page-list/AddPageForm.vue';
 import AddGroupForm from './page-list/AddGroupForm.vue';
 import { useDataTable } from '@oceancode/ocean-wui';
 import UpdateGroupForm from './page-list/UpdateGroupForm.vue';
 import { isEmpty } from '@/utils';
 import { listPageGroupsTree, listPages, deletePageById } from '@common-api/api/page/PageFunction';
+import { PageType } from '@common-api/models/page/PageType';
 import { loadContextMenu } from './page-list/Contextmenu';
 import UpdatePageForm from './page-list/UpdatePageForm.vue';
 
@@ -162,14 +164,17 @@ const Table1725369927476 = useDataTable({
     {
       title:'类型',
       key:'type',
+      dict: PageType.options(),
     },
     {
       title:'实现方式',
       key:'implType',
+      dict: PageImplType.options(),
     },
     {
       title:'描述',
       key:'description',
+      ellipsis: true
     },
     {
       title: '操作',
@@ -201,7 +206,7 @@ const Table1725369927476 = useDataTable({
       if (isEmpty(param)) {
         return [];
       }
-      return listPages(param?.id);
+      return listPages(param.id);
     }
   },
 });
