@@ -138,6 +138,7 @@ import { UserLoginRequest } from '@common-api/models/user/UserLoginRequest';
 import { useForm, OUsernameInput, OPasswordInput, useUser, useRouter } from '@oceancode/ocean-wui';
 import { WorkspaceList } from '@common-api/meta/pages/workspace/index';
 import { UserRegister, ResetPassword } from '@common-api/meta/pages/user/index';
+import { toRedirect } from '@/utils';
 
 const user = useUser();
 const router = useRouter();
@@ -189,6 +190,9 @@ const Form = useForm({
       const res = userLogin(param);
       res.then(async (data) => {
         user.setLoginResponse(data);
+        if(toRedirect()){
+          return;
+        }
         await user.refreshPermission();
         router.push({ name: WorkspaceList.ROUTER_NAME });
       });
