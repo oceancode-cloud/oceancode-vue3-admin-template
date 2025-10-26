@@ -195,7 +195,7 @@ const Table1725369927476 = useDataTable({
       if (isEmpty(param)) {
         return [];
       }
-      return listFunctionPackages({ groupId: param.id });
+      return listFunctionPackages({groupId: param.groupId});
     }
   },
 });
