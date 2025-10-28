@@ -89,16 +89,17 @@
 <script lang="ts" setup>
 import { AppPackageStatus } from '@common-api/models/app/AppPackageStatus';
 import AddForm from './app-list/AddForm.vue';
-import { useDataTable, formatDateTime } from '@oceancode/ocean-wui';
+import { useDataTable, formatDateTime, useRouter } from '@oceancode/ocean-wui';
 import EditForm from './app-list/EditForm.vue';
+import { AppManager } from '@common-api/meta/pages/app/index';
 import { renderAppStatusColumn,
 showAppTableBuildActionItem,
 listAppPackages,
 deleteAppPackageById,
 handleAppPackageBuild,
-appPackageProduct,
-openAppEditor } from '@common-api/api/app/AppFunction';
+appPackageProduct } from '@common-api/api/app/AppFunction';
 
+const router = useRouter();
 const Table1725369451273 = useDataTable({
   columns: [
     {
@@ -171,7 +172,7 @@ const Table1725369451273 = useDataTable({
           type: 'custom',
           text: '管理',
           onClick(param, option, ctx) {
-            return openAppEditor(param.id)
+            router.open({ name: AppManager.ROUTER_NAME,  params: { appId: param.id }});
           },
         },
       ],

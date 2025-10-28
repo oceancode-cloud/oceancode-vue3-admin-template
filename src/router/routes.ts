@@ -167,6 +167,16 @@ const routeList = [
     id: 2303,
     component: () => import('@/packages/layout/app/AppManageLayout.vue'),
   },
+  {
+    id: 2306,
+    path: '/:projectId/:appId/app/app/manager',
+    name: 'appManager',
+    parentId: 2303,
+    component: () => import('@/views/app/AppManager.vue'),
+    meta:{
+      title: '应用管理',
+    },
+  },
 ]
 
 export const routes = deepTree([...commonRoutes, ...routeList]);
