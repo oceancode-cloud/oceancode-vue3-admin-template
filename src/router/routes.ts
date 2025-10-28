@@ -163,6 +163,10 @@ const routeList = [
       title: '页面列表',
     },
   },
+  {
+    id: 2303,
+    component: () => import('@/packages/layout/app/AppManageLayout.vue'),
+  },
 ]
 
 export const routes = deepTree([...commonRoutes, ...routeList]);
