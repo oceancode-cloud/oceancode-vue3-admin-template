@@ -71,6 +71,9 @@ const loadOptions1761662783778 = [
   {
     label:'设置',
     key:'key2',
+    router: {
+      name: 'appSetting',
+    },
   },
 ]
 async function handleTabClick1761662783778(item): Promise<void> {

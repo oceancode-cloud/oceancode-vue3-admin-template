@@ -169,12 +169,12 @@ const routeList = [
   },
   {
     id: 2306,
-    path: '/:projectId/:appId/app/app/manager',
-    name: 'appManager',
+    path: '/:projectId/:appId/app/app/setting',
+    name: 'appSetting',
     parentId: 2303,
-    component: () => import('@/views/app/AppManager.vue'),
+    component: () => import('@/views/app/AppSetting.vue'),
     meta:{
-      title: '应用管理',
+      title: '应用设置',
     },
   },
 ]
