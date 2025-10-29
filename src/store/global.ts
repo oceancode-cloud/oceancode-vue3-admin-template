@@ -9,6 +9,7 @@ export const useGlobal = defineStore('global', {
         projectId: '',
         query:{} as any,
         params:{} as any,
+        routerName: '' as string,
         pluginBaseUrl: PLUGIN_BASE_URL as string,
       }
     }
@@ -18,6 +19,7 @@ export const useGlobal = defineStore('global', {
     query: (state) => state.data.query,
     params: (state) => state.data.params,
     pluginBaseUrl: (state) => state.data.pluginBaseUrl,
+    routerName: (state) => state.data.routerName,
   },
   actions: {
     getProjectId() {
@@ -31,6 +33,9 @@ export const useGlobal = defineStore('global', {
     },
     setParams(params: any){
       this.data.params = params || {};
+    },
+    setRouterName(name: string) {
+      this.data.routerName = name;
     }
   }
 });

@@ -38,7 +38,7 @@ export function isSsoEnabled() {
 }
 
 export function toSsoPage() {
-  if(isEmpty(useUser().getToken())){
+  if (isEmpty(useUser().getToken())) {
     return false;
   }
   if (isSsoEnabled()) {
@@ -54,4 +54,21 @@ export function toSsoPage() {
     return true;
   }
   return false;
+}
+
+export function findTreeItemByKey<T>(list: T[], cb: (item: T) => boolean): T | undefined {
+  if (isEmpty(list)) {
+    return;
+  }
+  for (const it of list) {
+    if ((cb(it))) {
+      return it
+    }
+    if ((it as any).children) {
+      const ret = findTreeItemByKey((it as any).children, cb);
+      if (ret) {
+        return ret
+      }
+    }
+  }
 }

@@ -30,6 +30,7 @@ router.beforeEach(async (to, from, next) => {
   useGlobal().setProjectId(projectId)
   useGlobal().setQuery(to.query)
   useGlobal().setParams(to.params)
+  useGlobal().setRouterName(to.name as string);
 
   const permissions = (to.meta?.permissions || []) as Array<string>
   const mustParams = (to.meta?.mustParams || []) as Array<string>
