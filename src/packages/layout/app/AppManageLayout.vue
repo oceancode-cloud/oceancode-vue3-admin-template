@@ -32,8 +32,8 @@
         >
           <o-segment-tabs
             :options="loadOptions1761662783778"
-            v-model="activeIndex"
-            :on-update-value="handleUpdateTab"
+            v-model="activeIndex1761662783778"
+            :on-update-value="handleUpdateValue1761662783778"
             :on-item-click="handleTabClick1761662783778"
           >
           </o-segment-tabs>
@@ -58,15 +58,12 @@
 </template>
 <script lang="ts" setup>
 import CommonLayout from '@/packages/layout/common/CommonLayout.vue';
-import { useGlobal } from '@/store';
-import { findTreeItemByKey, switchRouter } from '@/utils';
+import { onMounted } from 'vue';
 import { useRouter } from '@oceancode/ocean-wui';
-import { onMounted, ref } from 'vue';
+import { switchRouter, findTreeItemByKey } from '@/utils';
+import { useGlobal } from '@/store';
 
 const router = useRouter();
-const activeIndex = ref<string>();
-const global = useGlobal();
-
 const loadOptions1761662783778 = [
   {
     label:'代码',
@@ -84,13 +81,15 @@ const loadOptions1761662783778 = [
     },
   },
 ]
-onMounted(async ()=>{
-  activeIndex.value = findTreeItemByKey(loadOptions1761662783778, it=>it.router?.name===global.routerName)?.key;
+const global = useGlobal();
+const activeIndex1761662783778 = ref<number>();
+onMounted(async () => {
+  activeIndex1761662783778.value = findTreeItemByKey(loadOptions1761662783778, it => it.router?.name === global.routerName)?.key;
 });
-
-function handleUpdateTab(key, option) {
+async function handleUpdateValue1761662783778(key, option): Promise<void> {
   switchRouter(option.router);
 }
+
 async function handleTabClick1761662783778(item): Promise<void> {
   if (item.router) {
     router.push(item.router);

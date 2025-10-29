@@ -75,6 +75,8 @@
             size="large"
             type="custom"
             :options="loadOptions1758107856457"
+            v-model="activeIndex1758107856457"
+            :on-update-value="handleUpdateValue1758107856457"
             :on-item-click="handleTabClick1758107856457"
           >
             <template #item="{option,selected}">
@@ -102,7 +104,10 @@
 </template>
 <script lang="ts" setup>
 import CommonLayout from '@/packages/layout/common/CommonLayout.vue';
+import { onMounted } from 'vue';
 import { useRouter } from '@oceancode/ocean-wui';
+import { switchRouter, findTreeItemByKey } from '@/utils';
+import { useGlobal } from '@/store';
 
 const router = useRouter();
 const loadOptions1758107856457 = [
@@ -125,10 +130,19 @@ const loadOptions1758107856457 = [
     key:'key2',
   },
 ]
+const global = useGlobal();
+const activeIndex1758107856457 = ref<number>();
+onMounted(async () => {
+  activeIndex1758107856457.value = findTreeItemByKey(loadOptions1758107856457, it => it.router?.name === global.routerName)?.key;
+});
 async function handleTabClick1758107856457(item): Promise<void> {
   if (item.router) {
     router.push(item.router);
   }
+}
+
+async function handleUpdateValue1758107856457(key, option): Promise<void> {
+  switchRouter(option.router);
 }
 
 </script>
