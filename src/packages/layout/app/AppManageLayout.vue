@@ -22,12 +22,52 @@
       >
         <div
           :style="{
+            'z-index': 3,
+            top: '28.0px',
+            left: '131.0px',
+            width: '213px',
+            position: 'absolute',
+            height: '29px',
+          }"
+        >
+          <o-text
+            :font-weight="600"
+            color="#000"
+            text-align="left"
+            type="text"
+          font-size="18px"
+          :text-style="{
+            fontSize:'18px',
+          }"
+          >
+            {{ appInfo?.name }}
+          </o-text>
+        </div>
+        <div
+          :style="{
+            'z-index': 4,
+            top: '29.0px',
+            left: '15.0px',
+            width: '86.33px',
+            position: 'absolute',
+            height: '71px',
+          }"
+        >
+          <o-image
+            src="./images/design/icons/create.png"
+            :width="86.33"
+            :height="71.0"
+          >
+          </o-image>
+        </div>
+        <div
+          :style="{
             'z-index': 2,
             top: '148.0px',
             left: '3.0px',
-            width: '278px',
+            width: '220px',
             position: 'absolute',
-            height: '38px',
+            height: '36px',
           }"
         >
           <o-segment-tabs
@@ -58,9 +98,11 @@
 </template>
 <script lang="ts" setup>
 import CommonLayout from '@/packages/layout/common/CommonLayout.vue';
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useRouter } from '@oceancode/ocean-wui';
 import { switchRouter, findTreeItemByKey } from '@/utils';
+import { getAppPackageById } from '@common-api/api/app/AppFunction';
+import { AppPackageInfo } from '@common-api/models/app/AppPackageInfo';
 import { useGlobal } from '@/store';
 
 const router = useRouter();
@@ -83,8 +125,12 @@ const loadOptions1761662783778 = [
 ]
 const global = useGlobal();
 const activeIndex1761662783778 = ref<number>();
+const appId = ref();
+const appInfo = ref<AppPackageInfo>()
 onMounted(async () => {
   activeIndex1761662783778.value = findTreeItemByKey(loadOptions1761662783778, it => it.router?.name === global.routerName)?.key;
+  appId.value =  global.params?.appId
+  appInfo.value = await getAppPackageById(appId.value)
 });
 async function handleUpdateValue1761662783778(key, option): Promise<void> {
   switchRouter(option.router);
