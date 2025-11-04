@@ -80,18 +80,36 @@
         </div>
       </div>
       <div
-        :style="{
-          'z-index': 1,
-          top: '198.0px',
-          left: '0.0px',
-          width: '100%',
-          position: 'absolute',
-          height: '698px',
-        }"
+          :style="{
+            boxShadow: '0px 2px 6px 0px rgba(37, 43, 58, 0.24)',
+            borderTopLeftRadius: '4px',
+            'z-index': 1,
+            transform: 'rotate(0deg)',
+            top: '206.0px',
+            left: '298.0px',
+            borderBottomLeftRadius: '4px',
+            background: 'rgba(255, 255, 255, 1)',
+            bottom: '20px',
+            borderBottomRightRadius: '4px',
+            borderTopRightRadius: '4px',
+            position: 'absolute',
+            right: '20px',
+          }"
       >
-        <app-router-context
+        <div
+          :style="{
+            'z-index': 6,
+            top: '19.0px',
+            left: '14.0px',
+            width: '76.52777777777776%',
+            position: 'absolute',
+            bottom: '0',
+          }"
         >
-        </app-router-context>
+          <app-router-context
+          >
+          </app-router-context>
+        </div>
       </div>
     </CommonLayout>
   </div>
