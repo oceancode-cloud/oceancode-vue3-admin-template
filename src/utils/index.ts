@@ -8,6 +8,7 @@ export * from './validator'
 export * from './router'
 export * from './event'
 export * from './uuid'
+export * from './image';
 
 export { isEmpty, uniqueId, deepTree }
 
