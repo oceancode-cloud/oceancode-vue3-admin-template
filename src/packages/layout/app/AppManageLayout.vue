@@ -88,9 +88,9 @@
             borderBottomLeftRadius: '0px',
             bottom: '3.0px',
             background: 'rgba(255, 255, 255, 1)',
+            width: '286.8px',
             borderBottomRightRadius: '0px',
             borderTopRightRadius: '0px',
-            right: '1153.2px',
             position: 'absolute',
             borderTopLeftRadius: '0px',
           }"
@@ -147,8 +147,8 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { loadOption1762266760947 } from './app-manage-layout/index';
 import CommonLayout from '@/packages/layout/common/CommonLayout.vue';
+import { loadOption1762266760947 } from './app-manage-layout/index';
 import { onMounted, ref } from 'vue';
 import { useRouter } from '@oceancode/ocean-wui';
 import { switchRouter, findTreeItemByKey } from '@/utils';
