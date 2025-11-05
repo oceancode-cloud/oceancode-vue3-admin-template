@@ -81,6 +81,38 @@
       </div>
       <div
           :style="{
+            'z-index': 5,
+            transform: 'rotate(0deg)',
+            top: '193.0px',
+            left: '0.0px',
+            borderBottomLeftRadius: '0px',
+            bottom: '3.0px',
+            background: 'rgba(255, 255, 255, 1)',
+            borderBottomRightRadius: '0px',
+            borderTopRightRadius: '0px',
+            right: '1153.2px',
+            position: 'absolute',
+            borderTopLeftRadius: '0px',
+          }"
+      >
+        <div
+          :style="{
+            'z-index': 7,
+            top: '0.0px',
+            left: '0.0px',
+            width: '286.8px',
+            position: 'absolute',
+            height: '704px',
+          }"
+        >
+          <o-menu
+            :options="loadOption1762266760947"
+          >
+          </o-menu>
+        </div>
+      </div>
+      <div
+          :style="{
             boxShadow: '0px 2px 6px 0px rgba(37, 43, 58, 0.24)',
             bottom: '11.0px',
             right: '13.0px',
@@ -115,6 +147,7 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { loadOption1762266760947 } from './app-manage-layout/index';
 import CommonLayout from '@/packages/layout/common/CommonLayout.vue';
 import { onMounted, ref } from 'vue';
 import { useRouter } from '@oceancode/ocean-wui';
