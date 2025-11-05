@@ -83,10 +83,10 @@
           :style="{
             'z-index': 5,
             transform: 'rotate(0deg)',
-            top: '193.0px',
+            top: '192.0px',
             left: '0.0px',
             borderBottomLeftRadius: '0px',
-            bottom: '3.0px',
+            bottom: '2.0px',
             background: 'rgba(255, 255, 255, 1)',
             width: '286.8px',
             borderBottomRightRadius: '0px',
@@ -102,7 +102,7 @@
             left: '0.0px',
             width: '286.8px',
             position: 'absolute',
-            height: '704px',
+            height: '708px',
           }"
         >
           <o-menu
