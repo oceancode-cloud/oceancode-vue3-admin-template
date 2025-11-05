@@ -97,7 +97,7 @@
       >
         <o-menu
           :options="loadOption1762266760947"
-          :on-update-value="handleUpdateValue"
+          :on-update-value="handleMenuUpdateValue1762266760947"
         >
         </o-menu>
       </div>
@@ -177,15 +177,14 @@ async function handleUpdateValue1761662783778(key, option): Promise<void> {
   switchRouter(option.router);
 }
 
+async function handleMenuUpdateValue1762266760947(key, option): Promise<void> {
+  global.setCurrentMenu({...option, name: option?.label});
+}
+
 async function handleTabClick1761662783778(item): Promise<void> {
   if (item.router) {
     router.push(item.router);
   }
-}
-
-function handleUpdateValue(key,option) {
-  console.log(key,option)
-  global.setCurrentMenu({...option, name: option?.label})
 }
 
 </script>
