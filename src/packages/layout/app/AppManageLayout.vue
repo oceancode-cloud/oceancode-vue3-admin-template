@@ -95,21 +95,10 @@
             borderTopLeftRadius: '0px',
           }"
       >
-        <div
-          :style="{
-            'z-index': 7,
-            top: '0.0px',
-            left: '0.0px',
-            width: '286.8px',
-            position: 'absolute',
-            height: '708px',
-          }"
+        <o-menu
+          :options="loadOption1762266760947"
         >
-          <o-menu
-            :options="loadOption1762266760947"
-          >
-          </o-menu>
-        </div>
+        </o-menu>
       </div>
       <div
           :style="{
