@@ -97,8 +97,8 @@
       >
         <o-menu
           :options="loadOption1762266760947"
-          v-model="currentMenu"
           :on-update-value="handleMenuUpdateValue1762266760947"
+          v-model="activeMenuIndex1762266760947"
         >
         </o-menu>
       </div>
@@ -166,14 +166,14 @@ const loadOptions1761662783778 = [
   },
 ]
 const global = useGlobal();
-const currentMenu = ref(global.routerName);
 const activeIndex1761662783778 = ref<number>();
 const appId = ref();
 const appInfo = ref<AppPackageInfo>()
+const activeMenuIndex1762266760947 = ref<string>(global.routerName);
 onMounted(async () => {
   activeIndex1761662783778.value = findTreeItemByKey(loadOptions1761662783778, it => it.router?.name === global.routerName)?.key;
   appId.value =  global.params?.appId
-  appInfo.value = await getAppPackageById(appId.value);
+  appInfo.value = await getAppPackageById(appId.value)
 });
 async function handleUpdateValue1761662783778(key, option): Promise<void> {
   switchRouter(option.router);
