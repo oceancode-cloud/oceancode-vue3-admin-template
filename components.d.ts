@@ -25,6 +25,7 @@ declare module 'vue' {
     ODrawer: typeof import('@oceancode/ocean-wui')['ODrawer']
     ODropdown: typeof import('@oceancode/ocean-wui')['ODropdown']
     OForm: typeof import('@oceancode/ocean-wui')['OForm']
+    OGroupTree: typeof import('@oceancode/ocean-wui')['OGroupTree']
     OImage: typeof import('@oceancode/ocean-wui')['OImage']
     OInputGroup: typeof import('@oceancode/ocean-wui')['OInputGroup']
     OLayoutMenu: typeof import('@oceancode/ocean-wui')['OLayoutMenu']

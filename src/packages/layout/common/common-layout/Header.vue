@@ -5,9 +5,6 @@
     >
     <div
         :style="{
-          display: 'inline-block',
-          minWidth: '100%',
-          borderTopLeftRadius: '0px',
           'z-index': 0,
           transform: 'rotate(0deg)',
           top: '0.0px',
@@ -15,9 +12,11 @@
           borderBottomLeftRadius: '0px',
           background: 'rgba(255, 255, 255, 1)',
           borderBottomRightRadius: '0px',
+          minWidth: '100%',
           borderTopRightRadius: '0px',
           position: 'absolute',
           height: '40px',
+          borderTopLeftRadius: '0px',
         }"
     >
       <div
@@ -25,9 +24,9 @@
           'z-index': 1,
           top: '3.0px',
           left: '13.0px',
+          bottom: '37.0px',
           width: '300px',
           position: 'absolute',
-          height: '0px',
         }"
       >
         <o-layout-square-nav-menu
@@ -41,7 +40,7 @@
           right: '19.14285714285711px',
           position: 'absolute',
           top: '5.0px',
-          height: '30px',
+          bottom: '5.0px',
         }"
       >
         <div

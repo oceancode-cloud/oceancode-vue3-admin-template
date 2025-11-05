@@ -31,9 +31,9 @@
         'z-index': 2,
         top: '78.0px',
         left: '24.0px',
+        bottom: '0.0px',
         width: '300px',
         position: 'absolute',
-        height: '91.33333333333333%',
       }"
     >
       <o-group-tree
@@ -55,9 +55,9 @@
         'z-index': 3,
         top: '78.0px',
         left: '330.0px',
-        width: '75.13888888888889%',
+        bottom: '0.0px',
+        right: '28.0px',
         position: 'absolute',
-        height: '91.33333333333333%',
       }"
     >
       <div

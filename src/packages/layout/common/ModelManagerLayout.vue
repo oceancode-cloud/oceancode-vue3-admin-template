@@ -25,9 +25,9 @@
             'z-index': 1,
             top: '5.0px',
             left: '38.0px',
+            bottom: '41.0px',
             width: '60px',
             position: 'absolute',
-            height: '60px',
           }"
         >
           <o-image
@@ -91,7 +91,7 @@
           top: '113.0px',
           left: '0.0px',
           bottom: '0.0px',
-          width: '100%',
+          right: '0.0px',
           position: 'absolute',
         }"
       >

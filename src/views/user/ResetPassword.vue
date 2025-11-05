@@ -7,6 +7,7 @@
         :style="{
           border: '1px solid rgba(234,236,240,1)',
           boxShadow: '0px 0px 104px 0px rgba(22, 14, 105, 0.06)',
+          right: '36.11111111111112%',
           borderTopLeftRadius: '18px',
           'z-index': 0,
           transform: 'rotate(0deg)',
@@ -14,7 +15,6 @@
           left: '36.11111111111111%',
           borderBottomLeftRadius: '18px',
           background: 'rgba(255,255,255,1)',
-          width: '400px',
           borderBottomRightRadius: '18px',
           borderTopRightRadius: '18px',
           position: 'absolute',
@@ -49,7 +49,7 @@
           'z-index': 1,
           top: '133.0px',
           left: '40.5px',
-          width: '319px',
+          right: '40.5px',
           position: 'absolute',
           height: '254px',
         }"

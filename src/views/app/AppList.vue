@@ -50,9 +50,9 @@
         'z-index': 1,
         top: '112.0px',
         left: '24.0px',
-        width: '96.66666666666667%',
+        bottom: '0.0px',
+        right: '24.0px',
         position: 'absolute',
-        height: '87.55555555555556%',
       }"
     >
       <div
