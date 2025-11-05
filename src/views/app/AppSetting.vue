@@ -2,7 +2,7 @@
 
 <template>
   <div
-    >
+    >f
   </div>
 </template>
 <script lang="ts" setup>
