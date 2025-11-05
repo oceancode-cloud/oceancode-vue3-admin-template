@@ -30,6 +30,7 @@ declare module 'vue' {
     OInputGroup: typeof import('@oceancode/ocean-wui')['OInputGroup']
     OLayoutMenu: typeof import('@oceancode/ocean-wui')['OLayoutMenu']
     OLayoutSquareNavMenu: typeof import('@oceancode/ocean-wui')['OLayoutSquareNavMenu']
+    OMenu: typeof import('@oceancode/ocean-wui')['OMenu']
     ORootContext: typeof import('@oceancode/ocean-wui')['ORootContext']
     OSegmentTabs: typeof import('@oceancode/ocean-wui')['OSegmentTabs']
     OSelect: typeof import('@oceancode/ocean-wui')['OSelect']
