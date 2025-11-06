@@ -140,7 +140,7 @@
 <script lang="ts" setup>
 import CommonLayout from '@/packages/layout/common/CommonLayout.vue';
 import { loadOption1762266760947 } from './app-manage-layout/index';
-import { onMounted, ref } from 'vue';
+import { onBeforeUnmount, onMounted, ref } from 'vue';
 import { useRouter } from '@oceancode/ocean-wui';
 import { switchRouter, findTreeItemByKey } from '@/utils';
 import { getAppPackageById } from '@common-api/api/app/AppFunction';
@@ -188,5 +188,9 @@ async function handleTabClick1761662783778(item): Promise<void> {
     router.push(item.router);
   }
 }
+
+onBeforeUnmount(()=>{
+  global.setCurrentMenu({});
+});
 
 </script>
