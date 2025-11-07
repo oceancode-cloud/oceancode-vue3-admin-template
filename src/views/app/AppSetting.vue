@@ -26,10 +26,13 @@
         {{ global.currentMenu.name }}
       </o-text>
     </div>
+    <br/>
+    <BaseSettingForm></BaseSettingForm>
   </div>
 </template>
 <script lang="ts" setup>
 import { useGlobal } from '@/store';
+import BaseSettingForm from './app-setting/BaseSettingForm.vue';
 
 const global = useGlobal();
 </script>
