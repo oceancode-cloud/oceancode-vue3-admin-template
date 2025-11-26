@@ -9,6 +9,7 @@ export * from './router'
 export * from './event'
 export * from './uuid'
 export * from './image';
+export * from './copy';
 
 export { isEmpty, uniqueId, deepTree }
 
