@@ -1,7 +1,7 @@
 import type { UserConfig, ConfigEnv } from 'vite';
 import { loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import { resolve } from 'path';
+import { resolve, basename, join } from 'path';
 import { OUTPUT_DIR, chunkSizeWarningLimit, terserOptions, rollupOptions } from './build/constant';
 import viteCompression from 'vite-plugin-compression';
 import { viteMockServe } from 'vite-plugin-mock';
@@ -11,9 +11,21 @@ import Components from 'unplugin-vue-components/vite';
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 import AutoImport from 'unplugin-auto-import/vite';
 import { libResolves } from './vite.lib.config';
+import { readdirSync, statSync } from 'fs';
 
 function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir)
+}
+
+function pluginModules() {
+  const files = readdirSync(pathResolve('plugins'));
+  return files.map(file=>{
+    const filename = basename(file);
+    return {
+      find: '@'+ filename,
+      replacement: pathResolve('plugins/'+filename),
+    }
+  });
 }
 
 export default ({ command, mode }: ConfigEnv): UserConfig => {
@@ -45,6 +57,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
           replacement: pathResolve('./node_modules/naive-ui'),
         },
         ...libResolves,
+        ...pluginModules(),
       ],
       dedupe: ['vue']
     },
